@@ -3,6 +3,7 @@
 ## Prognosis
 <details>
 <summary>June 2022, Nature Cancer, Multimodal data integration using machine learning improves risk stratification of high-grade serous ovarian cancer</summary>
+
 [Paper](https://www.nature.com/articles/s43018-022-00388-9)
 - **Journal:** Nature Cancer
 - **Published Date:** June 2022
@@ -12,4 +13,5 @@
   - 404 training patients: 243 had H&E WSIs, 245 had adnexal lesions on pre-treatment CE-CT, 251 had omental implants on pre-treatment CE-CT
   - 40 test patients: all had omental lesions on CE-CT, H&E WSIs
 - **Fusion Mode:** Late-fusion, using a multivariate Cox model to integrate unimodal submodels’ predictions
+
 </details>
