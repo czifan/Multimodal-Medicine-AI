@@ -6,8 +6,8 @@
 
 [Paper](https://www.nature.com/articles/s43018-022-00388-9)
 [Code](https://github.com/kmboehm/onco-fusion)
-- **Journal:** Nature Cancer
-- **Published Date:** June 2022
+<!-- - **Journal:** Nature Cancer
+- **Published Date:** June 2022 -->
 - **Cancer:** Ovarian Cancer
 - **Modalities:** Radiological CTs, Pathological images, Clinical data
 - **Data Source:** MSKCC, TCGA-OV
@@ -26,8 +26,8 @@
 <summary>April 2022, <i>Artificial Intelligence in Medicine</i>, <b>A Multi-modal Fusion Framework Based on Multi-task Correlation Learning for Cancer Prognosis Prediction (MultiCoFusion)</b></summary>
 
 [Paper](https://www.sciencedirect.com/science/article/pii/S0933365722000252) 
-- **Journal:** Artificial Intelligence in Medicine
-- **Published Date:** April 2022
+<!-- - **Journal:** Artificial Intelligence in Medicine
+- **Published Date:** April 2022 -->
 - **Cancer:** Brain Lower Grade Glioma, Glioblastoma Multiforme
 - **Modalities:** Pahological images, Gene (mRNA)
 - **Data Source:** TCGA-LGG, TCGA-GBM
