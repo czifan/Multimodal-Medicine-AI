@@ -20,7 +20,7 @@
     - using PyRadiomics for Radiological CTs; pre-training a ResNet-18 as histopathological tissue-type classifier and for extracting cell type features and tissue-type features; encoding clinical data as binary variables or one-hot categorical variables
     - using univariate Cox proportional hazards model to select features
     - employing a multivariable Cox model for late fusing
-- **Fusion Mode:** Late-fusion, using a multivariate Cox model to integrate unimodal submodels’ predictions
+- **Fusion Mode:** Early/Late-fusion, using a multivariate Cox model to integrate unimodal submodels’ predictions
 
 </details>
 
@@ -45,16 +45,34 @@
 
 </details>
 
+<details>
+<summary>December 2017, <i>Cell Systems</i>, <b>Association of Omics Features with Histopathology Patterns in Lung Adenocarcinoma</b></summary>
+
+[Paper](https://www.cell.com/cell-systems/pdf/S2405-4712(17)30484-2.pdf)
+
+- **Cancer:** Lung Adenocarcinoma
+- **Modalities:** Pathological Images, Pathological Reports, Gene (RNA sequencing), Proteomics
+- **Data Source:** TCGA
+- **Patients:** 538 patients
+- **Pipeline:** 
+    - converting pathological images into overlapping tiles and selected the ROIs to extract quantitative features (i.e. size, shape, intensity distribution, and texture features); identifing pathology grade from pathology reports; collecting gene and protein expression data by RNA sequencing and reverse-phase protein array
+    - employing feature selection on the training set
+    - building a random forest model for prognostic prediction
+- **Fusion Mode:** Early/Late-fusion, using a random forest model to integrate multimodal features
+
+</details>
+
 ## Others
 
 <details>
-<summary>June 2023, <i>Nature Biomedical Engineering</i>, <b>A transformer-based representation-learning model with unified processing of multimodal input for clinical diagnostics</b></summary>
+<summary>June 2023, <i>Nature Biomedical Engineering</i>, <b>A transformer-based representation-learning model with unified processing of multimodal input for clinical diagnostics (IRENE)</b></summary>
 
 [Paper](https://www.nature.com/articles/s41551-023-01045-x)
 [Code](https://github.com/RL4M/IRENE)
 - **Cancer:** Non-Cancer, predicting the adverse clinical outcomes in patients with COVID-19
 - **Modalities:** Chest X-rays, Unstructured Text (i.e. chief complaint, history of present and past illness, and a complete laboratory test report), Structured Text (i.e. demographics)
-- **Patients:** 51511 patients from West China Hospital with 72283 data samples
+- **Data Source:** In-house dataset from West China Hospital
+- **Patients:** 51511 patients with 72283 data samples
     - 44628 patients for training and 3325 patients for testing
 - **Pipeline:** 
     - tokenizing unstructured text into tokens
@@ -66,6 +84,8 @@
 
 </details>
 
+
+
 <details>
 <summary>, <i></i>, <b></b></summary>
 
@@ -73,6 +93,7 @@
 [Code]()
 - **Cancer:** 
 - **Modalities:** 
+- **Data Source:** 
 - **Patients:**
 - **Pipeline:** 
 - **Fusion Mode:** 
