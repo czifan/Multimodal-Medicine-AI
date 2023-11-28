@@ -4,7 +4,7 @@
 
 ## Prognosis
 <details>
-<summary>June 2022, <i>Nature Cancer</i>, <b>Multimodal data integration using machine learning improves risk stratification of high-grade serous ovarian cancer</b></summary>
+<summary>Jun. 2022, <i>Nature Cancer</i>, <b>Multimodal data integration using machine learning improves risk stratification of high-grade serous ovarian cancer</b></summary>
 
 [Paper](https://www.nature.com/articles/s43018-022-00388-9)
 [Code](https://github.com/kmboehm/onco-fusion)
@@ -25,7 +25,7 @@
 </details>
 
 <details>
-<summary>April 2022, <i>Artificial Intelligence in Medicine</i>, <b>A Multi-modal Fusion Framework Based on Multi-task Correlation Learning for Cancer Prognosis Prediction (MultiCoFusion)</b></summary>
+<summary>Apr. 2022, <i>Artificial Intelligence in Medicine</i>, <b>A Multi-modal Fusion Framework Based on Multi-task Correlation Learning for Cancer Prognosis Prediction (MultiCoFusion)</b></summary>
 
 [Paper](https://www.sciencedirect.com/science/article/pii/S0933365722000252) 
 <!-- - **Journal:** Artificial Intelligence in Medicine
@@ -46,7 +46,7 @@
 </details>
 
 <details>
-<summary>December 2017, <i>Cell Systems</i>, <b>Association of Omics Features with Histopathology Patterns in Lung Adenocarcinoma</b></summary>
+<summary>Dec. 2017, <i>Cell Systems</i>, <b>Association of Omics Features with Histopathology Patterns in Lung Adenocarcinoma</b></summary>
 
 [Paper](https://www.cell.com/cell-systems/pdf/S2405-4712(17)30484-2.pdf)
 
@@ -65,7 +65,7 @@
 ## Others
 
 <details>
-<summary>June 2023, <i>Nature Biomedical Engineering</i>, <b>A transformer-based representation-learning model with unified processing of multimodal input for clinical diagnostics (IRENE)</b></summary>
+<summary>Jun. 2023, <i>Nature Biomedical Engineering</i>, <b>A transformer-based representation-learning model with unified processing of multimodal input for clinical diagnostics (IRENE)</b></summary>
 
 [Paper](https://www.nature.com/articles/s41551-023-01045-x)
 [Code](https://github.com/RL4M/IRENE)
