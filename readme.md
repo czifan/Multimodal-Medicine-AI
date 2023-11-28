@@ -2,7 +2,7 @@
 
 ## Prognosis
 <details>
-<summary>June 2022, Nature Cancer, Multimodal data integration using machine learning improves risk stratification of high-grade serous ovarian cancer</summary>
+<summary>June 2022, <i>Nature Cancer</i>, <b>Multimodal data integration using machine learning improves risk stratification of high-grade serous ovarian cancer</b></summary>
 
 [Paper](https://www.nature.com/articles/s43018-022-00388-9)
 - **Journal:** Nature Cancer
