@@ -46,6 +46,22 @@
 </details>
 
 <details>
+<summary>Dec. 2020, <i>MICCAI</i>, <b>Brain Tumor Survival Prediction using Radiomics Features</b></summary>
+
+[Paper](https://link.springer.com/chapter/10.1007/978-3-030-66843-3_28)
+- **Cancer:** Brain Tumor
+- **Modalities:** MRI-T1-weighted, MRI-T2-weighted, T1-contrast enhanced, FLAIR
+- **Data Source:** BraTS 2019 
+- **Patients:** 259 subjects diagnosed with HGG and 76 subjects diagnosed with LGG along with ground truth annotations by experts. The data comprises of MRI images from 19 different institutions of four MRI modalities
+- **Pipeline:** 
+    - extracting image slices corresponding to tumor regions from multiple MRI modalities
+    - extracting radiomics features (i.e. first-order statistics, shape features, and texture features) from these 2D slices
+    - training machince learning classifiers (i.e. KNN, SVM, DT, RF, and DA) to make prognositic predictions
+- **Fusion Mode:** Middle-fusion, using machine learning classifiers to integrate multimodal features from multiple MRIs
+
+</details>
+
+<details>
 <summary>Dec. 2017, <i>Cell Systems</i>, <b>Association of Omics Features with Histopathology Patterns in Lung Adenocarcinoma</b></summary>
 
 [Paper](https://www.cell.com/cell-systems/pdf/S2405-4712(17)30484-2.pdf)
@@ -58,7 +74,7 @@
     - converting pathological images into overlapping tiles and selected the ROIs to extract quantitative features (i.e. size, shape, intensity distribution, and texture features); identifing pathology grade from pathology reports; collecting gene and protein expression data by RNA sequencing and reverse-phase protein array
     - employing feature selection on the training set
     - building a random forest model for prognostic prediction
-- **Fusion Mode:** Early/Late-fusion, using a random forest model to integrate multimodal features
+- **Fusion Mode:** Middle-fusion, using a random forest model to integrate multimodal features
 
 </details>
 
