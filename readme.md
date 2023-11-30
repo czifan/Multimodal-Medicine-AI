@@ -4,7 +4,7 @@
 
 ## Prognosis
 <details>
-<summary>Jun. 2022, <i>Nature Cancer</i>, <b>Multimodal data integration using machine learning improves risk stratification of high-grade serous ovarian cancer</b></summary>
+<summary>[Jun. 2022] <b>Multimodal data integration using machine learning improves risk stratification of high-grade serous ovarian cancer</b>, <i>Nature Cancer</i></summary>
 
 [Paper](https://www.nature.com/articles/s43018-022-00388-9)
 [Code](https://github.com/kmboehm/onco-fusion)
@@ -26,7 +26,7 @@
 </details>
 
 <details>
-<summary>Oct. 2022, <i>IEEE Transactions on Medical Imaging (TMI)</i>, <b>Clinically-Inspired Multi-Agent Transformers for Disease Trajectory Forecasting from Multimodal Data (CLIMATv2)</b></summary>
+<summary>[Oct. 2022] <b>Clinically-Inspired Multi-Agent Transformers for Disease Trajectory Forecasting from Multimodal Data (CLIMATv2)</b>, <i>IEEE Transactions on Medical Imaging (TMI)</i></summary>
 
 [Paper](https://ieeexplore.ieee.org/abstract/document/10242080)
 [Code](https://github.com/Oulu-IMEDS/CLIMATv2)
@@ -45,7 +45,7 @@
 </details>
 
 <details>
-<summary>Apr. 2022, <i>ISBI</i>, <b>CLIMAT: Clinically-Inspired Multi-Agent Transformers for Knee Osteoarthritis Trajectory Forecasting (CLIMAT)</b></summary>
+<summary>[Apr. 2022] <b>CLIMAT: Clinically-Inspired Multi-Agent Transformers for Knee Osteoarthritis Trajectory Forecasting (CLIMAT), <i>ISBI</i></b></summary>
 
 [Paper](https://ieeexplore.ieee.org/abstract/document/9761545)
 [Code](https://github.com/MIPT-Oulu/CLIMAT)
@@ -59,7 +59,7 @@
 </details>
 
 <details>
-<summary>Apr. 2022, <i>Artificial Intelligence in Medicine</i>, <b>A Multi-modal Fusion Framework Based on Multi-task Correlation Learning for Cancer Prognosis Prediction (MultiCoFusion)</b></summary>
+<summary>[Apr. 2022] <b>A Multi-modal Fusion Framework Based on Multi-task Correlation Learning for Cancer Prognosis Prediction (MultiCoFusion)</b>, <i>Artificial Intelligence in Medicine</i></summary>
 
 [Paper](https://www.sciencedirect.com/science/article/pii/S0933365722000252) 
 <!-- - **Journal:** Artificial Intelligence in Medicine
@@ -80,7 +80,7 @@
 </details>
 
 <details>
-<summary>Dec. 2020, <i>MICCAI</i>, <b>Brain Tumor Survival Prediction using Radiomics Features</b></summary>
+<summary>[Dec. 2020] <b>Brain Tumor Survival Prediction using Radiomics Features</b>, <i>MICCAI</i></summary>
 
 [Paper](https://link.springer.com/chapter/10.1007/978-3-030-66843-3_28)
 - **Cancer:** Brain Tumor
@@ -97,7 +97,7 @@
 
 
 <details>
-<summary>Jul. 2019, <i>Bioinformatics</i>, <b>Deep learning with multimodal representation for pancancer prognosis prediction</b></summary>
+<summary>[Jul. 2019] <b>Deep learning with multimodal representation for pancancer prognosis prediction</b>, <i>Bioinformatics</i></summary>
 
 [Paper](https://academic.oup.com/bioinformatics/article/35/14/i446/5529139?login=false)
 [Code](https://github.com/gevaertlab/MultimodalPrognosis)
@@ -118,7 +118,7 @@
 
 
 <details>
-<summary>Dec. 2017, <i>Cell Systems</i>, <b>Association of Omics Features with Histopathology Patterns in Lung Adenocarcinoma</b></summary>
+<summary>[Dec. 2017] <b>Association of Omics Features with Histopathology Patterns in Lung Adenocarcinoma</b>, <i>Cell Systems</i></summary>
 
 [Paper](https://www.cell.com/cell-systems/pdf/S2405-4712(17)30484-2.pdf)
 
@@ -137,7 +137,7 @@
 ## Others
 
 <details>
-<summary>Jun. 2023, <i>Nature Biomedical Engineering</i>, <b>A transformer-based representation-learning model with unified processing of multimodal input for clinical diagnostics (IRENE)</b></summary>
+<summary>[Jun. 2023] <b>A transformer-based representation-learning model with unified processing of multimodal input for clinical diagnostics (IRENE)</b>, <i>Nature Biomedical Engineering</i></summary>
 
 [Paper](https://www.nature.com/articles/s41551-023-01045-x)
 [Code](https://github.com/RL4M/IRENE)
@@ -158,7 +158,7 @@
 
 ## Related Reviews
 <details>
-<summary>Apr. 2023, <i>Progress in Biomedical Engineering</i>, <b>Deep multimodal fusion of image and non-image data in disease diagnosis and prognosis: a review</b></summary>
+<summary>[Apr. 2023] <b>Deep multimodal fusion of image and non-image data in disease diagnosis and prognosis: a review</b>, <i>Progress in Biomedical Engineering</i></summary>
 
 [Paper](https://iopscience.iop.org/article/10.1088/2516-1091/acc2fe/meta)
 
@@ -180,7 +180,7 @@
 
 
 <details>
-<summary>, <i></i>, <b></b></summary>
+<summary>[] <b></b>, <i></i></summary>
 
 [Paper]()
 [Code]()
