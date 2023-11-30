@@ -131,6 +131,24 @@
 
 </details>
 
+<details>
+<summary>[Jan. 2020] <b>Integrative analysis of cross-modal features for the prognosis prediction of clear cell renal cell carcinoma</b>, <i>Bioimage informatics</i></summary>
+
+[Paper](https://academic.oup.com/bioinformatics/article/36/9/2888/5716325)
+[Code](https://github.com/zhang-de-lab/zhang-lab?from¼singlemessage)
+- **Cancer:** Clear Cell Renal Cell Carcinoma
+- **Modalities:** Radiological Images (CTs), Pathological Images, Gene Data, Clinical Information
+- **Data Source:** 
+- **Patients:** 209 patients, randomly divided into training (n=139, 66.51%) and testing cohorts (n=70, 33.49%)
+- **Pipeline:** 
+    - selecting genes by their variation coefficients and employing the weighted gene co-expression network analysis (WGCNA) for gene analysis
+    - using two CNNs with same structure to extract deep features from CT and histopathological images
+    - using a parameter-free multivariate feature selection method (called block filtering post-pruning search (BFPS) algorithm) for feature selection; then applying a further faeture selection for the combination of the selected CT features, histopathological features and eigengenes for prognositic prediction via the Cox model
+- **Fusion Mode:** Middle-fusion, conbinating the selected CT features, histopathological features and eigengenes
+
+</details>
+
+
 
 <details>
 <summary>[Jul. 2019] <b>Deep learning with multimodal representation for pancancer prognosis prediction</b>, <i>Bioinformatics</i></summary>
