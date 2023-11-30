@@ -3,6 +3,42 @@
 ## Treatment Response Evaluation
 
 ## Prognosis
+
+<details>
+<summary>[Mar. 2023] <b>HGIB: Prognosis for Alzheimer’s Disease via Hypergraph Information Bottleneck</b>, <i>arXiv</i></summary>
+
+[Paper](https://arxiv.org/abs/2303.10390)
+- **Cancer:** Non-Cancer, predicting Alzheimer's disease prognosis
+- **Modalities:** Radiological Images (MRI and PET), Non-imaging Information
+- **Data Source:** Alzheimer's Disease Neuroimaging Initiative (ADNI) dataset (adni.loni.usc.edu)
+- **Patients:** 248 patients with complete three modalities from ADNI-2
+- **Pipeline:** 
+    - using different pre-trained backbones to extract features from different modalities
+    - for each modality, building a corresponding hypergraph, whose hyperedge represents the relationship between a subset of the patients, then concatenating all hypergraphs to generate the final hypergraph
+    - employing hypergraph convolution to aggregating message in the hypergraph
+    - applying hypergraph information bottleneck (HGIB) for requiring the node representation to minimize the information from hypergraph-structured data while maximizing the information to make prognostic prediction
+- **Fusion Mode:** Middle-fusion, concatenating hypergraphs from different modalities and employing hypergraph convolution and hypergraph information bottleneck (HGIB) to integrate multimodal information
+
+</details>
+
+
+<details>
+<summary>[Oct. 2022] <b>ICSDA: a multi-modal deep learning model to predict breast cancer recurrence and metastasis risk by integrating pathological, clinical and gene expression data</b>, <i>Briefings in Bioinformatics</i></summary>
+
+[Paper](https://academic.oup.com/bib/article-abstract/23/6/bbac448/6761046)
+[Code]()
+- **Cancer:** Breast Cancer
+- **Modalities:** Pathological Images (H&E), Clinical Information (TNM staging, clinical staging, age, axillary lymph node metastasis), Gene Data
+- **Data Source:** TCGA
+- **Patients:** 196 patients, divided into the training and testing sets with a ratio of 7:3, in which the distributions of the samples were kept between the two datasets by hierarchical sampling
+- **Pipeline:** 
+    - applying feature selection to select features from clinical information and sequencing data
+    - employing ResNet18 to extract deep image features within the tissue area in the H&E images (patching WSI into tiles); then the attention module is used to aggregate patches' features into a final pathological image deep feature
+    - concatenating the pathological image deep feature, sequencing data and clinical data and then predicting prognosis via FC layers
+- **Fusion Mode:** Middle-fusion, concatenating different modalities' features
+
+</details>
+
 <details>
 <summary>[Jun. 2022] <b>Multimodal data integration using machine learning improves risk stratification of high-grade serous ovarian cancer</b>, <i>Nature Cancer</i></summary>
 
