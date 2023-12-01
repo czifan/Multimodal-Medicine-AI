@@ -5,6 +5,25 @@
 ## Prognosis
 
 <details>
+<summary>[Sep 2023] <b>Med-UniC: Unifying Cross-Lingual Medical Vision-Language Pre-Training by Diminishing Bias</b>, <i>NeurIPS</i></summary>
+
+[Paper](https://arxiv.org/abs/2305.19894)
+[Code](https://github.com/SUSTechBruce/Med-UniC)
+- **Cancer:** Non-Cancer, make experiments across 5 medical image tasks and 10 datasets encompassing over 30 diseases
+- **Modalities:** Radiological Images (CXR images), Free-text Data (radiology reports)
+- **Data Source:** MIMIC-CXR, PadChest
+- **Patients:** Pre-training on approximately 220k image-text pairs for MIMIC-CXR and 160k pairs for PadChest, then applied to four downstream tasks: medical image linear classification, medical image zero-shot classification, medical image semantic segmentation, and medical image object detection 
+- **Pipeline:** 
+    - for free-text data, using the corss-lingual medical LM to align different languages
+    - for CXR images, using contrastive learning to align image features (apply random augmentations to the original images to create augmented views as postive samples while treating the rest of the images in the mini-batch as negative samples)
+    - following CLIP, a contrastive learning is used to align vison-language features
+    - introducing Cross-lingual Text Alignment Regularization (CTR) to learn language-independent text representations and neutralize the adverse effects of community bias on other modalitieslearn 
+- **Fusion Mode:** Middle-fusion, aligning different modalities' features within hidden space
+
+</details>
+
+
+<details>
 <summary>[Mar. 2023] <b>HGIB: Prognosis for Alzheimer’s Disease via Hypergraph Information Bottleneck</b>, <i>arXiv</i></summary>
 
 [Paper](https://arxiv.org/abs/2303.10390)
@@ -38,6 +57,8 @@
 - **Fusion Mode:** Middle-fusion, concatenating different modalities' features
 
 </details>
+
+
 
 <details>
 <summary>[Jun. 2022] <b>Multimodal data integration using machine learning improves risk stratification of high-grade serous ovarian cancer</b>, <i>Nature Cancer</i></summary>
@@ -210,6 +231,23 @@
 
 </details>
 
+<details>
+<summary>[Sep. 2022] <b>mmFormer: Multimodal Medical Transformer for Incomplete Multimodal Learning of Brain Tumor Segmentation</b>, <i>MICCAI</i></summary>
+
+[Paper](https://link.springer.com/chapter/10.1007/978-3-031-16443-9_11)
+[Code](https://github.com/YaoZhang93/mmFormer)
+- **Cancer:** Brain Tumor
+- **Modalities:** MRIs (FLAIR, T1c, T1, T2)
+- **Data Source:** BraTS 2018
+- **Patients:** 285 multi-contrast MRI scans
+- **Pipeline:** 
+    - using modality-specific encoders to extract modelity-specific features within each modality
+    - employing an inter-modal transformer to build and align the long-range correlations across modalities
+    - a decoder performs a progressive up-sampling and fusion with the modality-invariant features to generate robust segmentation
+- **Fusion Mode:** Middle-fusion, using an inter-modal transformer to integrate multimodal features
+
+</details>
+
 ## Related Reviews
 <details>
 <summary>[Apr. 2023] <b>Deep multimodal fusion of image and non-image data in disease diagnosis and prognosis: a review</b>, <i>Progress in Biomedical Engineering</i></summary>
@@ -227,6 +265,51 @@
 - Deep-learning methods require a large amount of training data, however, data scaricity, especially multimodal data, is a challenge in the healthcare are.
 - Unimodal feature extraction is a essential prerequisite for fusion, especially for multimodal heterogeneity.
 - Explainability is a challenge in multimodal diagnosis and prognosis.
+
+</details>
+
+<details>
+<summary>[Sep. 2022] <b>Multimodal biomedical AI</b>, <i>Nature Medicine</i></summary>
+
+[Paper](https://www.nature.com/articles/s41591-022-01981-2)
+
+**Content & View points:** 
+- Opportunities for leveraging multimodal data (applications)
+    - Personalized 'omics' for precision health
+    - Digital clinical trials
+    - Remote monitoring: the 'hospital-at-home'
+    - Pandemic surveillance and outbreak detection
+    - Digital twins
+    - Virtual health assistant
+- Multimodal data collection
+
+| Study                 | Country | Year started | Data modalities                                                                                                                                                         | Access         | Sample size   |
+|-----------------------|---------|--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------|---------------|
+| [UK Biobank](https://www.ukbiobank.ac.uk)            | UK      | 2006         | Questionnaires, EHR/clinical, Laboratory, Genome-wide genotyping, WES, WGS, Imaging, Metabolites                                                                       | Open access    | ~500,000      |
+| [China Kadoorie Biobank](https://www.ckbiobank.org) | China   | 2004         | Questionnaires, Physical measurements, Biosamples, Genome-wide genotyping                                                                                                | Restricted access | ~500,000      |
+| [Biobank Japan](https://biobankjp.org/en/index.html#01)         | Japan   | 2003         | Questionnaires, Clinical, Laboratory, Genome-wide genotyping                                                                                                             | Restricted access | ~200,000      |
+| [Million Veteran Program](https://www.mvp.va.gov/pwa/) | USA   | 2011         | EHR/clinical, Laboratory, Genome wide                                                                                                                                   | Restricted access | 1 million     |
+| [TOPMed](https://topmed.nhlbi.nih.gov/topmed-data-access-scientific-community)                | USA     | 2014         | Clinical, WGS                                                                                                                                                           | Open access    | ~180,000      |
+| [All of Us Research Program](https://allofus.nih.gov) | USA | 2017         | Questionnaires, SDH, EHR/clinical, Laboratory, Genome wide, Wearables                                                                                                   | Open access    | 1 million (target) |
+| [Project Baseline Health Study](https://ctsi.duke.edu/project-baseline-health-study) | USA | 2015       | Questionnaires, EHR/clinical, Laboratory, Wearables                                                                                                                     | Restricted access | 10,000 (target) |
+| [American Gut Project](https://db.cngb.org/search/project/PRJEB11419/)  | USA     | 2012         | Clinical, Diet, Microbiome                                                                                                                                              | Open access    | ~25,000       |
+| [MIMIC](https://lcp.mit.edu/mimic)                 | USA     | 2008-2019    | Clinical/EHR, Images                                                                                                                                                    | Open access    | ~380,000      |
+| [MIPACT](https://precisionhealth.umich.edu/our-research/mipact/)                | USA     | 2018-2019    | Wearables, clinical/EHR, physiological, laboratory                                                                                                                      | Restricted access | ~6,000        |
+| [North American Prodrome Longitudinal Study](https://napls.ucsf.edu) | USA  | 2008 | Clinical, Genetic                                                                                                                                                       | Restricted access | ~1,000        |
+
+- Technical challenges
+    - How to leverage multiple different types of data and learn to relate these multiple modalities or combine them for improving prediction performance?
+    - Another desirable feature for multimodal learning frameworks is the ability to learn from different modalities without the need for different model architectures.
+    - Another important modeling challenge relates to the exceedingly high number of dimensions contained in multimodal health data, collectively termed ‘the curse of dimensionality’.
+    - Multimodal fusion is a general concept that can be tackled using any architectural choice.
+    - Many other important challenges relating to multimodal model architectures remain (for example, how to extract features from three-dimensional imaging or whole-slide images)
+- Data challenges
+    - Medical datasets are heterogeneous, which can be described along several axes, including the sample size, depth of phenotyping, the length and intervals of follow-up, the degree of interaction between participants, the heterogeneity and diversity of the participants, the level of standardization and harmonization of the data and the amount of linkage between data sources.
+    - Achieving diversity across race/ethnicity, ancestry, income level, education level, healthcare access, age, disability status, geographic locations, gender and sexual orientation has proven difficult in practice.
+    - Another frequent problem with biomedical data is the usually high proportion of missing data.
+    - The risk of incurring several biases is important when conducting studies that collect health data, and multiple approaches are necessary to monitor and mitigate these biases.
+- Privacy challenges
+    - The successful development of multimodal AI in health requires breadth and depth of data, which encompasses higher privacy challenges than single-modality AI models.
 
 </details>
 
