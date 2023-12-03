@@ -2,6 +2,20 @@
 
 ## Treatment Response Evaluation
 
+<details>
+<summary>⭐️ [Aug. 2022] <b>Multimodal integration of radiology, pathology and genomics for prediction of response to PD-(L)1 blockade in patients with non-small cell lung cancer</b>, <i>Nature Cancer</i></summary>
+
+[Paper](https://www.nature.com/articles/s43018-022-00416-8)
+[Code](https://github.com/msk-mind/luna/)
+- **Cancer:** Non-small Cell Lung Cancer, predicting immunotherapy response
+- **Modalities:** Radiological Images (CTs), Pathological Images (digitized programmed death ligand-1 immunohistochemistry slides), Gene Data
+- **Data Source:** In-House Dataset
+- **Patients:** 249 patients at Memorial Sloan Kettering (MSK) Cancer Center with advanced NSCLC who received PD-(L)1-blockade-based therapy with baseline data and known outcomes between 2014 and 2019
+- **Pipeline:** [TODO]
+- **Fusion Mode:** Middle-fusion, using a multimodal dynamic attention with masking to integrate multimodal features and address missing data
+
+</details>
+
 ## Prognosis
 
 <details>
@@ -153,6 +167,24 @@
 </details>
 
 <details>
+<summary>[Jan. 2020] <b>PAGE-Net: Interpretable and Integrative Deep Learning for Survival Analysis Using Histopathological Images and Genomic Data</b>, <i>Pacific Symposium on Biocomputing</i></summary>
+
+[Paper](https://pubmed.ncbi.nlm.nih.gov/31797610/)
+[Code](https: //github.com/DataX-JieHao/PAGE-Net)
+- **Cancer:** Glioblastoma Multiforme
+- **Modalities:** Pathological Images (WSIs), Gene Data, Clinical Data
+- **Data Source:** TCGA, TCIA
+- **Patients:** 447 GBM patients
+- **Pipeline:**
+    - patching WSIs into patches; the patch-wise pre-trained CNN is used to extract pathological features; then the pathology hidden layer is used to aggregate these features for as input of Cox layer
+    - gene features is extracted by a series layers, inlcuding gene layer, pathway layer, H1 and H2 layers
+    - clinical features is extracted by the clinical layer
+    - these three modalities' features are concatenated and as the input of the Cox layer for prediction
+- **Fusion Mode:** Middle-fusion, concatenating multimodal features and using Cox layer for survival analysis
+
+</details>
+
+<details>
 <summary>[Jan. 2020] <b>Integrative analysis of cross-modal features for the prognosis prediction of clear cell renal cell carcinoma</b>, <i>Bioimage informatics</i></summary>
 
 [Paper](https://academic.oup.com/bioinformatics/article/36/9/2888/5716325)
@@ -248,6 +280,25 @@
 
 </details>
 
+
+<details>
+<summary>[Feb. 2021] <b>Multimodal deep learning models for early detection of Alzheimer’s disease stage</b>, <i>Scientific Reports</i></summary>
+
+[Paper](https://www.nature.com/articles/s41598-020-74399-w)
+[Code]()
+- **Cancer:** Non-Cancer, early detection of Alzheimer's disease stage
+- **Modalities:** Radiological Images (MRI), Gene Data (single nucleotide polymorphisms (SNPs)), Clinical Data
+- **Data Source:** ADNI dataset
+- **Patients:** ADNI dataset contains SNP (808 patients), MRI imaging (503 patients), and clinical and neurological test data (2004 patients)
+- **Pipeline:** 
+    - using stacked denoising auto-encoders to extract faetures from clinical and genetic data
+    - using 3D0CNNs for imaging data
+    - developing a novel data interpretation method to identify top-performing features learned by the deep-models with clustering and perturbation analysis
+- **Fusion Mode:** Middle-fusion, concatenating multimodal features and then using a classification layer for prediction
+
+</details>
+
+
 ## Related Reviews
 <details>
 <summary>[Apr. 2023] <b>Deep multimodal fusion of image and non-image data in disease diagnosis and prognosis: a review</b>, <i>Progress in Biomedical Engineering</i></summary>
@@ -316,17 +367,7 @@
 
 
 
-<details>
-<summary>[] <b></b>, <i></i></summary>
 
-[Paper]()
-[Code]()
-- **Cancer:** 
-- **Modalities:** 
-- **Data Source:** 
-- **Patients:**
-- **Pipeline:** 
-- **Fusion Mode:** 
 
-</details>
+
 
