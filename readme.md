@@ -59,7 +59,6 @@
 <summary>[Oct. 2022] <b>ICSDA: a multi-modal deep learning model to predict breast cancer recurrence and metastasis risk by integrating pathological, clinical and gene expression data</b>, <i>Briefings in Bioinformatics</i></summary>
 
 [Paper](https://academic.oup.com/bib/article-abstract/23/6/bbac448/6761046)
-[Code]()
 - **Cancer:** Breast Cancer
 - **Modalities:** Pathological Images (H&E), Clinical Information (TNM staging, clinical staging, age, axillary lymph node metastasis), Gene Data
 - **Data Source:** TCGA
@@ -170,7 +169,7 @@
 <summary>[Jan. 2020] <b>PAGE-Net: Interpretable and Integrative Deep Learning for Survival Analysis Using Histopathological Images and Genomic Data</b>, <i>Pacific Symposium on Biocomputing</i></summary>
 
 [Paper](https://pubmed.ncbi.nlm.nih.gov/31797610/)
-[Code](https: //github.com/DataX-JieHao/PAGE-Net)
+[Code](https://github.com/DataX-JieHao/PAGE-Net)
 - **Cancer:** Glioblastoma Multiforme
 - **Modalities:** Pathological Images (WSIs), Gene Data, Clinical Data
 - **Data Source:** TCGA, TCIA
@@ -285,7 +284,6 @@
 <summary>[Feb. 2021] <b>Multimodal deep learning models for early detection of Alzheimer’s disease stage</b>, <i>Scientific Reports</i></summary>
 
 [Paper](https://www.nature.com/articles/s41598-020-74399-w)
-[Code]()
 - **Cancer:** Non-Cancer, early detection of Alzheimer's disease stage
 - **Modalities:** Radiological Images (MRI), Gene Data (single nucleotide polymorphisms (SNPs)), Clinical Data
 - **Data Source:** ADNI dataset
