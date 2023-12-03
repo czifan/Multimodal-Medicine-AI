@@ -318,7 +318,7 @@
 </details>
 
 <details>
-<summary>[Sep. 2022] <b>Multimodal biomedical AI</b>, <i>Nature Medicine</i></summary>
+<summary>⭐️ [Sep. 2022] <b>Multimodal biomedical AI</b>, <i>Nature Medicine</i></summary>
 
 [Paper](https://www.nature.com/articles/s41591-022-01981-2)
 
