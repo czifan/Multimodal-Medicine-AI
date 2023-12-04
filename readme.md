@@ -12,9 +12,30 @@
 - **Modalities:** Radiological Images (CTs), Pathological Images (digitized programmed death ligand-1 immunohistochemistry slides), Gene Data
 - **Data Source:** In-House Dataset
 - **Patients:** 249 patients at Memorial Sloan Kettering (MSK) Cancer Center with advanced NSCLC who received PD-(L)1-blockade-based therapy with baseline data and known outcomes between 2014 and 2019
-- **Pipeline:** [TODO]
+- **Pipeline:**
+    - extracting radiomics features using expert segmented thoracic CT scans (Radiology Radiomics per site)
+    - extracting image-based IHC texture from original digitized PD-L1 IHC slide via the tumor segmentation mask and several visual transformations (Pathology GLCM and TPS)
+    - obtaining genomic alterations and TMB
+    - DyAM was used for multimodal integration. CT segmentation-derived features were separated by lesion type (lung PC, PL and LN) with separate attention weights applied. Attention weights are also used for genomics and PD-L1 IHC-derived features to result in a final prediction of response.
 - **Fusion Mode:** Middle-fusion, using a multimodal dynamic attention with masking to integrate multimodal features and address missing data
 
+</details>
+
+<details>
+<summary>[Jun. 2020] <b>Prediction of prognostic risk factors in hepatocellular carcinoma with transarterial chemoembolization using multi-modal multi-task deep learning</b>, <i>eClinicalMedicine</i></summary>
+
+[Paper](https://www.thelancet.com/journals/eclinm/article/PIIS2589-5370(20)30123-1/fulltext)
+- **Cancer:** Hepatocellular Carcinoma
+- **Modalities:** Radiological Images (CTs)
+- **Data Source:** In-house dataset
+- **Patients:** a total 737 patients, 478 patients (64.9%) underwent surgical resection; 16 patients (2.2%) underwent liver transplantation and 243 patients (32.9%) underwent nonsurgical TACE treatment.
+- **Pipeline:** 
+    - a Random forest feature selection and a SVM predictor used to develop MVI-score and Edmondson' score in 494 HCCs with surgical resection
+    - multi-task DL networks to build a prognostic score for HCC survival after TACE
+        - first, a DAE is used to reduce and transform 2420 radiomics features from 243 HCCs with TACE into 70 new features from the bottleneck hidden layer of the networks
+        - then, six time-varying DL algorithms were used to train the obtained DAE-transformed features and the one perform best was used to build a prognostic score to compute the survival probabilities on the time grid
+    - Finally, MVI-score, Edmondson's score, DL-based survival score and evidenced-based clinicoradiologic score were integrated into a Cox-PH model to obtain a precise prediction
+- **Fusion Mode:** Middle-fusion, using Cox-PH model to integrate multimodal scores into a prognostic prediction
 </details>
 
 ## Prognosis
@@ -166,6 +187,27 @@
 
 </details>
 
+
+<details>
+<summary>⭐️ [Sep. 2020] <b>Pathomic Fusion: An Integrated Framework for Fusing Histopathology and Genomic Features for Cancer Diagnosis and Prognosis</b>, <i>TMI</i></summary>
+
+[Paper](https://ieeexplore.ieee.org/abstract/document/9186053)
+[Code](https://github.com/mahmoodlab/PathomicFusion)
+- **Cancer:** Glioma, Clear Cell Renal Cell Carcinoma
+- **Modalities:** Pathological Images, Gene Data (mutations, CNV, RNA-Seq)
+- **Data Source:** TCGA-GBM, TCGA-LGG
+- **Patients:** 769 patients
+- **Pipeline:** 
+    - using CNNs, parameter efficient GCNs or a combination of the two to extract histology features
+    - using a feed-forword network to extract genomic features
+    - first training unimodal networks for the respective image and genomic features individually for the corresponding supervised learning task, then used as feature exxtractors for multimodal fusion
+    - multimodal fusion is performed by applying an gating-based attention mechanism to first control the expressiveness of each modality, followed by the Kronecker product to model pairwise feature interactions across modalities
+    - finally, using cox model for survival analysis and the FC layers for classification
+- **Fusion Mode:** Middle-fusion, employing gating-based attention mechanism followed by a Kronecher product to intergate multimodal features
+</details>
+
+
+
 <details>
 <summary>[Jan. 2020] <b>PAGE-Net: Interpretable and Integrative Deep Learning for Survival Analysis Using Histopathological Images and Genomic Data</b>, <i>Pacific Symposium on Biocomputing</i></summary>
 
@@ -279,6 +321,23 @@
 - **Fusion Mode:** Middle-fusion, using an inter-modal transformer to integrate multimodal features
 
 </details>
+
+
+<details>
+<summary>[Mar. 2021] <b>Relation-Induced Multi-Modal Shared Representation Learning for Alzheimer’s Disease Diagnosis</b>, <i>TMI</i></summary>
+
+[Paper](https://ieeexplore.ieee.org/abstract/document/9366692)
+- **Cancer:** Non-Cancer, predicting Alzheimer's disease diagnosis
+- **Modalities:** Radiological Images (MRIs, PETs)
+- **Data Source:** [ADNI](http://www.loni.usc.edu)
+- **Patients:** A total of 820 patients, consisting of 93 AD, 99 NC, 121 sMCI, and 79 pMCI from ADNI-1 and 136 AD, 107 NC, 103 sMCI, and 82 pMCI from ADNI-2.
+- **Pipeline:** 
+    - learning a bi-directional mapping (including projection matrix P and reconstruction matrix Q) to obtain the shared representation matrix U between original space and shared space
+    - within this shared space, utilizing several relational regularizers (including feature-feature, feature-label, and sample-sample regularizers) as auxiliary regularizers to encourage learning underlying associations inherent in multi-modal data and alleviate overfitting
+    - predict the shared representations into the target space for AD diagnosis
+- **Fusion Mode:** Middle-fusion, learning a shared-representation across different modalities 
+</details>
+
 
 
 <details>
