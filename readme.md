@@ -4,6 +4,21 @@
 ## Treatment Response Evaluation
 
 <details>
+<summary>[Mar. 2023] <b>Integration of longitudinal deep-radiomics and clinical data improves the prediction of durable benefits to anti-PD-1/PD-L1 immunotherapy in advanced NSCLC patients</b>, <i>Journal of Translational Medicine</i></summary>
+
+[Paper](https://translational-medicine.biomedcentral.com/articles/10.1186/s12967-023-04004-x)
+- **Cancer:** Advanced Non-small Cell Lung Cancer (NSCLC)
+- **Modalities:** Radiological Images (CTs with follow-ups), Clinical Data (demographic, epidemiologic data, hemogram with follow-ups)
+- **Data Source:** In-House dataset
+- **Patients:** 264 patients with pathologically confirmed stage IV NSCLC treated with immunotherapy from two institutions, randomly divided into a training (n=221) and an independent test set (n=43)
+- **Pipeline:** 
+    - using Radiomics and NoduleX to extract time-series CT features and then concatenating them to as the input of Random Forest to predict response
+    - clinical data is first encoded by one-hot encoding and then concatenated to as the input of another Random Forest to predict response
+    - averaging these two results to get ensemble prediction
+- **Fusion Mode:** Late-fusion, averaging multimodal predictions into an ensemble prediction
+</details>
+
+<details>
 <summary>⭐️ [Aug. 2022] <b>Multimodal integration of radiology, pathology and genomics for prediction of response to PD-(L)1 blockade in patients with non-small cell lung cancer</b>, <i>Nature Cancer</i></summary>
 
 [Paper](https://www.nature.com/articles/s43018-022-00416-8)
@@ -320,6 +335,26 @@
 - **Fusion Mode:** Middle-fusion
 
 </details>
+
+<details>
+<summary>[Dec. 2022] <b>Medical Diagnosis with Large Scale Multimodal Transformers: Leveraging Diverse Data for More Accurate Diagnosis</b>, <i>arXiv</i></summary>
+
+[Paper](https://arxiv.org/abs/2212.09162)
+[Code](https://github.com/FirasGit/lsmt)
+- **Cancer:** Non-Cancer, focus on intensive care and ophthalmology walk-ins
+- **Modalities:** Radiological Images (chest radiographs, fundoscopy images), Clinical Data
+- **Data Source:** MIMIC dataset
+- **Patients:** MIMIC database comprises retrospectively collected image and non-image data of over 40,000 patients admitted to an intensive care unit or the emergency department at the Beth Israel Deaconess Medical Center between 2008 and 2019. 
+    - The authors follow [the previous work](http://arxiv.org/abs/2207.07027) and extract imaging and non-imaging information from the [MIMIC-IV](https://physionet.org/content/mimiciv/1.0/) and [MIMIC-CXR-JPG](https://arxiv.org/abs/1901.07042) database resulting in a subset of 45,676 samples from n=36,542 patients
+    - The internal dataset of chest radiographs consisting of 193,556 samples (n=45,016 patients) is thus split into a training set of 122,294 samples (n=28,809 patients), validation set of 31,243 samples (n=7,203 patients) and a test set of 40,028 samples (n=9,004 patients).
+    - The the fundoscopy dataset comprised of 3,860 samples (n=1,930 patients) is split into training set of 2,586 samples (n=1,293 patients), a validation set of 502 samples (n=251 patients) and a test set of 772 samples (n=386 patients).
+- **Pipeline:** 
+    - using a transformer encoder (similar to ViT) to tokenize and encode imaging data into visual tokens (imaging features)
+    - using learnable tokens to as query, meanwhile clinical parameters as the key and value, and employing the cross-attention to extract clinical information from clinical parameters into learnable tokens (non-imaging features)
+    - the output learnbale tokens and the visual tokens are passed through the transformer encoder, and then the class token is used to make prediction via a MLP
+- **Fusion Mode:** Middle-fusion, using a transformer encoder to integrate imaging and non-imaging features
+</details>
+
 
 <details>
 <summary>[Sep. 2022] <b>mmFormer: Multimodal Medical Transformer for Incomplete Multimodal Learning of Brain Tumor Segmentation</b>, <i>MICCAI</i></summary>
