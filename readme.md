@@ -8,7 +8,7 @@
 | 2023 | [🔗](https://translational-medicine.biomedcentral.com/articles/10.1186/s12967-023-04004-x) | | NSCLC | Rad, Clin | In-House | 264 | Late |
 | 2022 | [🔗](https://www.nature.com/articles/s43018-022-00416-8) | [🔗](https://github.com/msk-mind/luna/) | NSCLC | Rad, Path, Gene | In-House | 249 | Middle |
 | 2021 | [🔗](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7868825/) | | NSCLC | Rad, Lab, Clin | In-House | 200 | Middle |
-| 2020 | [🔗](https://www.thelancet.com/journals/eclinm/article/PIIS2589-5370(20)30123-1/fulltext) | | Hepatocellular Carcinoma | Rad | In-House | 737 | Middle |
+| 2020 | [🔗](https://www.thelancet.com/journals/eclinm/article/PIIS2589-5370(20)30123-1/fulltext) | | HCC | Rad | In-House | 737 | Middle |
 
 
 <details>
@@ -78,6 +78,23 @@
 </details>
 
 ## Prognosis
+
+| Date  | Paper | Code | Cancer | Modalities | Data Source | Patients | Fusion Mode |
+|-------|-------|------|--------|------------|-------------|----------|-------------|
+| 2023 | [🔗](https://arxiv.org/abs/2305.19894) | [🔗](https://github.com/SUSTechBruce/Med-UniC) | | Rad, Text | MIMIC-CXR, PadChest | ~380k pairs | Middle |
+| 2023 | [🔗](https://arxiv.org/abs/2303.10390) | | | Rad, Non-imaging | ADNI | 248 | Middle |
+| 2022 | [🔗](https://academic.oup.com/bib/article-abstract/23/6/bbac448/6761046) | | BC | Path, Clin, Gene | TCGA | 196 | Middle |
+| 2022 | [🔗](https://www.nature.com/articles/s43018-022-00388-9) | [🔗](https://github.com/kmboehm/onco-fusion) | OC | Rad, Path, Clin | MSKCC, TCGA-OV | 444 | Early/Late |
+| 2022 | [🔗](https://ieeexplore.ieee.org/abstract/document/10242080) | [🔗](https://github.com/Oulu-IMEDS/CLIMATv2) | | Imaging, Non-Imaging | OAI, ADNI | 4796 (knee OA), 2577 (AD) | Middle |
+| 2022 | [🔗](https://ieeexplore.ieee.org/abstract/document/9761545) | [🔗](https://github.com/MIPT-Oulu/CLIMAT) | | X-ray, Non-Imaging | OAI | 4796 | Middle |
+| 2022 | [🔗](https://www.sciencedirect.com/science/article/pii/S0933365722000252) | | Brain | Path, Gene | TCGA-LGG, TCGA-GBM | 470 | Middle |
+| 2020 | [🔗](https://link.springer.com/chapter/10.1007/978-3-030-66843-3_28) | | Brain | MRIs | BraTS 2019 | 335 | Middle |
+| 2020 | [🔗](https://ieeexplore.ieee.org/abstract/document/9186053) | [🔗](https://github.com/mahmoodlab/PathomicFusion) | Glioma, ccRCC | Path, Gene | TCGA-GBM, TCGA-LGG | 769 | Middle |
+| 2020 | [🔗](https://pubmed.ncbi.nlm.nih.gov/31797610/) | [🔗](https://github.com/DataX-JieHao/PAGE-Net) | GBM | Path, Gene, Clin | TCGA, TCIA | 447 | Middle |
+| 2020 | [🔗](https://academic.oup.com/bioinformatics/article/36/9/2888/5716325) | [🔗](https://github.com/zhang-de-lab/zhang-lab) | ccRCC | Rad, Path, Gene, Clin | TCGA | 209 | Middle |
+| 2019 | [🔗](https://academic.oup.com/bioinformatics/article/35/14/i446/5529139?login=false) | [🔗](https://github.com/gevaertlab/MultimodalPrognosis) | Pancancer | Clin, Gene, Path | TCGA | 11160 | Middle |
+| 2017 | [🔗](https://www.cell.com/cell-systems/pdf/S2405-4712(17)30484-2.pdf) | | LUNA | Path, Path Reports, Gene, Proteomics | TCGA | 538 | Middle |
+
 
 <details>
 <summary>[Sep 2023] <b>Med-UniC: Unifying Cross-Lingual Medical Vision-Language Pre-Training by Diminishing Bias</b>, <i>NeurIPS</i></summary>
@@ -272,7 +289,7 @@
 [Code](https://github.com/zhang-de-lab/zhang-lab?from¼singlemessage)
 - **Cancer:** Clear Cell Renal Cell Carcinoma
 - **Modalities:** Radiological Images (CTs), Pathological Images, Gene Data, Clinical Information
-- **Data Source:** 
+- **Data Source:** TCGA
 - **Patients:** 209 patients, randomly divided into training (n=139, 66.51%) and testing cohorts (n=70, 33.49%)
 - **Pipeline:** 
     - selecting genes by their variation coefficients and employing the weighted gene co-expression network analysis (WGCNA) for gene analysis
