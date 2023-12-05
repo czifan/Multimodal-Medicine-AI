@@ -84,7 +84,7 @@
 | 2023 | [🔗](https://arxiv.org/abs/2305.19894) | [🔗](https://github.com/SUSTechBruce/Med-UniC) | | Rad, Text | MIMIC-CXR, PadChest | ~380k pairs | Middle |
 | 2023 | [🔗](https://arxiv.org/abs/2303.10390) | | | Rad, Non-imaging | ADNI | 248 | Middle |
 | 2022 | [🔗](https://academic.oup.com/bib/article-abstract/23/6/bbac448/6761046) | | BC | Path, Clin, Gene | TCGA | 196 | Middle |
-| 2022 | [🔗](https://www.nature.com/articles/s43018-022-00388-9) | [🔗](https://github.com/kmboehm/onco-fusion) | OC | Rad, Path, Clin | MSKCC, TCGA-OV | 444 | Early/Late |
+| 2022 | [🔗](https://www.nature.com/articles/s43018-022-00388-9) | [🔗](https://github.com/kmboehm/onco-fusion) | OC | Rad, Path, Clin | MSKCC, TCGA-OV | 444 | Late |
 | 2022 | [🔗](https://ieeexplore.ieee.org/abstract/document/10242080) | [🔗](https://github.com/Oulu-IMEDS/CLIMATv2) | | Imaging, Non-Imaging | OAI, ADNI | 4796 (knee OA), 2577 (AD) | Middle |
 | 2022 | [🔗](https://ieeexplore.ieee.org/abstract/document/9761545) | [🔗](https://github.com/MIPT-Oulu/CLIMAT) | | X-ray, Non-Imaging | OAI | 4796 | Middle |
 | 2022 | [🔗](https://www.sciencedirect.com/science/article/pii/S0933365722000252) | | Brain | Path, Gene | TCGA-LGG, TCGA-GBM | 470 | Middle |
@@ -169,7 +169,7 @@
     - using PyRadiomics for Radiological CTs; pre-training a ResNet-18 as histopathological tissue-type classifier and for extracting cell type features and tissue-type features; encoding clinical data as binary variables or one-hot categorical variables
     - using univariate Cox proportional hazards model to select features
     - employing a multivariable Cox model for late fusing
-- **Fusion Mode:** Early/Late-fusion, using a multivariate Cox model to integrate unimodal submodels’ predictions
+- **Fusion Mode:** Late-fusion, using a multivariate Cox model to integrate unimodal submodels’ predictions
 
 </details>
 
