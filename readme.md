@@ -3,6 +3,14 @@
 
 ## Treatment Response Evaluation
 
+| Date | Paper | Code | Cancer | Modalities | Data Source | Patients | Fusion Mode |
+|-------|-------|------|--------|------------|-------------|----------|-------------|
+| 2023 | [🔗](https://translational-medicine.biomedcentral.com/articles/10.1186/s12967-023-04004-x) | | NSCLC | Rad, Clin | In-House | 264 | Late |
+| 2022 | [🔗](https://www.nature.com/articles/s43018-022-00416-8) | [🔗](https://github.com/msk-mind/luna/) | NSCLC | Rad, Path, Gene | In-House | 249 | Middle |
+| 2021 | [🔗](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7868825/) | | NSCLC | Rad, Lab, Clin | In-House | 200 | Middle |
+| 2020 | [🔗](https://www.thelancet.com/journals/eclinm/article/PIIS2589-5370(20)30123-1/fulltext) | | Hepatocellular Carcinoma | Rad | In-House | 737 | Middle |
+
+
 <details>
 <summary>[Mar. 2023] <b>Integration of longitudinal deep-radiomics and clinical data improves the prediction of durable benefits to anti-PD-1/PD-L1 immunotherapy in advanced NSCLC patients</b>, <i>Journal of Translational Medicine</i></summary>
 
