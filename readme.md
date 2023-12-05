@@ -3,7 +3,7 @@
 
 ## Treatment Response Evaluation
 
-| Date | Paper | Code | Cancer | Modalities | Data Source | Patients | Fusion Mode |
+| Year | Paper | Code | Cancer | Modalities | Data Source | Patients | Fusion Mode |
 |-------|-------|------|--------|------------|-------------|----------|-------------|
 | 2023 | [🔗](https://translational-medicine.biomedcentral.com/articles/10.1186/s12967-023-04004-x) | | NSCLC | Rad, Clin | In-House | 264 | Late |
 | 2022 | [🔗](https://www.nature.com/articles/s43018-022-00416-8) | [🔗](https://github.com/msk-mind/luna/) | NSCLC | Rad, Path, Gene | In-House | 249 | Middle |
@@ -79,7 +79,7 @@
 
 ## Prognosis
 
-| Date  | Paper | Code | Cancer | Modalities | Data Source | Patients | Fusion Mode |
+| Year  | Paper | Code | Cancer | Modalities | Data Source | Patients | Fusion Mode |
 |-------|-------|------|--------|------------|-------------|----------|-------------|
 | 2023 | [🔗](https://arxiv.org/abs/2305.19894) | [🔗](https://github.com/SUSTechBruce/Med-UniC) | | Rad, Text | MIMIC-CXR, PadChest | ~380k pairs | Middle |
 | 2023 | [🔗](https://arxiv.org/abs/2303.10390) | | | Rad, Non-imaging | ADNI | 248 | Middle |
@@ -340,6 +340,15 @@
 </details>
 
 ## Others
+
+| Year | Paper | Code | Cancer | Modalities | Data Source | Patients | Fusion Mode |
+|------|-------|------|--------|------------|-------------|----------|-------------|
+| 2023 | [🔗](https://www.nature.com/articles/s41551-023-01045-x) | [🔗](https://github.com/RL4M/IRENE) | | X-rays, Text | In-House | 51511 | Middle |
+| 2022 | [🔗](https://arxiv.org/abs/2212.09162) | [🔗](https://github.com/FirasGit/lsmt) | | Rad, Clin | MIMIC | >40,000 | Middle |
+| 2022 | [🔗](https://link.springer.com/chapter/10.1007/978-3-031-16443-9_11) | [🔗](https://github.com/YaoZhang93/mmFormer) | Brain | MRIs | BraTS 2018 | 285 | Middle |
+| 2021 | [🔗](https://ieeexplore.ieee.org/abstract/document/9366692) |  | | MRIs, PETs | ADNI | 820 | Middle |
+| 2021 | [🔗](https://www.nature.com/articles/s41598-020-74399-w) |  | | MRI, Gene, Clin | ADNI | 2004 | Middle |
+
 
 <details>
 <summary>[Jun. 2023] <b>A transformer-based representation-learning model with unified processing of multimodal input for clinical diagnostics (IRENE)</b>, <i>Nature Biomedical Engineering</i></summary>
