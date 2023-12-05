@@ -1,5 +1,5 @@
 <!-- # Multimodal Models in Oncology: Enhancing Treatment Response Evaluation and Prognostic Accuracy -->
-# Multimodal AI in Medicine
+# Multimodal Medicine AI
 
 ## Treatment Response Evaluation
 
