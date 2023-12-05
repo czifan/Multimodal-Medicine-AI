@@ -21,6 +21,22 @@
 
 </details>
 
+
+<details>
+<summary>⭐️ [Feb. 2021] <b>A multi-omics-based serial deep learning approach to predict clinical outcomes of single-agent anti-PD-1/PD-L1 immunotherapy in advanced stage non-small-cell lung cancer</b>, <i>American Journal of Translational Research</i></summary>
+
+[Paper](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7868825/)
+- **Cancer:** Non-small-cell Lung Cancer (NSCLC)
+- **Modalities:** Radiological Images (serial radiomics), Laboratory Data, Baseline Clinical Data
+- **Data Source:** In-House Dataset
+- **Patients:** 200 advanced stage NSCLC patients with 1633 CT scans and 3414 blood samples who received single anti-PD-1/PD-L1 agent between April 2016 and December 2019
+- **Pipeline:** 
+    - using the proposed Simple Temporal Attention (SimTA) moduels to process asynchronous clinical time series (i.e. the radiomics and blood tests) separately
+    - the encoded features of these time series and static clinical information are then fused by a MLP to get the final output for the assessment prediction of responders/non-responders
+- **Fusion Mode:** Middle-fusion, concatenating radiomics and blood test features and then using MLP for predictions
+</details>
+
+
 <details>
 <summary>[Jun. 2020] <b>Prediction of prognostic risk factors in hepatocellular carcinoma with transarterial chemoembolization using multi-modal multi-task deep learning</b>, <i>eClinicalMedicine</i></summary>
 
