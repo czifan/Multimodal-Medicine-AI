@@ -131,7 +131,7 @@
 - **Fusion Mode:** Middle-fusion, using Cox-PH model to integrate multimodal scores into a prognostic prediction
 </details>
 
-## Prognosis
+## Prognosis Evaluation
 
 | Year  | Paper | Code | Cancer | Modalities | Data Source | Patients | Fusion Mode |
 |-------|-------|------|--------|------------|-------------|----------|-------------|
