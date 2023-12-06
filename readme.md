@@ -5,10 +5,64 @@
 
 | Year | Paper | Code | Cancer | Modalities | Data Source | Patients | Fusion Mode |
 |-------|-------|------|--------|------------|-------------|----------|-------------|
+| 2023 | [🔗](https://www.biorxiv.org/content/10.1101/2023.11.24.568360v1.abstract)| | ccRCC | Gene | TCGA | ~1000 | Middle |
+| 2023 | [🔗](https://www.biorxiv.org/content/10.1101/2023.07.04.547697v1.abstract) | [🔗](https://github.com/rootchang/ICBpredictor) | 18 solid tumor types | Path, Gene, Clin | In-House | 2881 | Middle |
+| 2023 | [🔗](https://www.sciencedirect.com/science/article/pii/S0167814023003316?casa_token=MZeMEY7Dz48AAAAA:9iepZVnJHZdhSU0Hmoq-UyajUchgBk1i1ZpoSZTj0NvvdbUaQhJg5ltcoth-iAC0TaVq9abwWA) | [🔗](https://github.com/vancywx/Immunotherapy-response-prediction-using-multi-modal-semi-superviseddeep-learning/tree/main) | GC | Rad, Clin | In-House | 249 | Middle |
 | 2023 | [🔗](https://translational-medicine.biomedcentral.com/articles/10.1186/s12967-023-04004-x) | | NSCLC | Rad, Clin | In-House | 264 | Late |
 | 2022 | [🔗](https://www.nature.com/articles/s43018-022-00416-8) | [🔗](https://github.com/msk-mind/luna/) | NSCLC | Rad, Path, Gene | In-House | 249 | Middle |
 | 2021 | [🔗](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7868825/) | | NSCLC | Rad, Lab, Clin | In-House | 200 | Middle |
 | 2020 | [🔗](https://www.thelancet.com/journals/eclinm/article/PIIS2589-5370(20)30123-1/fulltext) | | HCC | Rad | In-House | 737 | Middle |
+
+
+<details>
+<summary>[Nov. 2023] <b>Multi-omics features-based machine learning method improve immunotherapy response in clear cell renal cell carcinoma</b>, <i>bioRxiv</i></summary>
+
+[Paper](https://www.biorxiv.org/content/10.1101/2023.11.24.568360v1.abstract)
+- **Cancer:** Clear Cell Renal Cell Carcinomas
+- **Modalities:** Gene Data (bulk RNA, scRNA, DNA)
+- **Data Source:** TCGA
+- **Patients:** >1900 patients with immune-mediated kidney discorders; >400 patients with ccRCC treated by ICBs; ~1000 patients as the immune cohort for ccRCC
+- **Pipeline:** 
+    - extracting six distinct types of features (TIs) from multimodal gene data
+    - using XGBoost to predict response based on these features
+- **Fusion Mode:** Middle-fusion, using XGBoost to integrate multimodal features
+</details>
+
+
+<details>
+<summary>[Jul. 2023] <b>Robust prediction of patient outcomes with immune checkpoint blockade therapy for cancer using common clinical, pathologic, and genomic feature</b>, <i>bioRxiv</i></summary>
+
+[Paper](https://www.biorxiv.org/content/10.1101/2023.07.04.547697v1.abstract)
+[Code](https://github.com/rootchang/ICBpredictor)
+- **Cancer:** 18 solid tumor types
+- **Modalities:** Pathologic, Gene Data, Clinical Data
+- **Data Source:** In-House dataset
+- **Patients:** 2881 immune checkpoint blockade (ICB)-treated patients across 18 solid tumor types
+- **Pipeline:** Using machine learning (i.e., decision tree, random forest) to take the clinical, pathologic, genomic features as inputs and make predictions
+- **Fusion Mode:** Middle-fusion, using ML algorithms to integrate multimodal features
+</details>
+
+<details>
+<summary>⭐️ [Jul. 2023] <b>Cancer immunotherapy response prediction from multi-modal clinical and image data using semi-supervised deep learning</b>, <i>Radiotherapy and Oncology</i></summary>
+
+[Paper](https://www.sciencedirect.com/science/article/pii/S0167814023003316?casa_token=MZeMEY7Dz48AAAAA:9iepZVnJHZdhSU0Hmoq-UyajUchgBk1i1ZpoSZTj0NvvdbUaQhJg5ltcoth-iAC0TaVq9abwWA)
+[Code](https://github.com/vancywx/Immunotherapy-response-prediction-using-multi-modal-semi-superviseddeep-learning/tree/main)
+- **Cancer:** Gastric Cancer
+- **Modalities:** Radiological Images (CTs), Clinical Data
+- **Data Source:** In-House
+- **Patients:** 249 advanced gastric cancer patients treated with immunotherapy, and an additional dataset of 2029 patients who did not receive immunotherapy in a semi-supervised framework to learn intrinsic imaing phenotypes of the disease
+    - 168 advanced GC patients treated with immunotherapy for training
+    - two independent cohorts of 81 patients treated with immunotherapy for evaluating model performance
+- **Pipeline:** 
+    - an MLP for extracting clinical features from clinical data
+    - an MLP for mapping radiomics features extracted from CTs
+    - a CNN for extracting deep image features from CTs
+    - concatenating these features into a multimodal features and predicting response/non-response via an MLP
+    - this work innovatively employs a semi-supervised framework to leverage unlabeled examples (patients not treated with immunotherapy). Specially, for labeled example, the consistent loss is employed to consist the teacher model's predictions (predicted by multimodal features) and student model's predictions (predicted by only deep image features); for unlabeled example, the consistent loss is used to consist the teacher model's predictions (applied weak augmentation for CTs) and student model's predictions (applied strong augmentation for CTs). The teacher model is an ema model from student models.
+- **Fusion Mode:** Middle-fusion, concatenating multimodal features for predictions via an MLP
+</details>
+
+
 
 
 <details>
@@ -343,12 +397,30 @@
 
 | Year | Paper | Code | Cancer | Modalities | Data Source | Patients | Fusion Mode |
 |------|-------|------|--------|------------|-------------|----------|-------------|
+| 2023 | [🔗](https://arxiv.org/abs/2304.02836) | [🔗](https://github.com/MASILab/lmsignatures) | SPN | Rad, Clin | NLST, EHR-Pulmonary, Image-EHR, In-House | 2668 (public), 1449 (in-house) | Middle |
 | 2023 | [🔗](https://www.nature.com/articles/s41551-023-01045-x) | [🔗](https://github.com/RL4M/IRENE) | | X-rays, Text | In-House | 51511 | Middle |
+| 2023 | [🔗](https://www.sciencedirect.com/science/article/pii/S0895611123001179) | | LUNA | Rad, Clin | In-House | 199 | Middle |
 | 2022 | [🔗](https://arxiv.org/abs/2212.09162) | [🔗](https://github.com/FirasGit/lsmt) | | Rad, Clin | MIMIC | >40,000 | Middle |
 | 2022 | [🔗](https://link.springer.com/chapter/10.1007/978-3-031-16443-9_11) | [🔗](https://github.com/YaoZhang93/mmFormer) | Brain | MRIs | BraTS 2018 | 285 | Middle |
 | 2021 | [🔗](https://ieeexplore.ieee.org/abstract/document/9366692) |  | | MRIs, PETs | ADNI | 820 | Middle |
 | 2021 | [🔗](https://www.nature.com/articles/s41598-020-74399-w) |  | | MRI, Gene, Clin | ADNI | 2004 | Middle |
 
+<details>
+<summary>[Jun. 2023] <b>Longitudinal Multimodal Transformer Integrating Imaging and Latent Clinical Signatures From Routine EHRs for Pulmonary Nodule Classification</b>, <i>arXiv</i></summary>
+
+[Paper](https://arxiv.org/abs/2304.02836)
+[Code](https://github.com/MASILab/lmsignatures)
+- **Cancer:** Solitary Pulmonary Nodule (SPN)
+- **Modalities:** Radiological Images (chest CTs), Clinical Data (EHR)
+- **Data Source:** [NLST](https://cdas.cancer.gov/nlst/), EHR-Pulmonary (the unlabeled dataset used to learn clinical signatures in an unsupervised manner), Image-EHR (a labeled dataset with paired imaging and EHRs), In-House dataset
+- **Patients:** Our classifier is pretrained on 2,668 scans from a public dataset and 1,149 subjects with longitudinal chest CTs, billing codes, medications, and laboratory tests from EHRs of our home institution.
+- **Pipeline:** 
+    - learning independent latent signatures in an unsupervised manner on a large non-imaging cohort (non-imaging features)
+    - extracting longitudinal deep image features from CTs via a CNN (imaging features)
+    - token embedding is derived from signatures (non-imaging features) and imaging (imaging features); a fixed positional embedding indicating the token's position in the sequence; a learnable segment embedding indicating imaging or non-imaging modality
+    - a self-attention is used to integrate multimodal and longitudinal features
+- **Fusion Mode:** Middle-fusion, using self-attention to integrate multimodal features
+</details>
 
 <details>
 <summary>[Jun. 2023] <b>A transformer-based representation-learning model with unified processing of multimodal input for clinical diagnostics (IRENE)</b>, <i>Nature Biomedical Engineering</i></summary>
@@ -369,6 +441,26 @@
 - **Fusion Mode:** Middle-fusion
 
 </details>
+
+
+
+<details>
+<summary>[Feb. 2023] <b>Development and evaluation of an integrated model based on a deep segmentation network and demography-added radiomics algorithm for segmentation and diagnosis of early lung adenocarcinoma</b>, <i>Computerized Medical Imaging and Graphics</i></summary>
+
+[Paper](https://www.sciencedirect.com/science/article/pii/S0895611123001179)
+
+- **Cancer:** Lung Adenocarcinoma
+- **Modalities:** Radiological Images (CT), Clinical Data
+- **Data Source:** In-House
+- **Patients:** A total of 199 GGN cases, consisting of 168 GGN cases for developing the model and the rest of 31 independent cases for validation
+- **Pipeline:** 
+    - first, a deep segmentation model is utilized to locate GGNs in CTs and to help categorizing the lesions with a classification model to be subsequently applied
+    - then, extracting 1690 quantitative image features via Pyradiomics from lesions, and 28 features from the settings of CTs (i.e., device and modality settings), patients' general characteristics (i.e., age, sex, smoking status), and references were added
+    - reducing and selecting the features
+    - using a classifier to make prediction
+- **Fusion Mode:** Middle-fusion, concatenating CT radiomics features and clinical data and the settings of CTs within feature space
+</details>
+
 
 <details>
 <summary>[Dec. 2022] <b>Medical Diagnosis with Large Scale Multimodal Transformers: Leveraging Diverse Data for More Accurate Diagnosis</b>, <i>arXiv</i></summary>
