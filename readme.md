@@ -5,7 +5,7 @@
 
 | Year | Paper | Code | Cancer | Modalities | Data Source | Patients | Fusion Mode |
 |-------|-------|------|--------|------------|-------------|----------|-------------|
-| 2023 | [🔗](https://www.biorxiv.org/content/10.1101/2023.11.24.568360v1.abstract)| | ccRCC | Gene | TCGA | ~1000 | Middle |
+| 2023 | [🔗](https://www.biorxiv.org/content/10.1101/2023.11.24.568360v1.abstract)| | ccRCC | Gene | TCGA, In-House | ~1000 | Middle |
 | 2023 | [🔗](https://www.biorxiv.org/content/10.1101/2023.07.04.547697v1.abstract) | [🔗](https://github.com/rootchang/ICBpredictor) | 18 solid tumor types | Path, Gene, Clin | In-House | 2881 | Middle |
 | 2023 | [🔗](https://www.sciencedirect.com/science/article/pii/S0167814023003316?casa_token=MZeMEY7Dz48AAAAA:9iepZVnJHZdhSU0Hmoq-UyajUchgBk1i1ZpoSZTj0NvvdbUaQhJg5ltcoth-iAC0TaVq9abwWA) | [🔗](https://github.com/vancywx/Immunotherapy-response-prediction-using-multi-modal-semi-superviseddeep-learning/tree/main) | GC | Rad, Clin | In-House | 249 | Middle |
 | 2023 | [🔗](https://translational-medicine.biomedcentral.com/articles/10.1186/s12967-023-04004-x) | | NSCLC | Rad, Clin | In-House | 264 | Late |
@@ -20,7 +20,7 @@
 [Paper](https://www.biorxiv.org/content/10.1101/2023.11.24.568360v1.abstract)
 - **Cancer:** Clear Cell Renal Cell Carcinomas
 - **Modalities:** Gene Data (bulk RNA, scRNA, DNA)
-- **Data Source:** TCGA
+- **Data Source:** TCGA, In-House dataset
 - **Patients:** >1900 patients with immune-mediated kidney discorders; >400 patients with ccRCC treated by ICBs; ~1000 patients as the immune cohort for ccRCC
 - **Pipeline:** 
     - extracting six distinct types of features (TIs) from multimodal gene data
