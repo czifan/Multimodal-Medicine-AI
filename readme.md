@@ -556,7 +556,7 @@
 
 
 <details>
-<summary>[Oct. 2022] <b>Artificial intelligence for multimodal data integration in oncology</b>, <i>Cancer Cell</i></summary>
+<summary>⭐️ [Oct. 2022] <b>Artificial intelligence for multimodal data integration in oncology</b>, <i>Cancer Cell</i></summary>
 
 [Paper](https://www.cell.com/cancer-cell/pdf/S1535-6108(22)00441-X.pdf)
 
@@ -593,13 +593,29 @@
     - Late fusion (decision-level fusion)
         - 👍：allows one to use a different model achitecture for each modality, making it suitable for systems with large data heterogeneity or modalities from different time points; be able to cope  with missing or incomplete data; suitable for weak interdependencies
         - 👎: unsuitable for strong interdependencies
-
-
-
-
-
-**View points:**
-- 
+    - Intermediate fusion
+        - 👍：flexible—single-level fusion, gradual fusion, guided fusion
+    - There is no conclusive evidence that one fusion type is ultimately better than the others, as each type is heavily data and task specific.
+- Multimodal interpretability
+    - Histopathology: map model architecture attention or probability scores to obtain slide-level attention heatmaps
+    - Radiology: is similar to those used in histoloty
+    - Molecular data: use the integrated gradient method to analyze, which computes attribution values indicating how changes in specific inputs affect the model outputs
+    - Multimodal models: all previously mentioned methods can be used in multimodal models to explore interpretability within each modality. Moreover, shifts in feature importance under unimodal and multimodal settings can be investigated to analyze the impact of the multimodal context.
+    - While CAM- or attention-based methods can localize the predictive regions, they cannot specify which features are relevant, i.e., they can explain where but not why.
+    - There is no guarantee that all high-attention/attribution regions carry clinical relevance. High scores just mean that the model has considered these regions more important than others.
+- Multimodal data interconnection
+    - Morphologic associations
+    - Non-invasive alternatives
+    - Outcome associations
+    - Early predictors
+- Challenges
+    - Missing data
+        - Synthetic data generation
+        - Dropout-based methods
+    - Data alignment
+        - Alignment of similar modalities (e.g. MRI and PET brain scans)
+        - Alignment of diverse modalities (e.g. data from different scales, timepoints, or measurements)
+    - Transparency and prospective clinical trials
 
 </details>
 
