@@ -554,6 +554,56 @@
 
 </details>
 
+
+<details>
+<summary>[Oct. 2022] <b>Artificial intelligence for multimodal data integration in oncology</b>, <i>Cancer Cell</i></summary>
+
+[Paper](https://www.cell.com/cancer-cell/pdf/S1535-6108(22)00441-X.pdf)
+
+**Content:** 
+- AI methods in oncology
+    - Supervised methods
+        - Hand-crafted methods
+            - 👍：simpler architecture, lower computation cost, may require less training data, and better interpretability
+            - 👎：time consuming, translate human bias to the models
+        - Representation learning methods
+            - 👍：their ability to extract rich feature representations from raw data, resulting in lower preprocessing cost, higher flexibility, and often superior performance over hand-crafted methods
+            - 👎：reliance on pixel-level annotations, lack of interpretability
+    - Weakly supervised methods: this method can reduce the cost of data preprocessing and mitigate the bias and interrater variability; additionally, they are free to learn from the entire scan, that can indentify predictive features even beyond the regions typically evaluated by clinicians.
+        - Graph convolutional networks
+            - 👍：can incorporate larger context and spatial tissue structure
+            - 👎：higher training costs and memory requirements (since the nodes cannot be processed independently)
+        - Multiple-instance learning
+            - 👍：no fine annotation is required
+            - 👎：overlook patches' correlation
+        - Vision transformers
+            - 👍：be fully context aware, consider patches' correlation and context, consider spatial structure or relative distances between patches via positional encoding
+            - 👎: tend to be more data hungry
+    - Unsupervised methods
+        - Self-supervised methods
+            - 👍：can learn general-purpose features, which can be beneficial for other practical tasks (transfer learning)
+            - 👎: (Not mentioned in the paper)
+        - Unsupervised feature analysis
+            - 👍：can explore structure, similarity and common features across data points
+            - 👎: (Not mentioned in the paper)
+- Multimodal data fusion
+    - Early fusion
+        - 👍：only one model is trainied, simplifing the design process
+        - 👎: requires a certain level of alignment or synchronization between the modalities
+    - Late fusion (decision-level fusion)
+        - 👍：allows one to use a different model achitecture for each modality, making it suitable for systems with large data heterogeneity or modalities from different time points; be able to cope  with missing or incomplete data; suitable for weak interdependencies
+        - 👎: unsuitable for strong interdependencies
+
+
+
+
+
+**View points:**
+- 
+
+</details>
+
+
 <details>
 <summary>⭐️ [Sep. 2022] <b>Multimodal biomedical AI</b>, <i>Nature Medicine</i></summary>
 
