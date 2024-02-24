@@ -10,6 +10,7 @@
 | 2023 | [🔗](https://www.sciencedirect.com/science/article/pii/S0167814023003316?casa_token=MZeMEY7Dz48AAAAA:9iepZVnJHZdhSU0Hmoq-UyajUchgBk1i1ZpoSZTj0NvvdbUaQhJg5ltcoth-iAC0TaVq9abwWA) | [🔗](https://github.com/vancywx/Immunotherapy-response-prediction-using-multi-modal-semi-superviseddeep-learning/tree/main) | GC | Rad, Clin | In-House | 249 | Middle |
 | 2023 | [🔗](https://translational-medicine.biomedcentral.com/articles/10.1186/s12967-023-04004-x) | | NSCLC | Rad, Clin | In-House | 264 | Late |
 | 2022 | [🔗](https://www.nature.com/articles/s43018-022-00416-8) | [🔗](https://github.com/msk-mind/luna/) | NSCLC | Rad, Path, Gene | In-House | 249 | Middle |
+| 2022 | [🔗](https://www.sciencedirect.com/science/article/pii/S1361841522001128) | | | Rad | UKBB, EchoNet-Dynamic, GSTFT, GSTFT CRT | 62 for response predictions and 10,730 for training segmentation models | Middle |
 | 2021 | [🔗](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7868825/) | | NSCLC | Rad, Lab, Clin | In-House | 200 | Middle |
 | 2020 | [🔗](https://www.thelancet.com/journals/eclinm/article/PIIS2589-5370(20)30123-1/fulltext) | | HCC | Rad | In-House | 737 | Middle |
 
@@ -63,8 +64,6 @@
 </details>
 
 
-
-
 <details>
 <summary>[Mar. 2023] <b>Integration of longitudinal deep-radiomics and clinical data improves the prediction of durable benefits to anti-PD-1/PD-L1 immunotherapy in advanced NSCLC patients</b>, <i>Journal of Translational Medicine</i></summary>
 
@@ -98,6 +97,31 @@
 
 </details>
 
+<details>
+<summary>[Apr. 2022] <b>A multimodal deep learning model for cardiac resynchronisation therapy response prediction</b>, <i>Medical Image Analysis</i></summary>
+
+[Paper](https://www.sciencedirect.com/science/article/pii/S1361841522001128)
+- **Cancer:** Non-Cancer, predicting cardiac resynchronisation therapy response
+- **Modalities:** 2D echocardiography and cardiac magnetic resonace (CMR) data
+- **Data Source:** 
+    - UK Biobank (UKBB) for pre-training the CMR segmentation model
+    - EchoNet-Dynamic dataset for pre-training the echocardiography segmentation model
+    - Guys and St Thomas NHS Foundation Trust (GSTFT) for training and validating the CMR and echocardiography segmentation models
+    - GSTFT CRT echocardiography database for testing the proposed model in the intended clinical application of using only echocardiography data at test time
+- **Patients:** 
+    - [UK Biobank (UKBB)](https://www.ukbiobank.ac.uk/): 700 healthy subjects
+    - [EchoNet-Dynamic dataset](https://echonet.github.io/echoNet/): 10,030 patients
+    - Guys and St Thomas NHS Foundation Trust (GSTFT): 50 HF patients and 50 CRT patients (32/50 patients who were classified as responders to CRT)
+    - GSTFT CRT echocardiography database: 12 CRT patients (7/12 patients who were classified as responders to CRT)
+    - a total of 62 patients for response predictions
+- **Pipeline:**
+    - the nnU-Net architecture is used to extract segmentations of the heart over the full cardiac cycle from the two modalities
+    - training the multimodal deep learning (MMDL) by maximizing the correlation between two modalities' latent respresents
+    - combining the latent spaces of the nnU-Net models from two modalities through average
+    - using a SVM classifier for predicting CRT response
+- **Fusion Mode:** Middle-fusion, maximizing the correlation between multimodal features and averaging them
+
+</details>
 
 <details>
 <summary>⭐️ [Feb. 2021] <b>A multi-omics-based serial deep learning approach to predict clinical outcomes of single-agent anti-PD-1/PD-L1 immunotherapy in advanced stage non-small-cell lung cancer</b>, <i>American Journal of Translational Research</i></summary>
