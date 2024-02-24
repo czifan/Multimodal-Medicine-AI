@@ -421,6 +421,7 @@
 
 | Year | Paper | Code | Cancer | Modalities | Data Source | Patients | Fusion Mode |
 |------|-------|------|--------|------------|-------------|----------|-------------|
+| 2024 | [🔗](https://arxiv.org/pdf/2402.14252.pdf) | | | Rad | In-House | | |
 | 2023 | [🔗](https://arxiv.org/abs/2304.02836) | [🔗](https://github.com/MASILab/lmsignatures) | SPN | Rad, Clin | NLST, EHR-Pulmonary, Image-EHR, In-House | 2668 (public), 1449 (in-house) | Middle |
 | 2023 | [🔗](https://www.nature.com/articles/s41551-023-01045-x) | [🔗](https://github.com/RL4M/IRENE) | | X-rays, Text | In-House | 51511 | Middle |
 | 2023 | [🔗](https://www.sciencedirect.com/science/article/pii/S0895611123001179) | | LUNA | Rad, Clin | In-House | 199 | Middle |
@@ -428,6 +429,16 @@
 | 2022 | [🔗](https://link.springer.com/chapter/10.1007/978-3-031-16443-9_11) | [🔗](https://github.com/YaoZhang93/mmFormer) | Brain | MRIs | BraTS 2018 | 285 | Middle |
 | 2021 | [🔗](https://ieeexplore.ieee.org/abstract/document/9366692) |  | | MRIs, PETs | ADNI | 820 | Middle |
 | 2021 | [🔗](https://www.nature.com/articles/s41598-020-74399-w) |  | | MRI, Gene, Clin | ADNI | 2004 | Middle |
+
+<details>
+<summary>[Feb. 2024] <b>Multimodal Healthcare AI: Identifying and Designing Clinically Relevant Vision-Language Applications for Radiology</b>, <i>arXiv</i></summary>
+
+[Paper](https://arxiv.org/pdf/2402.14252.pdf)
+- **Cancer:** Non-Cancer
+- **Modalities:** Radiological Images
+- **Data Source:** In-House
+- **Contribution:** The first inverstigation into the potential utility and design requirements for leveraging vision-language model (VLM) capabilities with 13 radiologists and clinicians in the context of radiology of four tasks: Draft Report Generation, Augmented Report Review, Visual Search and Querying, and Patient Imaging History Highlights.
+</details>
 
 <details>
 <summary>[Jun. 2023] <b>Longitudinal Multimodal Transformer Integrating Imaging and Latent Clinical Signatures From Routine EHRs for Pulmonary Nodule Classification</b>, <i>arXiv</i></summary>
