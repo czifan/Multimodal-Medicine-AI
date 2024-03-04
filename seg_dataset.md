@@ -1,0 +1,21 @@
+## CT
+- ***AbdomenCT-1K***
+    - [Download](https://forms.gle/dcqxBt4TeG8uTGvt7)
+    - Data characteristic: 1056 3D CT scans with 3D abdominal organ (liver, kidneys, pancreas, spleen) segmentations
+    - Data citations:
+        - J. Ma, Y. Zhang, S. Gu, C. Zhu, C. Ge, Y. Zhang, X. An, C. Wang, Q. Wang, X. Liu, S. Cao, Q. Zhang, S. Liu, Y. Wang, Y. Li, J. He, and X. Yang, “Abdomenct-1k: Is abdominal organ segmentation a solved problem?” IEEE Transactions on Pattern Analysis and Machine Intelligence, 2021.
+        - J. Ma, Y. Zhang, S. Gu, X. An, Z. Wang, C. Ge, C. Wang, F. Zhang, Y. Wang, Y. Xu, S. Gou, F. Thaler, C. Payer, D. ˇ Stern, E. G. Henderson, D. M. McSweeney, A. Green, P. Jackson, L. McIntosh, Q.-C. Nguyen, A. Qayyum, P.-H. Conze, Z. Huang, Z. Zhou, D.-P. Fan, H. Xiong, G. Dong, Q. Zhu, J. He, and X. Yang, “Fast and low-gpu-memory abdomen ct organ segmentation: The flare challenge,” Medical Image Analysis, vol. 82, p. 102616, 2022
+- ***⭐️ Adrenal-ACC-Ki67***
+    - [Download](https://doi.org/10.7937/1FPG-VM46)
+    - Data characteristic: 53 3D CT scans with 3D adrenocortical carcinoma (ACC) segmentations
+    - Data citation: A. Ahmed, M. Elmohr, D. Fuentes, M. Habra, S. Fisher, N. Perrier, M. Zhang, and K. Elsayes, “Radiomic mapping model for prediction of ki-67 expression in adrenocortical carcinoma,” Clinical Radiology, vol. 75, no. 6, pp. 479–e17, 2020. 
+- ***AMOS-CT***
+    - [Download](https://amos22.grand-challenge.org/)
+    - Data characteristic: 360 (exclude test set) 3D CT scans with annotations of 15 organs (spleen, right kidney, left kidney, gallbladder, esophagus, liver, stomach, aorta, inferior vena cava, pancreas, right adrenal gland, left adrenal gland, duodenum, bladder, prostate/uterus)
+    - Data citation: Y. Ji, H. Bai, J. Yang, C. Ge, Y. Zhu, R. Zhang, Z. Li, L. Zhang, W. Ma, X. Wan et al., “Amos: A large-scale abdominal multi-organ benchmark for versatile medical image segmentation,” arXiv preprint arXiv:2206.08023, 2022.
+- ***⭐️ HCC-TACE-Seg***
+    - [Download](https://doi.org/10.7937/TCIA.5FNA-0924)
+    - Data characteristic: 105 3D CT scans with annotations of liver tumors
+    - Data citations:
+        - K. Clark, B. Vendt, K. Smith, J. Freymann, J. Kirby, P. Koppel, S. Moore, S. Phillips, D. Maffitt, M. Pringle et al., “The cancer imaging archive (tcia): maintaining and operating a public information repository,” Journal of Digital Imaging, vol. 26, no. 6, pp. 1045–1057, 2013.
+        - A. Morshid, K. M. Elsayes, A. M. Khalaf, M. M. Elmohr, J. Yu, A. O. Kaseb, M. Hassan, A. Mahvash, Z. Wang, J. D. Hazle, and D. Fuentes, “A machine learning model to predict hepatocellular carcinoma response to transcatheter arterial chemoembolization,” Radiology: Artificial Intelligence, vol. 1, no. 5, p. e180021, 2019.
