@@ -432,6 +432,7 @@
 | 2022 | [🔗](https://link.springer.com/chapter/10.1007/978-3-031-16443-9_11) | [🔗](https://github.com/YaoZhang93/mmFormer) | Brain | MRIs | BraTS 2018 | 285 | Middle |
 | 2021 | [🔗](https://ieeexplore.ieee.org/abstract/document/9366692) |  | | MRIs, PETs | ADNI | 820 | Middle |
 | 2021 | [🔗](https://www.nature.com/articles/s41598-020-74399-w) |  | | MRI, Gene, Clin | ADNI | 2004 | Middle |
+| 2019 | [🔗](https://pubmed.ncbi.nlm.nih.gov/31586211/) | [🔗](https://cnoc-bwh.shinyapps.io/gbmsurvivalpredictor/) | Glioblastoma | Clinical info. | SEER | 20821 | Early |
 
 <details>
 <summary>[Feb. 2024] <b>Multimodal Healthcare AI: Identifying and Designing Clinically Relevant Vision-Language Applications for Radiology</b>, <i>arXiv</i></summary>
@@ -568,6 +569,22 @@
     - using 3D0CNNs for imaging data
     - developing a novel data interpretation method to identify top-performing features learned by the deep-models with clustering and perturbation analysis
 - **Fusion Mode:** Middle-fusion, concatenating multimodal features and then using a classification layer for prediction
+
+</details>
+
+<details>
+<summary>[Oct. 2019] <b>An Online Calculator for the Prediction of Survival in Glioblastoma Patients Using Classical Statistics and Machine Learning</b>, <i>RESEARCH—HUMAN—CLINICAL STUDIES</i></summary>
+
+[Paper](https://pubmed.ncbi.nlm.nih.gov/31586211/)
+[Code](https://cnoc-bwh.shinyapps.io/gbmsurvivalpredictor/)
+- **Cancer:** Glioblastoma
+- **Modalities:** Clinical information, including continuous variables (age, tumor diameter, ...), categorical variables (sex, race, ...)
+- **Data Source:** [Surveillance Epidemiology and end results (SEER) dataset (2005-2015)](https://pubmed.ncbi.nlm.nih.gov/24464362/)
+- **Patients:** in total 20821 patients split into a training and hold-out test set in an 80/20 raio
+- **Pipeline:** 
+    - for censored survival data, using Cox proportional hazards regression (CPHR) and accelerated failure time (AFT) algorithms
+    - for predictive analysis, using 15 machine learning and statistical algorithms
+- **Fusion Mode:** Early-fusion, taking continuous variables and categorical variables as inputs, actually, it acts as the multi-variables analysis
 
 </details>
 
