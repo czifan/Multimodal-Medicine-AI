@@ -173,6 +173,7 @@
 | 2020 | [🔗](https://ieeexplore.ieee.org/abstract/document/9186053) | [🔗](https://github.com/mahmoodlab/PathomicFusion) | Glioma, ccRCC | Path, Gene | TCGA-GBM, TCGA-LGG | 769 | Middle |
 | 2020 | [🔗](https://pubmed.ncbi.nlm.nih.gov/31797610/) | [🔗](https://github.com/DataX-JieHao/PAGE-Net) | GBM | Path, Gene, Clin | TCGA, TCIA | 447 | Middle |
 | 2020 | [🔗](https://academic.oup.com/bioinformatics/article/36/9/2888/5716325) | [🔗](https://github.com/zhang-de-lab/zhang-lab) | ccRCC | Rad, Path, Gene, Clin | TCGA | 209 | Middle |
+| 2019 | [🔗](https://pubmed.ncbi.nlm.nih.gov/31586211/) | [🔗](https://cnoc-bwh.shinyapps.io/gbmsurvivalpredictor/) | Glioblastoma | Clinical info. | SEER | 20821 | Early |
 | 2019 | [🔗](https://academic.oup.com/bioinformatics/article/35/14/i446/5529139?login=false) | [🔗](https://github.com/gevaertlab/MultimodalPrognosis) | Pancancer | Clin, Gene, Path | TCGA | 11160 | Middle |
 | 2017 | [🔗](https://www.cell.com/cell-systems/pdf/S2405-4712(17)30484-2.pdf) | | LUNA | Path, Path Reports, Gene, Proteomics | TCGA | 538 | Middle |
 
@@ -325,6 +326,8 @@
 </details>
 
 
+
+
 <details>
 <summary>⭐️ [Sep. 2020] <b>Pathomic Fusion: An Integrated Framework for Fusing Histopathology and Genomic Features for Cancer Diagnosis and Prognosis</b>, <i>TMI</i></summary>
 
@@ -380,6 +383,21 @@
 
 </details>
 
+<details>
+<summary>[Oct. 2019] <b>An Online Calculator for the Prediction of Survival in Glioblastoma Patients Using Classical Statistics and Machine Learning</b>, <i>RESEARCH—HUMAN—CLINICAL STUDIES</i></summary>
+
+[Paper](https://pubmed.ncbi.nlm.nih.gov/31586211/)
+[Code](https://cnoc-bwh.shinyapps.io/gbmsurvivalpredictor/)
+- **Cancer:** Glioblastoma
+- **Modalities:** Clinical information, including continuous variables (age, tumor diameter, ...), categorical variables (sex, race, ...)
+- **Data Source:** [Surveillance Epidemiology and end results (SEER) dataset (2005-2015)](https://pubmed.ncbi.nlm.nih.gov/24464362/)
+- **Patients:** in total 20821 patients split into a training and hold-out test set in an 80/20 raio
+- **Pipeline:** 
+    - for censored survival data, using Cox proportional hazards regression (CPHR) and accelerated failure time (AFT) algorithms
+    - for predictive analysis, using 15 machine learning and statistical algorithms
+- **Fusion Mode:** Early-fusion, taking continuous variables and categorical variables as inputs, actually, it acts as the multi-variables analysis
+
+</details>
 
 
 <details>
@@ -420,6 +438,8 @@
 
 </details>
 
+
+
 ## Others
 
 | Year | Paper | Code | Cancer | Modalities | Data Source | Patients | Fusion Mode |
@@ -432,7 +452,7 @@
 | 2022 | [🔗](https://link.springer.com/chapter/10.1007/978-3-031-16443-9_11) | [🔗](https://github.com/YaoZhang93/mmFormer) | Brain | MRIs | BraTS 2018 | 285 | Middle |
 | 2021 | [🔗](https://ieeexplore.ieee.org/abstract/document/9366692) |  | | MRIs, PETs | ADNI | 820 | Middle |
 | 2021 | [🔗](https://www.nature.com/articles/s41598-020-74399-w) |  | | MRI, Gene, Clin | ADNI | 2004 | Middle |
-| 2019 | [🔗](https://pubmed.ncbi.nlm.nih.gov/31586211/) | [🔗](https://cnoc-bwh.shinyapps.io/gbmsurvivalpredictor/) | Glioblastoma | Clinical info. | SEER | 20821 | Early |
+| 2020 | [🔗](https://www.nature.com/articles/s43018-020-00121-4) | [🔗](https://github.com/PascaDiMagliano-Lab/MultimodalMappingPDA-scRNASeq) | Pancreas | CyTOF, m-IHC, scRNA-seq | In-House | 18+105+19 | N/A |
 
 <details>
 <summary>[Feb. 2024] <b>Multimodal Healthcare AI: Identifying and Designing Clinically Relevant Vision-Language Applications for Radiology</b>, <i>arXiv</i></summary>
@@ -573,20 +593,23 @@
 </details>
 
 <details>
-<summary>[Oct. 2019] <b>An Online Calculator for the Prediction of Survival in Glioblastoma Patients Using Classical Statistics and Machine Learning</b>, <i>RESEARCH—HUMAN—CLINICAL STUDIES</i></summary>
+<summary>[Nov. 2020] <b>Multimodal mapping of the tumor and peripheral blood immune landscape in human pancreatic cancer</b>, <i>Nature cancer</i></summary>
 
-[Paper](https://pubmed.ncbi.nlm.nih.gov/31586211/)
-[Code](https://cnoc-bwh.shinyapps.io/gbmsurvivalpredictor/)
-- **Cancer:** Glioblastoma
-- **Modalities:** Clinical information, including continuous variables (age, tumor diameter, ...), categorical variables (sex, race, ...)
-- **Data Source:** [Surveillance Epidemiology and end results (SEER) dataset (2005-2015)](https://pubmed.ncbi.nlm.nih.gov/24464362/)
-- **Patients:** in total 20821 patients split into a training and hold-out test set in an 80/20 raio
-- **Pipeline:** 
-    - for censored survival data, using Cox proportional hazards regression (CPHR) and accelerated failure time (AFT) algorithms
-    - for predictive analysis, using 15 machine learning and statistical algorithms
-- **Fusion Mode:** Early-fusion, taking continuous variables and categorical variables as inputs, actually, it acts as the multi-variables analysis
+[Paper](https://www.nature.com/articles/s43018-020-00121-4)
+[Code](https://github.com/PascaDiMagliano-Lab/MultimodalMappingPDA-scRNASeq)
+- **Cancer:** Pancreatic cancer
+- **Modalities:** CyTOF, single-cell RNA sequencing, and multiplex immunohistochemistry
+- **Data Source:** In-house
+- **Patients:** 
+    - CyTOF: 10 PDA samples / 8 control samples
+    - m-IHCs: 71 PDA and 34 chronic pancreatitis samples
+    - single-cell RNA-sequencing: 16 PDA samples / 3 control samples (in total, we sequenced 8,541 cells from adjacent/normal samples and 46,244 cells from PDA, while from the blood samples we sequenced 14,240 cells from four healthy subjects and 55,873 cells from 16 patients with PDA.) 
+- **Pipeline:** Performing biological analysis for different modalities respectively
+- **Fusion Mode:** N/A
 
 </details>
+
+
 
 
 ## Related Reviews
