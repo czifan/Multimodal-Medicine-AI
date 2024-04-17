@@ -162,6 +162,7 @@
 
 | Year  | Paper | Code | Cancer | Modalities | Data Source | Patients | Fusion Mode |
 |-------|-------|------|--------|------------|-------------|----------|-------------|
+| 2024 | [🔗](https://pubmed.ncbi.nlm.nih.gov/38445478/)| [🔗](https://github.com/mahmoodlab/clam) | ccRCC | Path, Rad, Clin | In-House, TCGA, CPTAC | 414 | Middle |
 | 2023 | [🔗](https://arxiv.org/abs/2305.19894) | [🔗](https://github.com/SUSTechBruce/Med-UniC) | | Rad, Text | MIMIC-CXR, PadChest | ~380k pairs | Middle |
 | 2023 | [🔗](https://arxiv.org/abs/2303.10390) | | | Rad, Non-imaging | ADNI | 248 | Middle |
 | 2022 | [🔗](https://academic.oup.com/bib/article-abstract/23/6/bbac448/6761046) | | BC | Path, Clin, Gene | TCGA | 196 | Middle |
@@ -169,6 +170,7 @@
 | 2022 | [🔗](https://ieeexplore.ieee.org/abstract/document/10242080) | [🔗](https://github.com/Oulu-IMEDS/CLIMATv2) | | Imaging, Non-Imaging | OAI, ADNI | 4796 (knee OA), 2577 (AD) | Middle |
 | 2022 | [🔗](https://ieeexplore.ieee.org/abstract/document/9761545) | [🔗](https://github.com/MIPT-Oulu/CLIMAT) | | X-ray, Non-Imaging | OAI | 4796 | Middle |
 | 2022 | [🔗](https://www.sciencedirect.com/science/article/pii/S0933365722000252) | | Brain | Path, Gene | TCGA-LGG, TCGA-GBM | 470 | Middle |
+| 2021 | [🔗](https://pubmed.ncbi.nlm.nih.gov/35035786/) | [🔗](https://github.com/bensteven2/HE_breast_recurrence)  | Breast | Path, Clin | In-House, TCGA | 127+123 | Middle |
 | 2020 | [🔗](https://link.springer.com/chapter/10.1007/978-3-030-66843-3_28) | | Brain | MRIs | BraTS 2019 | 335 | Middle |
 | 2020 | [🔗](https://ieeexplore.ieee.org/abstract/document/9186053) | [🔗](https://github.com/mahmoodlab/PathomicFusion) | Glioma, ccRCC | Path, Gene | TCGA-GBM, TCGA-LGG | 769 | Middle |
 | 2020 | [🔗](https://pubmed.ncbi.nlm.nih.gov/31797610/) | [🔗](https://github.com/DataX-JieHao/PAGE-Net) | GBM | Path, Gene, Clin | TCGA, TCIA | 447 | Middle |
@@ -177,6 +179,26 @@
 | 2019 | [🔗](https://academic.oup.com/bioinformatics/article/35/14/i446/5529139?login=false) | [🔗](https://github.com/gevaertlab/MultimodalPrognosis) | Pancancer | Clin, Gene, Path | TCGA | 11160 | Middle |
 | 2017 | [🔗](https://www.cell.com/cell-systems/pdf/S2405-4712(17)30484-2.pdf) | | LUNA | Path, Path Reports, Gene, Proteomics | TCGA | 538 | Middle |
 
+<details>
+<summary>⭐️ [Mar. 2024] <b>Deep learning-based multimodel prediction for disease-free survival status of patients with clear cell renal cell carcinoma after surgery: a multicenter cohort study</b>, <i>International Journal of Surgery</i></summary>
+
+[Paper](https://pubmed.ncbi.nlm.nih.gov/38445478/)
+[Code](https://github.com/mahmoodlab/clam)
+- **Cancer:** Clear cell renal cell carcinoma (ccRCC) after surgery
+- **Modalities:** Pathological whole-slide images, CT images, and clinical data
+- **Data Source:** 
+    - (General cohort) 238 ccRCC patients receiving radical or partial nephrectomy from January 2008 to December 2016 in Renji hospital were included.
+    - (TCGA cohort) 137 patients with ccRCC were recruited from [The Cancer Genome Atlas](https://portal.gdc.cancer.gov/). 
+    - (CPTAC cohort) 39 ccRCC patients meeting the criteria mentioned above from the Clinical Proteomic Tumor Analysis Consortium
+- **Patients:** A total of 414 patients.
+- **Pipeline:** 
+    - Deep learning-based prediction score (DLPS): for pathological whole-slide images, dividing them into patches (256x256) according to tissue regions; then employing multiple-isntance learning to learn features; last, a CNN was used to convert these patches into 2048-dim feature vectors.
+    - Machine learning-based pathomics signature (MLPS): based on [the authors' previous study](https://pubmed.ncbi.nlm.nih.gov/34824449/), identifying five segmentation features.
+    - Radiomics prediction score (RADIS): using PyRadiomics to extract 2400 features from CT images within manually delineated RoIs, then 7 radiomics features were selected via least absolute shrinkage and selection operator regression.
+    - Multi-modal prediction signature (MMPS): applying cox regression analysis, developing a multi-modal prediction signature (MMPS) based on DLPS, MLPS, RADIS, and clinicopathological features (tumor stage and tumor grade).
+- **Fusion Mode:** Middle-fusion, using a cox model to integrate multimodal features
+
+</details>
 
 <details>
 <summary>[Sep 2023] <b>Med-UniC: Unifying Cross-Lingual Medical Vision-Language Pre-Training by Diminishing Bias</b>, <i>NeurIPS</i></summary>
@@ -306,6 +328,23 @@
     - fusing these representations by a FCN
     - the fused FCN is a multi-task shared network, outputing survival analysis and cancer grade classification simultaneously
 - **Fusion Mode:** Middle-fusion
+
+</details>
+
+<details>
+<summary>⭐️ [Dec. 2021] <b>Prediction of HER2-positive breast cancer recurrence and metastasis risk from histopathological images and clinical information via multimodal deep learning</b>, <i>Computational and Structural Biotechnology Journal</i></summary>
+
+[Paper](https://pubmed.ncbi.nlm.nih.gov/35035786/)
+[Code](https://github.com/bensteven2/HE_breast_recurrence)
+- **Cancer:** Breast cancer
+- **Modalities:** Histopathological images, clinical information
+- **Data Source:** In-house, TCGA
+- **Patients:** 127 HER2-positive breast cancer patients with known recurrence and matastasis status from Cancer Hospital of the Chinese Academy of Medical Sciences ([Dataset](https://github.com/bensteven2/HE_breast_recurrence)); 123 HER2-positive breast cancer patients with available H&E image and known recurrence and metastasis status in The Cancer Genome Atlas (TCGA)
+- **Pipeline:** 
+    - dividing histological images into patches and using CNNs for feature extraction
+    - integrating image features and clinical features through multimodal compact bilinear (MCB)
+    - using a output layer to predict risk scores
+- **Fusion Mode:** Middle-fusion, using MCB to integrate multimodal features
 
 </details>
 
