@@ -166,6 +166,7 @@
 | 2023 | [🔗](https://arxiv.org/abs/2305.19894) | [🔗](https://github.com/SUSTechBruce/Med-UniC) | | Rad, Text | MIMIC-CXR, PadChest | ~380k pairs | Middle |
 | 2023 | [🔗](https://arxiv.org/abs/2303.10390) | | | Rad, Non-imaging | ADNI | 248 | Middle |
 | 2022 | [🔗](https://academic.oup.com/bib/article-abstract/23/6/bbac448/6761046) | | BC | Path, Clin, Gene | TCGA | 196 | Middle |
+| 2022 | [🔗](https://www.cell.com/cancer-cell/pdf/S1535-6108(22)00317-8.pdf) | [🔗](https://github.com/mahmoodlab/PORPOISE) | Pan-cancer | Path, Molecular profile data | TCGA | 5720 | Middle |
 | 2022 | [🔗](https://www.nature.com/articles/s43018-022-00388-9) | [🔗](https://github.com/kmboehm/onco-fusion) | OC | Rad, Path, Clin | MSKCC, TCGA-OV | 444 | Late |
 | 2022 | [🔗](https://ieeexplore.ieee.org/abstract/document/10242080) | [🔗](https://github.com/Oulu-IMEDS/CLIMATv2) | | Imaging, Non-Imaging | OAI, ADNI | 4796 (knee OA), 2577 (AD) | Middle |
 | 2022 | [🔗](https://ieeexplore.ieee.org/abstract/document/9761545) | [🔗](https://github.com/MIPT-Oulu/CLIMAT) | | X-ray, Non-Imaging | OAI | 4796 | Middle |
@@ -175,7 +176,7 @@
 | 2020 | [🔗](https://ieeexplore.ieee.org/abstract/document/9186053) | [🔗](https://github.com/mahmoodlab/PathomicFusion) | Glioma, ccRCC | Path, Gene | TCGA-GBM, TCGA-LGG | 769 | Middle |
 | 2020 | [🔗](https://pubmed.ncbi.nlm.nih.gov/31797610/) | [🔗](https://github.com/DataX-JieHao/PAGE-Net) | GBM | Path, Gene, Clin | TCGA, TCIA | 447 | Middle |
 | 2020 | [🔗](https://academic.oup.com/bioinformatics/article/36/9/2888/5716325) | [🔗](https://github.com/zhang-de-lab/zhang-lab) | ccRCC | Rad, Path, Gene, Clin | TCGA | 209 | Middle |
-| 2019 | [🔗](https://pubmed.ncbi.nlm.nih.gov/31586211/) | [🔗](https://cnoc-bwh.shinyapps.io/gbmsurvivalpredictor/) | Glioblastoma | Clinical info. | SEER | 20821 | Early |
+| 2019 | [🔗](https://pubmed.ncbi.nlm.nih.gov/31586211/) | [🔗](https://cnoc-bwh.shinyapps.io/gbmsurvivalpredictor/) | Glioblastoma | Clin | SEER | 20821 | Early |
 | 2019 | [🔗](https://academic.oup.com/bioinformatics/article/35/14/i446/5529139?login=false) | [🔗](https://github.com/gevaertlab/MultimodalPrognosis) | Pancancer | Clin, Gene, Path | TCGA | 11160 | Middle |
 | 2017 | [🔗](https://www.cell.com/cell-systems/pdf/S2405-4712(17)30484-2.pdf) | | LUNA | Path, Path Reports, Gene, Proteomics | TCGA | 538 | Middle |
 
@@ -253,6 +254,24 @@
 
 </details>
 
+
+<details>
+<summary>⭐️ [Aug. 2022] <b>Pan-cancer integrative histology-genomic analysis via multimodal deep learning</b>, <i>Cancer Cell</i></summary>
+
+[Paper](https://www.cell.com/cancer-cell/pdf/S1535-6108(22)00317-8.pdf)
+[Code](https://github.com/mahmoodlab/PORPOISE)
+- **Cancer:** Pan-cancer, including 14 cancer types
+- **Modalities:** Pathological H&E WSIs, Molecular profile data
+- **Data Source:** TCGA
+- **Patients:** 6592 gigapixel WSIs from 5720 patien samples across 14 cancer types from the TCGA
+- **Pipeline:** 
+    - using attention-based MIL to extract WSIs' features
+    - using MLPs to extract molecular profile data features
+    - employing [pathomic fusion](https://pubmed.ncbi.nlm.nih.gov/32881682/) to integrate dual modalities' features
+    - using Shapley Additive Explanation (SHAP)-styled attribution decision plots to visualize the attribution weight and direction of each molecular feature
+- **Fusion Mode:** Middle-fusion, employing pathomic fusion to integrate multimodal features
+
+</details>
 
 
 <details>
