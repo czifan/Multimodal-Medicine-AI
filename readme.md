@@ -163,6 +163,7 @@
 | Year  | Paper | Code | Cancer | Modalities | Data Source | Patients | Fusion Mode |
 |-------|-------|------|--------|------------|-------------|----------|-------------|
 | 2024 | [🔗](https://pubmed.ncbi.nlm.nih.gov/38445478/)| [🔗](https://github.com/mahmoodlab/clam) | ccRCC | Path, Rad, Clin | In-House, TCGA, CPTAC | 414 | Middle |
+| 2024 | [🔗](https://www.nature.com/articles/s43018-024-00725-0)| | Breast | Gene, Trans, Prot, Meta, Rad, Path | In-House | 773 | Middle |
 | 2023 | [🔗](https://arxiv.org/abs/2305.19894) | [🔗](https://github.com/SUSTechBruce/Med-UniC) | | Rad, Text | MIMIC-CXR, PadChest | ~380k pairs | Middle |
 | 2023 | [🔗](https://arxiv.org/abs/2303.10390) | | | Rad, Non-imaging | ADNI | 248 | Middle |
 | 2022 | [🔗](https://academic.oup.com/bib/article-abstract/23/6/bbac448/6761046) | | BC | Path, Clin, Gene | TCGA | 196 | Middle |
@@ -198,6 +199,22 @@
     - Radiomics prediction score (RADIS): using PyRadiomics to extract 2400 features from CT images within manually delineated RoIs, then 7 radiomics features were selected via least absolute shrinkage and selection operator regression.
     - Multi-modal prediction signature (MMPS): applying cox regression analysis, developing a multi-modal prediction signature (MMPS) based on DLPS, MLPS, RADIS, and clinicopathological features (tumor stage and tumor grade).
 - **Fusion Mode:** Middle-fusion, using a cox model to integrate multimodal features
+
+</details>
+
+<details>
+<summary>[Feb. 2024] <b>Integrated multiomic profiling of breast cancer in the Chinese population reveals patient stratification and therapeutic vulnerabilities</b>, <i>Nature Cancer</i></summary>
+
+[Paper](https://www.nature.com/articles/s43018-024-00725-0)
+- **Cancer:** Breast Cancer
+- **Modalities:** Genomic, Transcriptomic, Proteomic, Metabolomic, Radiomic, and Digital pathological characteristics
+- **Data Source:** In-House 
+- **Patients:** A total of 773 patients with breast cancer nationwide from China who were treated at Fudan University Shanghai Cancer Center during 2013 and 2014
+- **Pipeline:** 
+    - most of the content analyzes multimodal data from a clinical perspective
+    - using OneHotEncoder in scikit-learn to incorporate multimodal discrete features
+    - employing a Cox proportional hazards model to predict outcomes
+- **Fusion Mode:** Middle-fusion, using OneHotEncoder to incorporate multimodal features
 
 </details>
 
