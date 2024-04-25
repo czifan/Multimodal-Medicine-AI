@@ -173,6 +173,7 @@
 | 2022 | [🔗](https://ieeexplore.ieee.org/abstract/document/9761545) | [🔗](https://github.com/MIPT-Oulu/CLIMAT) | | X-ray, Non-Imaging | OAI | 4796 | Middle |
 | 2022 | [🔗](https://www.sciencedirect.com/science/article/pii/S0933365722000252) | | Brain | Path, Gene | TCGA-LGG, TCGA-GBM | 470 | Middle |
 | 2021 | [🔗](https://pubmed.ncbi.nlm.nih.gov/35035786/) | [🔗](https://github.com/bensteven2/HE_breast_recurrence)  | Breast | Path, Clin | In-House, TCGA | 127+123 | Middle |
+| 2021 | [🔗](https://ieeexplore.ieee.org/document/9710773) | [🔗](https://github.com/mahmoodlab/MCAT)  | Five cancer types | Path, Gene | TCGA (BLCA, BRCA, GBMLGG, LUAD, UCEC) | 437+1022+1011+515+538 | Middle |
 | 2020 | [🔗](https://link.springer.com/chapter/10.1007/978-3-030-66843-3_28) | | Brain | MRIs | BraTS 2019 | 335 | Middle |
 | 2020 | [🔗](https://ieeexplore.ieee.org/abstract/document/9186053) | [🔗](https://github.com/mahmoodlab/PathomicFusion) | Glioma, ccRCC | Path, Gene | TCGA-GBM, TCGA-LGG | 769 | Middle |
 | 2020 | [🔗](https://pubmed.ncbi.nlm.nih.gov/31797610/) | [🔗](https://github.com/DataX-JieHao/PAGE-Net) | GBM | Path, Gene, Clin | TCGA, TCIA | 447 | Middle |
@@ -383,6 +384,27 @@
 - **Fusion Mode:** Middle-fusion, using MCB to integrate multimodal features
 
 </details>
+
+
+<details>
+<summary>⭐️ [Oct. 2021] <b>Multimodal Co-Attention Transformer for Survival Prediction in Gigapixel Whole Slide Images</b>, <i>ICCV</i></summary>
+
+[Paper](https://ieeexplore.ieee.org/document/9710773)
+[Code](https://github.com/mahmoodlab/MCAT)
+- **Cancer:** Five cancer types
+- **Modalities:** Pathological images (WSIs), Gene
+- **Data Source:** TCGA, five largest cancer datasets from TCGA
+- **Patients:** Bladder Urothelial Carcinoma (BLCA) (n = 437), Breast Invasive Carcinoma (BRCA) (n = 1022), Glioblastoma & Lower Grade Glioma (GBMLGG) (n = 1011), Lung Adenocarcinoma (LUAD) (n = 515), and Uterine Corpus Endometrial Carcinoma (UCEC) (n = 538).
+- **Pipeline:** 
+    - dividing WSIs into 256x256 patches, and extracting instance-level patch embeddings
+    - mapping genomic features into genomic embeddings
+    - applying co-attention to enhancing instance-level patch embeddings into genomic-guided WSI embeddings (Query=Gene embeddings; Key & Value=instance-level patch embeddings)
+    - employing Transformer to integrating instance-level embeddings into bag-level embeddings
+    - concatenating two-modal features and predicting risk scores
+- **Fusion Mode:** Middle-fusion, concatenating multimodal features
+
+</details>
+
 
 <details>
 <summary>[Dec. 2020] <b>Brain Tumor Survival Prediction using Radiomics Features</b>, <i>MICCAI</i></summary>
