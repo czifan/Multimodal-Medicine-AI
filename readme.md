@@ -163,7 +163,7 @@
 | Year  | Paper | Code | Cancer | Modalities | Data Source | Patients | Fusion Mode |
 |-------|-------|------|--------|------------|-------------|----------|-------------|
 | 2024 | [🔗](https://pubmed.ncbi.nlm.nih.gov/38445478/)| [🔗](https://github.com/mahmoodlab/clam) | ccRCC | Path, Rad, Clin | In-House, TCGA, CPTAC | 414 | Middle |
-| 2024 | [🔗](https://www.google.com/search?client=safari&rls=en&q=MOCAT%3A+multi%E2%80%91omics+integration+with%C2%A0auxiliary+classifiers+enhanced+autoencoder&ie=UTF-8&oe=UTF-8)| [🔗](https://github.com/Yaolab-fantastic/MOCAT) | | mRNA, miRNA, methylation | BRCA, ROSMAP, LGG, KIPAN | | Middle |
+| 2024 | [🔗](https://www.google.com/search?client=safari&rls=en&q=MOCAT%3A+multi%E2%80%91omics+integration+with%C2%A0auxiliary+classifiers+enhanced+autoencoder&ie=UTF-8&oe=UTF-8)| [🔗](https://github.com/Yaolab-fantastic/MOCAT) | | mRNA, miRNA, methylation | BRCA, ROSMAP, LGG, KIPAN | 351+875+510+658 samples | Middle |
 | 2024 | [🔗](https://www.nature.com/articles/s43018-024-00725-0)| | Breast | Gene, Trans, Prot, Meta, Rad, Path | In-House | 773 | Middle |
 | 2023 | [🔗](https://arxiv.org/abs/2305.19894) | [🔗](https://github.com/SUSTechBruce/Med-UniC) | | Rad, Text | MIMIC-CXR, PadChest | ~380k pairs | Middle |
 | 2023 | [🔗](https://arxiv.org/abs/2303.10390) | | | Rad, Non-imaging | ADNI | 248 | Middle |
