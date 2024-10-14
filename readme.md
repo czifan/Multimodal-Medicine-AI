@@ -589,9 +589,6 @@
 </details>
 
 <details>
-<summary>[Jun. 2023] <b>Longitudinal Multimodal Transformer Integrating Imaging and Latent Clinical Signatures From Routine EHRs for Pulmonary Nodule Classification</b>, <i>arXiv</i></summary>
-
-<details>
 <summary>[Feb. 2024] <b>Multimodal Healthcare AI: Identifying and Designing Clinically Relevant Vision-Language Applications for Radiology</b>, <i>arXiv</i></summary>
 
 [Paper](https://arxiv.org/pdf/2402.14252.pdf)
