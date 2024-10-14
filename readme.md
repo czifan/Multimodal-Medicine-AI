@@ -563,6 +563,7 @@
 
 | Year | Paper | Code | Cancer | Modalities | Data Source | Patients | Fusion Mode |
 |------|-------|------|--------|------------|-------------|----------|-------------|
+| 2024 | [🔗](https://www.nature.com/articles/s41467-024-46700-2) | [🔗](https://github.com/Xiao-OMG/OvcaFinder) | Ovarian | Rad, Clin | In-House | 724 | Middle |
 | 2024 | [🔗](https://arxiv.org/pdf/2402.14252.pdf) | | | Rad | In-House | | |
 | 2023 | [🔗](https://arxiv.org/abs/2304.02836) | [🔗](https://github.com/MASILab/lmsignatures) | SPN | Rad, Clin | NLST, EHR-Pulmonary, Image-EHR, In-House | 2668 (public), 1449 (in-house) | Middle |
 | 2023 | [🔗](https://www.nature.com/articles/s41551-023-01045-x) | [🔗](https://github.com/RL4M/IRENE) | | X-rays, Text | In-House | 51511 | Middle |
@@ -572,6 +573,23 @@
 | 2021 | [🔗](https://ieeexplore.ieee.org/abstract/document/9366692) |  | | MRIs, PETs | ADNI | 820 | Middle |
 | 2021 | [🔗](https://www.nature.com/articles/s41598-020-74399-w) |  | | MRI, Gene, Clin | ADNI | 2004 | Middle |
 | 2020 | [🔗](https://www.nature.com/articles/s43018-020-00121-4) | [🔗](https://github.com/PascaDiMagliano-Lab/MultimodalMappingPDA-scRNASeq) | Pancreas | CyTOF, m-IHC, scRNA-seq | In-House | 18+105+19 | N/A |
+
+<details>
+<summary>[Mar. 2024] <b>Development and validation of an interpretable model integrating multimodal information for improving ovarian cancer diagnosis</b>, <i>Nature Communications</i></summary>
+
+[Paper](https://www.nature.com/articles/s41467-024-46700-2)
+[Code](https://github.com/Xiao-OMG/OvcaFinder)
+- **Cancer:** Ovarian Cancer
+- **Modalities:** Radiological ultrasound images, routine clinical variables (patient's age, lesion diameter, and CA125 concentration), O-RADS scores
+- **Data Source:** In-House, there were 3972 B-mode and colour Doppler ultrasound images of 296 (40.9%) benign and 428 (59.1%) malignant lesions from 724 patients in SYSUCC
+- **Pipeline:**
+    - using six image-based DL models (DenseNet121, DenseNet169, DenseNet201, ResNet34, EfficientNet-b5, and EfficientNet-b6, initialised with ImageNet pretrained weights) to predict image-based scores, then ensembling (averaging) the predictions of these six models
+    -  Thress clinical factors, O-RADS scores diagnosed by readers, and DL-based predictions were used to build the input with 5-dim vectors via Random Forest (RF) algorithm
+- **Fusion Mode:** Middle-fusion, using RF algorithm to integrate image-based scores and clinical factors
+</details>
+
+<details>
+<summary>[Jun. 2023] <b>Longitudinal Multimodal Transformer Integrating Imaging and Latent Clinical Signatures From Routine EHRs for Pulmonary Nodule Classification</b>, <i>arXiv</i></summary>
 
 <details>
 <summary>[Feb. 2024] <b>Multimodal Healthcare AI: Identifying and Designing Clinically Relevant Vision-Language Applications for Radiology</b>, <i>arXiv</i></summary>
