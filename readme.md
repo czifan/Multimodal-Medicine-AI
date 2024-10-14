@@ -563,6 +563,7 @@
 
 | Year | Paper | Code | Cancer | Modalities | Data Source | Patients | Fusion Mode |
 |------|-------|------|--------|------------|-------------|----------|-------------|
+| 2024 | [🔗](https://www.nature.com/articles/s41467-024-50369-y) | [🔗](https://github.com/guichengpeng1/WSI-based-deep-learning-classifier-in-papillary-renal-cell-carcinoma) | pRCC | Gene, Rad, Clin | In-House, TCGA | 793 + 204 | Late |
 | 2024 | [🔗](https://www.nature.com/articles/s41467-024-46700-2) | [🔗](https://github.com/Xiao-OMG/OvcaFinder) | Ovarian | Rad, Clin | In-House | 724 | Middle |
 | 2024 | [🔗](https://arxiv.org/pdf/2402.14252.pdf) | | | Rad | In-House | | |
 | 2023 | [🔗](https://arxiv.org/abs/2304.02836) | [🔗](https://github.com/MASILab/lmsignatures) | SPN | Rad, Clin | NLST, EHR-Pulmonary, Image-EHR, In-House | 2668 (public), 1449 (in-house) | Middle |
@@ -573,6 +574,22 @@
 | 2021 | [🔗](https://ieeexplore.ieee.org/abstract/document/9366692) |  | | MRIs, PETs | ADNI | 820 | Middle |
 | 2021 | [🔗](https://www.nature.com/articles/s41598-020-74399-w) |  | | MRI, Gene, Clin | ADNI | 2004 | Middle |
 | 2020 | [🔗](https://www.nature.com/articles/s43018-020-00121-4) | [🔗](https://github.com/PascaDiMagliano-Lab/MultimodalMappingPDA-scRNASeq) | Pancreas | CyTOF, m-IHC, scRNA-seq | In-House | 18+105+19 | N/A |
+
+<details>
+<summary>[July 2024] <b>A multi-classifier system integrated by clinico-histology-genomic analysis for predicting recurrence of papillary renal cell carcinoma</b>, <i>Nature Communications</i></summary>
+
+[Paper](https://www.nature.com/articles/s41467-024-50369-y)
+[Code](https://github.com/guichengpeng1/WSI-based-deep-learning-classifier-in-papillary-renal-cell-carcinoma)
+- **Cancer:** papillary Renal Cell Carcinoma (pRCC)
+- **Modalities:** lncRNA, pathological whole-slide image (WSI), clinical info. (age, sex, grade and pathologic stage)
+- **Data Source:** In-House (793 patients with pRCC) and TCGA (204 cases)
+- **Pipeline:**
+    - a lncRNA-based classifier
+    - a deep learning whole-slide-image-based classifier, built around multiple instance learning and comprised a MobileNet V3 representation network
+    - a clinicopathological classifier, built in univariate and multivariate Cox regression analyses
+    - developing a multi-classifier system, driven by Cox regression, to integrate the above three modality models' outputs
+- **Fusion Mode:** Late-fusion, using Cox regression coefficients to integrate multimodal outputs: Multi classifier risk score = 1.2924 × the lncRNA-based risk score + 2.6315 × the WSI-basedscore + 0.8646 × (0.5670 × grade + 0.5326 × stage)
+</details>
 
 <details>
 <summary>[Mar. 2024] <b>Development and validation of an interpretable model integrating multimodal information for improving ovarian cancer diagnosis</b>, <i>Nature Communications</i></summary>
