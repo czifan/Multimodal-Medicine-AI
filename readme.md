@@ -1,8 +1,14 @@
 <!-- # Multimodal Models in Oncology: Enhancing Treatment Response Evaluation and Prognostic Accuracy -->
 # Multimodal Medicine AI
 
-## Multimodal Medical Datasets
-🦘[Multimodal Medical Datasets](https://github.com/czifan/Multimodal-Medicine-AI/blob/main/multimodal_dataset.md)
+[Multimodal Medical Datasets](https://github.com/czifan/Multimodal-Medicine-AI/blob/main/multimodal_dataset.md)
+
+<details>
+<summary>👈[Tips] The following article can be expanded by clicking on the left triangle</summary>
+More context
+</details>
+
+<!-- ## Multimodal Medical Datasets -->
 
 ## Treatment Response Evaluation
 
@@ -162,6 +168,7 @@
 
 | Year  | Paper | Code | Cancer | Modalities | Data Source | Patients | Fusion Mode |
 |-------|-------|------|--------|------------|-------------|----------|-------------|
+| 2024 | [🔗](https://ieeexplore.ieee.org/document/10669115)| | BLCA, BRCA, GBMLGG, LUAD, UCEC | Path, Gene | TCGA | 372+956+569+453+480 | Middle |
 | 2024 | [🔗](https://pubmed.ncbi.nlm.nih.gov/38445478/)| [🔗](https://github.com/mahmoodlab/clam) | ccRCC | Path, Rad, Clin | In-House, TCGA, CPTAC | 414 | Middle |
 | 2024 | [🔗](https://www.google.com/search?client=safari&rls=en&q=MOCAT%3A+multi%E2%80%91omics+integration+with%C2%A0auxiliary+classifiers+enhanced+autoencoder&ie=UTF-8&oe=UTF-8)| [🔗](https://github.com/Yaolab-fantastic/MOCAT) | | mRNA, miRNA, methylation | BRCA, ROSMAP, LGG, KIPAN | 351+875+510+658 samples | Middle |
 | 2024 | [🔗](https://www.nature.com/articles/s43018-024-00725-0)| | Breast | Gene, Trans, Prot, Meta, Rad, Path | In-House | 773 | Middle |
@@ -182,6 +189,23 @@
 | 2019 | [🔗](https://pubmed.ncbi.nlm.nih.gov/31586211/) | [🔗](https://cnoc-bwh.shinyapps.io/gbmsurvivalpredictor/) | Glioblastoma | Clin | SEER | 20821 | Early |
 | 2019 | [🔗](https://academic.oup.com/bioinformatics/article/35/14/i446/5529139?login=false) | [🔗](https://github.com/gevaertlab/MultimodalPrognosis) | Pancancer | Clin, Gene, Path | TCGA | 11160 | Middle |
 | 2017 | [🔗](https://www.cell.com/cell-systems/pdf/S2405-4712(17)30484-2.pdf) | | LUNA | Path, Path Reports, Gene, Proteomics | TCGA | 538 | Middle |
+
+<details>
+<summary>⭐️ [Sep. 2024] <b>Cohort-Individual Cooperative Learning for Multimodal Cancer Survival Analysis</b>, <i>IEEE Transactions on Medical Imaging (TMI)</i></summary>
+
+[Paper](https://ieeexplore.ieee.org/document/10669115)
+- **Cancer:** Five cancers: Bladder Urothelial Carcinoma, Breast Invasive Carcinoma, Glioblastoma & Lower Grade Glioma, Lung Adenocarcinoma, and Uterine Corpus Endometrial Carcinoma 
+- **Modalities:** Genomics, pathological whole-slide images (WSIs)
+- **Data Source:** Five TCGA datasets: Bladder Urothelial Carcinoma (BLCA, n=372), Breast Invasive Carcinoma (BRCA, n=956), Glioblastoma & Lower Grade Glioma (GBMLGG, n=569), Lung Adenocarcinoma (LUAD, n=453) and Uterine Corpus Endometrial Carcinoma (UCEC, n=480).
+- **Pipeline:**
+    - (1) partioning RNA sequencing (RNA-seq), Copy Number Variation (CNV), Simple Nucleotide Variation (SNV) sequences into six sub-sequences; (2) each sub-sequence is transformed into a feature by two cascaded 256-dim self-normalizing Neural Netwoek (SNN) layers; (3) using a fully-connected layer to aggregate the representations of multiple sequences into a single genomic representation (Fg, 256-dim)
+    - (1) splitting tissue regions within each WSI into non-overlapping patches at 20x magnification (256x256 resolution for each patch); (2) utilizing an ImageNet pre-trained ResNet-50 model to extract a 1024-dim embedding for each patch; (3) employing the K-means to cluster all patch embeddings within each WSI into k groups and leveraging the cluster centers as pathology features; (4) using cluster center alignment (CCA) to align cluster centers among WSIs; (5) employing a 256-dim SNN layer and a fully-connected layer to aggregate the cluster centers into a single pathology representation (Fp, 256-dim)
+    - (1) employing MLP layers as modality encoders (E_path, E_gene) to extract specific knowledge from pathological images and gene, respectively (G, P); (2) employing co-attention blocks as common and synergistic encoders (E_com, E_syn) to integrate knowledge from different modalities into common fused feature and synergistic features (G, S), respectively
+    - incorporating additional supervision signals to guarantee the effective extraction of the intended knowledge components: (1) at the knowledge level: loss =|cos(G, Fp)| − cos(G, Fg) − cos(P, Fp) +|cos(P, Fg)| − cos(C, Fp) − cos(C, Fg) +|cos(S, Fp)| + |cos(S, Fg)|; (2) ath the patient level: using contrastive learning to pull patients' embeddings within same groups, while push embeddings across various groups
+    - concatenating a class token U with the decomposed G, P, C, and S as the inputs of Transformer, followed by a fully-connected layer with Sigmoid activation to make predictions
+- **Fusion Mode:** Middle, employing a Transformer to intergate multimodal (multiple components) embeddings
+</details>
+
 
 <details>
 <summary>⭐️ [Mar. 2024] <b>Deep learning-based multi-model prediction for disease-free survival status of patients with clear cell renal cell carcinoma after surgery: a multicenter cohort study</b>, <i>International Journal of Surgery</i></summary>
@@ -564,6 +588,7 @@
 | Year | Paper | Code | Cancer | Modalities | Data Source | Patients | Fusion Mode |
 |------|-------|------|--------|------------|-------------|----------|-------------|
 | 2024 | [🔗](https://www.nature.com/articles/s41467-024-50369-y) | [🔗](https://github.com/guichengpeng1/WSI-based-deep-learning-classifier-in-papillary-renal-cell-carcinoma) | pRCC | Gene, Rad, Clin | In-House, TCGA | 793 + 204 | Late |
+| 2024 | [🔗](https://www.nature.com/articles/s41591-024-02993-w) | [🔗](https://github.com/AIRMEC/HECTOR) | Endometrial | Path, Clin | In-House, TCGA | 2072 | Middle |
 | 2024 | [🔗](https://www.nature.com/articles/s41467-024-46700-2) | [🔗](https://github.com/Xiao-OMG/OvcaFinder) | Ovarian | Rad, Clin | In-House | 724 | Middle |
 | 2024 | [🔗](https://arxiv.org/pdf/2402.14252.pdf) | | | Rad | In-House | | |
 | 2023 | [🔗](https://arxiv.org/abs/2304.02836) | [🔗](https://github.com/MASILab/lmsignatures) | SPN | Rad, Clin | NLST, EHR-Pulmonary, Image-EHR, In-House | 2668 (public), 1449 (in-house) | Middle |
@@ -589,6 +614,21 @@
     - a clinicopathological classifier, built in univariate and multivariate Cox regression analyses
     - developing a multi-classifier system, driven by Cox regression, to integrate the above three modality models' outputs
 - **Fusion Mode:** Late-fusion, using Cox regression coefficients to integrate multimodal outputs: Multi classifier risk score = 1.2924 × the lncRNA-based risk score + 2.6315 × the WSI-basedscore + 0.8646 × (0.5670 × grade + 0.5326 × stage)
+</details>
+
+<details>
+<summary>⭐️ [May 2024] <b>Prediction of recurrence risk in endometrial cancer with multimodal deep learning</b>, <i>Nature Medicine</i></summary>
+
+[Paper](https://www.nature.com/articles/s41591-024-02993-w)
+[Code](https://github.com/AIRMEC/HECTOR)
+- **Cancer:** Endometrial Cancer (EC)
+- **Modalities:** Pathological H&E image, image-based molecular classes derived from the H&E-based predictions of im4MEC, anatomical stage
+- **Data Source:** In-house and TCGA, a total of 2072 patients from eight EC cohorts including the PORTEC-1/-2/-3 randomized trials
+- **Pipeline:**
+    - using a vision transformer (modified EsVIT) for patch-level, self-supervised representational learning
+    - applying a gating-based attention mechanism with biliear product on the embeddings from different modalities to weight the importance of each modality
+    - reducing the multimodal embedding by two fully connected (FC) layers before the survival categorical head of a FC layer with output size as the number of discrete time intervals
+- **Fusion Mode:** Middle, employing a gating-based attention mechanism with biliear product to intergate multimodal embeddings
 </details>
 
 <details>
