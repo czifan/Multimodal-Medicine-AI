@@ -4,7 +4,7 @@
 [Multimodal Medical Datasets](https://github.com/czifan/Multimodal-Medicine-AI/blob/main/multimodal_dataset.md)
 
 <details>
-<summary>👈 The following article can be expanded by clicking on the left triangle [Tips!!!]</summary>
+<summary>👈 [Tips!!!] The following article can be expanded by clicking on the left triangle</summary>
 
 [Paper](...)
 [Code](...)
