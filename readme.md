@@ -944,28 +944,71 @@
 
 </details>
 
-
-
-
-
-
-
+## Benchmarks
 <details>
-<summary> <b></b>, <i></i></summary>
+<summary>⭐️ [Aug. 2024] <b>MultiMed: Massively Multimodal and Multitask Medical Understanding</b>, <i>arXiv</i></summary>
 
-[Paper]()
-[Code]()
-- **Cancer:** 
-- **Modalities:** 
-- **Data Source:** 
-- **Patients:** 
-- **Pipeline:** 
-- **Fusion Mode:** 
+[Paper](https://arxiv.org/pdf/2408.12682v1)
+
+**Background:**
+- Biomedical data is inherently multimodal, consisting of electronic health records, medical imaging, digital pathology, genome sequencing, wearable sensors, and more.
+- The application of AI tools to these multifaceted sensing technologies has the potential to revolutionize the prognosis, diagnosis, and management of human health and disease.
+- However, current approaches to biomedical AI typically only train and evaluate with one or a small set of medical modalities and tasks, hampering the development of comprehensive tools that can leverage the rich interconnected information across many heterogeneous.
+
+**Contributions:**
+- Presenting MultiMed, a benchmark designed to evaluate and enable large-scale learning across a wide spectrum of medical modalities and tasks.
+- MultiMed consists of 2.56 million samples across medical reports, pathology, genomics, and protein data (ten medical modalities), and is structured into eleven challenging tasks, including disease prognosis, protein structure prediction, and medical question answering.
+- Based on MultiMed, conducting comprehensive experiments benckmarking state-of-the-art unimodal, multimodal, and multitask models.
+
+**Benchmark details:**
+- Modality diversity
+    - Imaging modalities: 84,495 OCT images, 194,922 X-ray images, 617,775 CT scans, 7,023 MRI scans, and 27,560 pathology images.
+    - Electrophysiological data: MultiMed consists of 120,000 samples designed for the classification of imagined motor imagery time-series data. 
+    - Molecular data: 12,560 samples of genomic sequences and 270,000 samples of scRNA-seq data to support expression prediction at the singlecell level; a total of 131,487 protein sequences for protein structure prediction.
+    - Text: Clinical notes that complement raw medical signals with rich, descriptive medical narratives with one million image-text pairs.
+- Task diversity
+    - Disease classification
+    - Brain tumor classification
+    - Breast cancer classification
+    - Radiographic findings classification
+    - Bone age classification
+    - Diabetic retinopathy classification
+    - Imagined motor imagery classification
+    - Cell type classification
+    - Expression prediction
+    - Protein structure prediction
+    - Medical Visual question answering
+
 </details>
 
 
+<details>
+<summary>[May 2016] <b>Data Descriptor: MIMIC-III, a freely accessible critical care database</b>, <i>Scientific Data</i></summary>
+
+[Paper](https://www.nature.com/articles/sdata201635)
+[Code](https://github.com/MIT-LCP/mimic-website)
+[Jupyter-Notebook](https://github.com/MIT-LCP/mimic-iii-paper/)
+
+**Contributions:**
+- MIMIC-III (‘Medical Information Mart for Intensive Care’) is a large, single-center database comprising information relating to patients admitted to critical care units at a large tertiary care hospital.
+- Data includes vital signs, medications, laboratory measurements, observations and notes charted by care providers, fluid balance, procedure codes, diagnostic codes, imaging reports, hospital length of stay, survival data, and more.
+- MIMIC-III critical care database is unique and notable:
+    - it is the only freely accessible critical care database of its kind; 
+    - the dataset spans more than a decade, with detailed information about individual patient care; 
+    - analysis is unrestricted once a data use agreement is accepted, enabling clinical research and education around the world.
+
+**Benchmark details:**
+- Patient characteristics
+    - MIMIC-III contains data associated with 53,423 distinct hospital admissions for adult patients (aged 16 years or above) admitted to critical care units between 2001 and 2012.
+    - In addition, it contains data for 7870 neonates admitted between 2001 and 2008.
+    - The data covers 38,597 distinct adult patients and 49,785 hospital admission. The median age of adult patients is 65.8 years (Q1–Q3: 52.8–77.8), 55.9% patients are male, and in-hospital mortality is 11.5%.
+    - The median length of an ICU stay is 2.1 days (Q1–Q3: 1.2–4.6) and the median length of a hospital stay is 6.9 days (Q1-Q3: 4.1–11.9). A mean of 4579 charted observations (’chartevents’) and 380 laboratory measurements (’labevents’) are available for each hospital admission.
+    - The top three codes across hospital admissions for patients aged 16 years and above were:
+        - 414.01 (‘Coronary atherosclerosis of native coronary artery’), accounting for 7.1% of all hospital admissions; 
+        - 038.9 (‘Unspecified septicemia’), accounting for 4.2% of all hospital admissions; and 
+        - 410.71 (‘Subendocardial infarction, initial episode of care’), accounting for 3.6% of all hospital admissions.
+- Classes of data
+    - Data available in the MIMIC-III database ranges from time-stamped, nurse-verified physiological measurements made at the bedside to free-text interpretations of imaging studies provided by the radiology department.
 
 
-- Multimodal Analysis of Composition and Spatial Architecture in Human Squamous Cell Carcinoma
-- Multimodal analysis of cell-free DNA wholegenome sequencing for pediatric cancers with low mutational burden
-- 
+</details>
