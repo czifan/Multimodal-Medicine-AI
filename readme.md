@@ -1,7 +1,18 @@
-<!-- # Multimodal Models in Oncology: Enhancing Treatment Response Evaluation and Prognostic Accuracy -->
 # Multimodal Medicine AI
 
-[Multimodal Medical Datasets](https://github.com/czifan/Multimodal-Medicine-AI/blob/main/multimodal_dataset.md)
+Articles collected so far: 48
+
+Last Updated: October 17, 2024
+
+---
+
+## Table of Contents
+- [Reviews](#reviews)
+- [Benchmarks](#benchmarks)
+- [Treatment Response Evaluation](#treatment-response-evaluation)
+- [Prognosis Evaluation](#prognosis-evaluation)
+- [Others (Dignosis, recurrence, ...)](#others)
+- [Multimodal Medical Datasets](https://github.com/czifan/Multimodal-Medicine-AI/blob/main/multimodal_dataset.md)
 
 <details>
 <summary>👈 [Tips!!!] The following article can be expanded by clicking on the left triangle</summary>
@@ -18,7 +29,206 @@
 - **Fusion Mode:** ...
 </details>
 
-<!-- ## Multimodal Medical Datasets -->
+---
+
+
+## Reviews
+<details>
+<summary>[Apr. 2023] <b>Deep multimodal fusion of image and non-image data in disease diagnosis and prognosis: a review</b>, <i>Progress in Biomedical Engineering</i></summary>
+
+[Paper](https://iopscience.iop.org/article/10.1088/2516-1091/acc2fe/meta)
+
+**Content:** 
+- Data Modalities: Image data (pathology images, radiology images, camera images); Non-image data (structured data, free-text data)
+ - Multimodal fusion methods: Operation-based; Subspace-based; Attention-based; Tensor-based; Graph-based
+
+**View points:**
+- It is difficult to compare the performance of different methods directly, since different studies were typically done on different datasets with different settings.
+- There is no clue that a fusion method always performance the best. The optimal fusion method might be task/data dependent.
+- Fusing multi-modal data typically surpassed the uni-modal counterparts in the downstream tasks, but on the other hand, some studies also mentioned that the model that fused more modalities may not always perform better than the ones with fewer modalities (I think the reason is not doing a good modal fusion)
+- Deep-learning methods require a large amount of training data, however, data scaricity, especially multimodal data, is a challenge in the healthcare are.
+- Unimodal feature extraction is a essential prerequisite for fusion, especially for multimodal heterogeneity.
+- Explainability is a challenge in multimodal diagnosis and prognosis.
+
+</details>
+
+
+<details>
+<summary>⭐️ [Oct. 2022] <b>Artificial intelligence for multimodal data integration in oncology</b>, <i>Cancer Cell</i></summary>
+
+[Paper](https://www.cell.com/cancer-cell/pdf/S1535-6108(22)00441-X.pdf)
+
+**Content:** 
+- AI methods in oncology
+    - Supervised methods
+        - Hand-crafted methods
+            - 👍：simpler architecture, lower computation cost, may require less training data, and better interpretability
+            - 👎：time consuming, translate human bias to the models
+        - Representation learning methods
+            - 👍：their ability to extract rich feature representations from raw data, resulting in lower preprocessing cost, higher flexibility, and often superior performance over hand-crafted methods
+            - 👎：reliance on pixel-level annotations, lack of interpretability
+    - Weakly supervised methods: this method can reduce the cost of data preprocessing and mitigate the bias and interrater variability; additionally, they are free to learn from the entire scan, that can indentify predictive features even beyond the regions typically evaluated by clinicians.
+        - Graph convolutional networks
+            - 👍：can incorporate larger context and spatial tissue structure
+            - 👎：higher training costs and memory requirements (since the nodes cannot be processed independently)
+        - Multiple-instance learning
+            - 👍：no fine annotation is required
+            - 👎：overlook patches' correlation
+        - Vision transformers
+            - 👍：be fully context aware, consider patches' correlation and context, consider spatial structure or relative distances between patches via positional encoding
+            - 👎: tend to be more data hungry
+    - Unsupervised methods
+        - Self-supervised methods
+            - 👍：can learn general-purpose features, which can be beneficial for other practical tasks (transfer learning)
+            - 👎: (Not mentioned in the paper)
+        - Unsupervised feature analysis
+            - 👍：can explore structure, similarity and common features across data points
+            - 👎: (Not mentioned in the paper)
+- Multimodal data fusion
+    - Early fusion
+        - 👍：only one model is trainied, simplifing the design process
+        - 👎: requires a certain level of alignment or synchronization between the modalities
+    - Late fusion (decision-level fusion)
+        - 👍：allows one to use a different model achitecture for each modality, making it suitable for systems with large data heterogeneity or modalities from different time points; be able to cope  with missing or incomplete data; suitable for weak interdependencies
+        - 👎: unsuitable for strong interdependencies
+    - Intermediate fusion
+        - 👍：flexible—single-level fusion, gradual fusion, guided fusion
+    - There is no conclusive evidence that one fusion type is ultimately better than the others, as each type is heavily data and task specific.
+- Multimodal interpretability
+    - Histopathology: map model architecture attention or probability scores to obtain slide-level attention heatmaps
+    - Radiology: is similar to those used in histoloty
+    - Molecular data: use the integrated gradient method to analyze, which computes attribution values indicating how changes in specific inputs affect the model outputs
+    - Multimodal models: all previously mentioned methods can be used in multimodal models to explore interpretability within each modality. Moreover, shifts in feature importance under unimodal and multimodal settings can be investigated to analyze the impact of the multimodal context.
+    - While CAM- or attention-based methods can localize the predictive regions, they cannot specify which features are relevant, i.e., they can explain where but not why.
+    - There is no guarantee that all high-attention/attribution regions carry clinical relevance. High scores just mean that the model has considered these regions more important than others.
+- Multimodal data interconnection
+    - Morphologic associations
+    - Non-invasive alternatives
+    - Outcome associations
+    - Early predictors
+- Challenges
+    - Missing data
+        - Synthetic data generation
+        - Dropout-based methods
+    - Data alignment
+        - Alignment of similar modalities (e.g. MRI and PET brain scans)
+        - Alignment of diverse modalities (e.g. data from different scales, timepoints, or measurements)
+    - Transparency and prospective clinical trials
+
+</details>
+
+
+<details>
+<summary>⭐️ [Sep. 2022] <b>Multimodal biomedical AI</b>, <i>Nature Medicine</i></summary>
+
+[Paper](https://www.nature.com/articles/s41591-022-01981-2)
+
+**Content & View points:** 
+- Opportunities for leveraging multimodal data (applications)
+    - Personalized 'omics' for precision health
+    - Digital clinical trials
+    - Remote monitoring: the 'hospital-at-home'
+    - Pandemic surveillance and outbreak detection
+    - Digital twins
+    - Virtual health assistant
+- Multimodal data collection
+
+| Study                 | Country | Year started | Data modalities                                                                                                                                                         | Access         | Sample size   |
+|-----------------------|---------|--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------|---------------|
+| [UK Biobank](https://www.ukbiobank.ac.uk)            | UK      | 2006         | Questionnaires, EHR/clinical, Laboratory, Genome-wide genotyping, WES, WGS, Imaging, Metabolites                                                                       | Open access    | ~500,000      |
+| [China Kadoorie Biobank](https://www.ckbiobank.org) | China   | 2004         | Questionnaires, Physical measurements, Biosamples, Genome-wide genotyping                                                                                                | Restricted access | ~500,000      |
+| [Biobank Japan](https://biobankjp.org/en/index.html#01)         | Japan   | 2003         | Questionnaires, Clinical, Laboratory, Genome-wide genotyping                                                                                                             | Restricted access | ~200,000      |
+| [Million Veteran Program](https://www.mvp.va.gov/pwa/) | USA   | 2011         | EHR/clinical, Laboratory, Genome wide                                                                                                                                   | Restricted access | 1 million     |
+| [TOPMed](https://topmed.nhlbi.nih.gov/topmed-data-access-scientific-community)                | USA     | 2014         | Clinical, WGS                                                                                                                                                           | Open access    | ~180,000      |
+| [All of Us Research Program](https://allofus.nih.gov) | USA | 2017         | Questionnaires, SDH, EHR/clinical, Laboratory, Genome wide, Wearables                                                                                                   | Open access    | 1 million (target) |
+| [Project Baseline Health Study](https://ctsi.duke.edu/project-baseline-health-study) | USA | 2015       | Questionnaires, EHR/clinical, Laboratory, Wearables                                                                                                                     | Restricted access | 10,000 (target) |
+| [American Gut Project](https://db.cngb.org/search/project/PRJEB11419/)  | USA     | 2012         | Clinical, Diet, Microbiome                                                                                                                                              | Open access    | ~25,000       |
+| [MIMIC](https://lcp.mit.edu/mimic)                 | USA     | 2008-2019    | Clinical/EHR, Images                                                                                                                                                    | Open access    | ~380,000      |
+| [MIPACT](https://precisionhealth.umich.edu/our-research/mipact/)                | USA     | 2018-2019    | Wearables, clinical/EHR, physiological, laboratory                                                                                                                      | Restricted access | ~6,000        |
+| [North American Prodrome Longitudinal Study](https://napls.ucsf.edu) | USA  | 2008 | Clinical, Genetic                                                                                                                                                       | Restricted access | ~1,000        |
+
+- Technical challenges
+    - How to leverage multiple different types of data and learn to relate these multiple modalities or combine them for improving prediction performance?
+    - Another desirable feature for multimodal learning frameworks is the ability to learn from different modalities without the need for different model architectures.
+    - Another important modeling challenge relates to the exceedingly high number of dimensions contained in multimodal health data, collectively termed ‘the curse of dimensionality’.
+    - Multimodal fusion is a general concept that can be tackled using any architectural choice.
+    - Many other important challenges relating to multimodal model architectures remain (for example, how to extract features from three-dimensional imaging or whole-slide images)
+- Data challenges
+    - Medical datasets are heterogeneous, which can be described along several axes, including the sample size, depth of phenotyping, the length and intervals of follow-up, the degree of interaction between participants, the heterogeneity and diversity of the participants, the level of standardization and harmonization of the data and the amount of linkage between data sources.
+    - Achieving diversity across race/ethnicity, ancestry, income level, education level, healthcare access, age, disability status, geographic locations, gender and sexual orientation has proven difficult in practice.
+    - Another frequent problem with biomedical data is the usually high proportion of missing data.
+    - The risk of incurring several biases is important when conducting studies that collect health data, and multiple approaches are necessary to monitor and mitigate these biases.
+- Privacy challenges
+    - The successful development of multimodal AI in health requires breadth and depth of data, which encompasses higher privacy challenges than single-modality AI models.
+
+</details>
+
+## Benchmarks
+<details>
+<summary>⭐️ [Aug. 2024] <b>MultiMed: Massively Multimodal and Multitask Medical Understanding</b>, <i>arXiv</i></summary>
+
+[Paper](https://arxiv.org/pdf/2408.12682v1)
+
+**Background:**
+- Biomedical data is inherently multimodal, consisting of electronic health records, medical imaging, digital pathology, genome sequencing, wearable sensors, and more.
+- The application of AI tools to these multifaceted sensing technologies has the potential to revolutionize the prognosis, diagnosis, and management of human health and disease.
+- However, current approaches to biomedical AI typically only train and evaluate with one or a small set of medical modalities and tasks, hampering the development of comprehensive tools that can leverage the rich interconnected information across many heterogeneous.
+
+**Contributions:**
+- Presenting MultiMed, a benchmark designed to evaluate and enable large-scale learning across a wide spectrum of medical modalities and tasks.
+- MultiMed consists of 2.56 million samples across medical reports, pathology, genomics, and protein data (ten medical modalities), and is structured into eleven challenging tasks, including disease prognosis, protein structure prediction, and medical question answering.
+- Based on MultiMed, conducting comprehensive experiments benckmarking state-of-the-art unimodal, multimodal, and multitask models.
+
+**Benchmark details:**
+- Modality diversity
+    - Imaging modalities: 84,495 OCT images, 194,922 X-ray images, 617,775 CT scans, 7,023 MRI scans, and 27,560 pathology images.
+    - Electrophysiological data: MultiMed consists of 120,000 samples designed for the classification of imagined motor imagery time-series data. 
+    - Molecular data: 12,560 samples of genomic sequences and 270,000 samples of scRNA-seq data to support expression prediction at the singlecell level; a total of 131,487 protein sequences for protein structure prediction.
+    - Text: Clinical notes that complement raw medical signals with rich, descriptive medical narratives with one million image-text pairs.
+- Task diversity
+    - Disease classification
+    - Brain tumor classification
+    - Breast cancer classification
+    - Radiographic findings classification
+    - Bone age classification
+    - Diabetic retinopathy classification
+    - Imagined motor imagery classification
+    - Cell type classification
+    - Expression prediction
+    - Protein structure prediction
+    - Medical Visual question answering
+
+</details>
+
+
+<details>
+<summary>[May 2016] <b>Data Descriptor: MIMIC-III, a freely accessible critical care database</b>, <i>Scientific Data</i></summary>
+
+[Paper](https://www.nature.com/articles/sdata201635)
+[Code](https://github.com/MIT-LCP/mimic-website)
+[Jupyter-Notebook](https://github.com/MIT-LCP/mimic-iii-paper/)
+
+**Contributions:**
+- MIMIC-III (‘Medical Information Mart for Intensive Care’) is a large, single-center database comprising information relating to patients admitted to critical care units at a large tertiary care hospital.
+- Data includes vital signs, medications, laboratory measurements, observations and notes charted by care providers, fluid balance, procedure codes, diagnostic codes, imaging reports, hospital length of stay, survival data, and more.
+- MIMIC-III critical care database is unique and notable:
+    - it is the only freely accessible critical care database of its kind; 
+    - the dataset spans more than a decade, with detailed information about individual patient care; 
+    - analysis is unrestricted once a data use agreement is accepted, enabling clinical research and education around the world.
+
+**Benchmark details:**
+- Patient characteristics
+    - MIMIC-III contains data associated with 53,423 distinct hospital admissions for adult patients (aged 16 years or above) admitted to critical care units between 2001 and 2012.
+    - In addition, it contains data for 7870 neonates admitted between 2001 and 2008.
+    - The data covers 38,597 distinct adult patients and 49,785 hospital admission. The median age of adult patients is 65.8 years (Q1–Q3: 52.8–77.8), 55.9% patients are male, and in-hospital mortality is 11.5%.
+    - The median length of an ICU stay is 2.1 days (Q1–Q3: 1.2–4.6) and the median length of a hospital stay is 6.9 days (Q1-Q3: 4.1–11.9). A mean of 4579 charted observations (’chartevents’) and 380 laboratory measurements (’labevents’) are available for each hospital admission.
+    - The top three codes across hospital admissions for patients aged 16 years and above were:
+        - 414.01 (‘Coronary atherosclerosis of native coronary artery’), accounting for 7.1% of all hospital admissions; 
+        - 038.9 (‘Unspecified septicemia’), accounting for 4.2% of all hospital admissions; and 
+        - 410.71 (‘Subendocardial infarction, initial episode of care’), accounting for 3.6% of all hospital admissions.
+- Classes of data
+    - Data available in the MIMIC-III database ranges from time-stamped, nurse-verified physiological measurements made at the bedside to free-text interpretations of imaging studies provided by the radiology department.
+</details>
 
 ## Treatment Response Evaluation
 
@@ -179,6 +389,7 @@
 | Year  | Paper | Code | Cancer | Modalities | Data Source | Patients | Fusion Mode |
 |-------|-------|------|--------|------------|-------------|----------|-------------|
 | 2024 | [🔗](https://ieeexplore.ieee.org/document/10669115)| | BLCA, BRCA, GBMLGG, LUAD, UCEC | Path, Gene | TCGA | 372+956+569+453+480 | Middle |
+| 2024 | [🔗](https://openaccess.thecvf.com/content/CVPR2024/papers/Jaume_Modeling_Dense_Multimodal_Interactions_Between_Biological_Pathways_and_Histology_for_CVPR_2024_paper.pdf)| [🔗](https://github.com/mahmoodlab/SurvPath) | BRCA, BLCA, COADREAD, HNSC, STAD | Path, Gene | TCGA | 869+359+296+392+317 | Middle |
 | 2024 | [🔗](https://pubmed.ncbi.nlm.nih.gov/38445478/)| [🔗](https://github.com/mahmoodlab/clam) | ccRCC | Path, Rad, Clin | In-House, TCGA, CPTAC | 414 | Middle |
 | 2024 | [🔗](https://www.google.com/search?client=safari&rls=en&q=MOCAT%3A+multi%E2%80%91omics+integration+with%C2%A0auxiliary+classifiers+enhanced+autoencoder&ie=UTF-8&oe=UTF-8)| [🔗](https://github.com/Yaolab-fantastic/MOCAT) | | mRNA, miRNA, methylation | BRCA, ROSMAP, LGG, KIPAN | 351+875+510+658 samples | Middle |
 | 2024 | [🔗](https://www.nature.com/articles/s43018-024-00725-0)| | Breast | Gene, Trans, Prot, Meta, Rad, Path | In-House | 773 | Middle |
@@ -216,6 +427,23 @@
 - **Fusion Mode:** Middle, employing a Transformer to intergate multimodal (multiple components) embeddings
 </details>
 
+
+<details>
+<summary>⭐️ [June 2024] <b>Modeling Dense Multimodal Interactions Between Biological Pathways and Histology for Survival Prediction</b>, <i>CVPR</i></summary>
+
+[Paper](https://openaccess.thecvf.com/content/CVPR2024/papers/Jaume_Modeling_Dense_Multimodal_Interactions_Between_Biological_Pathways_and_Histology_for_CVPR_2024_paper.pdf)
+[Code](https://github.com/mahmoodlab/SurvPath)
+- **Cancer:** 
+- **Modalities:** Pathological whole-slide images (WSIs), Gene (bulk transcriptomics)
+- **Data Source:** TCGA (five datasets: BRCA, BLCA, COADREAD, HNSC, STAD)
+    - Bladder Urothelial Carcinoma (BLCA) (n=359), Breast Invasive Carcinoma (BRCA) (n=869), Stomach Adenocarcinoma (STAD) (n=317), Colon and Rectum Adenocarcinoma (COADREAD) (n=296), and Head and Neck Squamous Cell Carcinoma (HNSC) (n=392).
+- **Patients:** 
+- **Pipeline:** 
+    - using a pathway encoder to tokenize transcriptomics into biological pathway tokens that are semantically meaning ful, interpretable, and end-to-end learnable.
+    - using an SSL pre-trained feature extractor to tokenize the corresponding histology whole-slide image into patch tokens.
+    - combining pathway and patch tokens using a memory-efficient multimodal Transformer for survival outcome prediction.
+- **Fusion Mode:** Middle-fusion, using a memory-efficient multimodal Transformer for intergating multimodal embeddings
+</details>
 
 <details>
 <summary>⭐️ [Mar. 2024] <b>Deep learning-based multi-model prediction for disease-free survival status of patients with clear cell renal cell carcinoma after surgery: a multicenter cohort study</b>, <i>International Journal of Surgery</i></summary>
@@ -606,6 +834,7 @@
 | 2023 | [🔗](https://www.sciencedirect.com/science/article/pii/S0895611123001179) | | LUNA | Rad, Clin | In-House | 199 | Middle |
 | 2022 | [🔗](https://arxiv.org/abs/2212.09162) | [🔗](https://github.com/FirasGit/lsmt) | | Rad, Clin | MIMIC | >40,000 | Middle |
 | 2022 | [🔗](https://link.springer.com/chapter/10.1007/978-3-031-16443-9_11) | [🔗](https://github.com/YaoZhang93/mmFormer) | Brain | MRIs | BraTS 2018 | 285 | Middle |
+| 2021 | [🔗](https://www.nature.com/articles/s41467-021-23445-w) | [🔗](https://zenodo.org/records/4719434) | Pediatric | Gene (multi-cfDNA-fragment) | In-House | 95+31 | Middle |
 | 2021 | [🔗](https://ieeexplore.ieee.org/abstract/document/9366692) |  | | MRIs, PETs | ADNI | 820 | Middle |
 | 2021 | [🔗](https://www.nature.com/articles/s41598-020-74399-w) |  | | MRI, Gene, Clin | ADNI | 2004 | Middle |
 | 2020 | [🔗](https://www.nature.com/articles/s43018-020-00121-4) | [🔗](https://github.com/PascaDiMagliano-Lab/MultimodalMappingPDA-scRNASeq) | Pancreas | CyTOF, m-IHC, scRNA-seq | In-House | 18+105+19 | N/A |
@@ -759,6 +988,24 @@
 
 </details>
 
+<details>
+<summary>[May 2021] <b>Multimodal analysis of cell-free DNA whole-genome sequencing for pediatric cancers with low mutational burden</b>, <i>Nature Communications</i></summary>
+
+[Paper](https://www.nature.com/articles/s41467-021-23445-w)
+[Code](https://zenodo.org/records/4719434)
+[Analysis-source-code](https://medical-epigenomics.org/papers/peneder2020_f17c4e3befc643ffbb31e69f43630748/#code)
+
+- **Cancer:** Pediatric Cancers
+- **Modalities:** Gene (multiple cfDNA fragment-based metrics)
+- **Data Source:** In-House
+- **Patients:** 241 deep whole-genome sequencing profiles of 95 patients with Ewing sarcoma and 31 patients with other pediatric sarcomas
+- **Pipeline:** 
+    - presenting an integrative analysis and comparison of fragmentation patterns in this data set, including (i) global fragment-size distribution; (ii) regional fragment-size distribution along the genome; and (iii) fragment coverage at predefined regions-of-interest.
+    - introducing a bioinformatic method for accurate quantification of these epigenetic signatures in cfDNA.
+    - investigating the clinical associations of cfDNA fragmentation patterns, and introducing a machine learning method that integrates multiple cfDNA fragment-based metrics into highly predictive models for the detection and classification of pediatric solid tumors.
+- **Fusion Mode:** Middle-fusion, employing a machine learning method to anlysis multiple cfDNA fragment-based metrics 
+</details>
+
 
 <details>
 <summary>[Mar. 2021] <b>Relation-Induced Multi-Modal Shared Representation Learning for Alzheimer’s Disease Diagnosis</b>, <i>TMI</i></summary>
@@ -807,208 +1054,5 @@
     - single-cell RNA-sequencing: 16 PDA samples / 3 control samples (in total, we sequenced 8,541 cells from adjacent/normal samples and 46,244 cells from PDA, while from the blood samples we sequenced 14,240 cells from four healthy subjects and 55,873 cells from 16 patients with PDA.) 
 - **Pipeline:** Performing biological analysis for different modalities respectively
 - **Fusion Mode:** N/A
-
-</details>
-
-
-
-
-## Related Reviews
-<details>
-<summary>[Apr. 2023] <b>Deep multimodal fusion of image and non-image data in disease diagnosis and prognosis: a review</b>, <i>Progress in Biomedical Engineering</i></summary>
-
-[Paper](https://iopscience.iop.org/article/10.1088/2516-1091/acc2fe/meta)
-
-**Content:** 
-- Data Modalities: Image data (pathology images, radiology images, camera images); Non-image data (structured data, free-text data)
- - Multimodal fusion methods: Operation-based; Subspace-based; Attention-based; Tensor-based; Graph-based
-
-**View points:**
-- It is difficult to compare the performance of different methods directly, since different studies were typically done on different datasets with different settings.
-- There is no clue that a fusion method always performance the best. The optimal fusion method might be task/data dependent.
-- Fusing multi-modal data typically surpassed the uni-modal counterparts in the downstream tasks, but on the other hand, some studies also mentioned that the model that fused more modalities may not always perform better than the ones with fewer modalities (I think the reason is not doing a good modal fusion)
-- Deep-learning methods require a large amount of training data, however, data scaricity, especially multimodal data, is a challenge in the healthcare are.
-- Unimodal feature extraction is a essential prerequisite for fusion, especially for multimodal heterogeneity.
-- Explainability is a challenge in multimodal diagnosis and prognosis.
-
-</details>
-
-
-<details>
-<summary>⭐️ [Oct. 2022] <b>Artificial intelligence for multimodal data integration in oncology</b>, <i>Cancer Cell</i></summary>
-
-[Paper](https://www.cell.com/cancer-cell/pdf/S1535-6108(22)00441-X.pdf)
-
-**Content:** 
-- AI methods in oncology
-    - Supervised methods
-        - Hand-crafted methods
-            - 👍：simpler architecture, lower computation cost, may require less training data, and better interpretability
-            - 👎：time consuming, translate human bias to the models
-        - Representation learning methods
-            - 👍：their ability to extract rich feature representations from raw data, resulting in lower preprocessing cost, higher flexibility, and often superior performance over hand-crafted methods
-            - 👎：reliance on pixel-level annotations, lack of interpretability
-    - Weakly supervised methods: this method can reduce the cost of data preprocessing and mitigate the bias and interrater variability; additionally, they are free to learn from the entire scan, that can indentify predictive features even beyond the regions typically evaluated by clinicians.
-        - Graph convolutional networks
-            - 👍：can incorporate larger context and spatial tissue structure
-            - 👎：higher training costs and memory requirements (since the nodes cannot be processed independently)
-        - Multiple-instance learning
-            - 👍：no fine annotation is required
-            - 👎：overlook patches' correlation
-        - Vision transformers
-            - 👍：be fully context aware, consider patches' correlation and context, consider spatial structure or relative distances between patches via positional encoding
-            - 👎: tend to be more data hungry
-    - Unsupervised methods
-        - Self-supervised methods
-            - 👍：can learn general-purpose features, which can be beneficial for other practical tasks (transfer learning)
-            - 👎: (Not mentioned in the paper)
-        - Unsupervised feature analysis
-            - 👍：can explore structure, similarity and common features across data points
-            - 👎: (Not mentioned in the paper)
-- Multimodal data fusion
-    - Early fusion
-        - 👍：only one model is trainied, simplifing the design process
-        - 👎: requires a certain level of alignment or synchronization between the modalities
-    - Late fusion (decision-level fusion)
-        - 👍：allows one to use a different model achitecture for each modality, making it suitable for systems with large data heterogeneity or modalities from different time points; be able to cope  with missing or incomplete data; suitable for weak interdependencies
-        - 👎: unsuitable for strong interdependencies
-    - Intermediate fusion
-        - 👍：flexible—single-level fusion, gradual fusion, guided fusion
-    - There is no conclusive evidence that one fusion type is ultimately better than the others, as each type is heavily data and task specific.
-- Multimodal interpretability
-    - Histopathology: map model architecture attention or probability scores to obtain slide-level attention heatmaps
-    - Radiology: is similar to those used in histoloty
-    - Molecular data: use the integrated gradient method to analyze, which computes attribution values indicating how changes in specific inputs affect the model outputs
-    - Multimodal models: all previously mentioned methods can be used in multimodal models to explore interpretability within each modality. Moreover, shifts in feature importance under unimodal and multimodal settings can be investigated to analyze the impact of the multimodal context.
-    - While CAM- or attention-based methods can localize the predictive regions, they cannot specify which features are relevant, i.e., they can explain where but not why.
-    - There is no guarantee that all high-attention/attribution regions carry clinical relevance. High scores just mean that the model has considered these regions more important than others.
-- Multimodal data interconnection
-    - Morphologic associations
-    - Non-invasive alternatives
-    - Outcome associations
-    - Early predictors
-- Challenges
-    - Missing data
-        - Synthetic data generation
-        - Dropout-based methods
-    - Data alignment
-        - Alignment of similar modalities (e.g. MRI and PET brain scans)
-        - Alignment of diverse modalities (e.g. data from different scales, timepoints, or measurements)
-    - Transparency and prospective clinical trials
-
-</details>
-
-
-<details>
-<summary>⭐️ [Sep. 2022] <b>Multimodal biomedical AI</b>, <i>Nature Medicine</i></summary>
-
-[Paper](https://www.nature.com/articles/s41591-022-01981-2)
-
-**Content & View points:** 
-- Opportunities for leveraging multimodal data (applications)
-    - Personalized 'omics' for precision health
-    - Digital clinical trials
-    - Remote monitoring: the 'hospital-at-home'
-    - Pandemic surveillance and outbreak detection
-    - Digital twins
-    - Virtual health assistant
-- Multimodal data collection
-
-| Study                 | Country | Year started | Data modalities                                                                                                                                                         | Access         | Sample size   |
-|-----------------------|---------|--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------|---------------|
-| [UK Biobank](https://www.ukbiobank.ac.uk)            | UK      | 2006         | Questionnaires, EHR/clinical, Laboratory, Genome-wide genotyping, WES, WGS, Imaging, Metabolites                                                                       | Open access    | ~500,000      |
-| [China Kadoorie Biobank](https://www.ckbiobank.org) | China   | 2004         | Questionnaires, Physical measurements, Biosamples, Genome-wide genotyping                                                                                                | Restricted access | ~500,000      |
-| [Biobank Japan](https://biobankjp.org/en/index.html#01)         | Japan   | 2003         | Questionnaires, Clinical, Laboratory, Genome-wide genotyping                                                                                                             | Restricted access | ~200,000      |
-| [Million Veteran Program](https://www.mvp.va.gov/pwa/) | USA   | 2011         | EHR/clinical, Laboratory, Genome wide                                                                                                                                   | Restricted access | 1 million     |
-| [TOPMed](https://topmed.nhlbi.nih.gov/topmed-data-access-scientific-community)                | USA     | 2014         | Clinical, WGS                                                                                                                                                           | Open access    | ~180,000      |
-| [All of Us Research Program](https://allofus.nih.gov) | USA | 2017         | Questionnaires, SDH, EHR/clinical, Laboratory, Genome wide, Wearables                                                                                                   | Open access    | 1 million (target) |
-| [Project Baseline Health Study](https://ctsi.duke.edu/project-baseline-health-study) | USA | 2015       | Questionnaires, EHR/clinical, Laboratory, Wearables                                                                                                                     | Restricted access | 10,000 (target) |
-| [American Gut Project](https://db.cngb.org/search/project/PRJEB11419/)  | USA     | 2012         | Clinical, Diet, Microbiome                                                                                                                                              | Open access    | ~25,000       |
-| [MIMIC](https://lcp.mit.edu/mimic)                 | USA     | 2008-2019    | Clinical/EHR, Images                                                                                                                                                    | Open access    | ~380,000      |
-| [MIPACT](https://precisionhealth.umich.edu/our-research/mipact/)                | USA     | 2018-2019    | Wearables, clinical/EHR, physiological, laboratory                                                                                                                      | Restricted access | ~6,000        |
-| [North American Prodrome Longitudinal Study](https://napls.ucsf.edu) | USA  | 2008 | Clinical, Genetic                                                                                                                                                       | Restricted access | ~1,000        |
-
-- Technical challenges
-    - How to leverage multiple different types of data and learn to relate these multiple modalities or combine them for improving prediction performance?
-    - Another desirable feature for multimodal learning frameworks is the ability to learn from different modalities without the need for different model architectures.
-    - Another important modeling challenge relates to the exceedingly high number of dimensions contained in multimodal health data, collectively termed ‘the curse of dimensionality’.
-    - Multimodal fusion is a general concept that can be tackled using any architectural choice.
-    - Many other important challenges relating to multimodal model architectures remain (for example, how to extract features from three-dimensional imaging or whole-slide images)
-- Data challenges
-    - Medical datasets are heterogeneous, which can be described along several axes, including the sample size, depth of phenotyping, the length and intervals of follow-up, the degree of interaction between participants, the heterogeneity and diversity of the participants, the level of standardization and harmonization of the data and the amount of linkage between data sources.
-    - Achieving diversity across race/ethnicity, ancestry, income level, education level, healthcare access, age, disability status, geographic locations, gender and sexual orientation has proven difficult in practice.
-    - Another frequent problem with biomedical data is the usually high proportion of missing data.
-    - The risk of incurring several biases is important when conducting studies that collect health data, and multiple approaches are necessary to monitor and mitigate these biases.
-- Privacy challenges
-    - The successful development of multimodal AI in health requires breadth and depth of data, which encompasses higher privacy challenges than single-modality AI models.
-
-</details>
-
-## Benchmarks
-<details>
-<summary>⭐️ [Aug. 2024] <b>MultiMed: Massively Multimodal and Multitask Medical Understanding</b>, <i>arXiv</i></summary>
-
-[Paper](https://arxiv.org/pdf/2408.12682v1)
-
-**Background:**
-- Biomedical data is inherently multimodal, consisting of electronic health records, medical imaging, digital pathology, genome sequencing, wearable sensors, and more.
-- The application of AI tools to these multifaceted sensing technologies has the potential to revolutionize the prognosis, diagnosis, and management of human health and disease.
-- However, current approaches to biomedical AI typically only train and evaluate with one or a small set of medical modalities and tasks, hampering the development of comprehensive tools that can leverage the rich interconnected information across many heterogeneous.
-
-**Contributions:**
-- Presenting MultiMed, a benchmark designed to evaluate and enable large-scale learning across a wide spectrum of medical modalities and tasks.
-- MultiMed consists of 2.56 million samples across medical reports, pathology, genomics, and protein data (ten medical modalities), and is structured into eleven challenging tasks, including disease prognosis, protein structure prediction, and medical question answering.
-- Based on MultiMed, conducting comprehensive experiments benckmarking state-of-the-art unimodal, multimodal, and multitask models.
-
-**Benchmark details:**
-- Modality diversity
-    - Imaging modalities: 84,495 OCT images, 194,922 X-ray images, 617,775 CT scans, 7,023 MRI scans, and 27,560 pathology images.
-    - Electrophysiological data: MultiMed consists of 120,000 samples designed for the classification of imagined motor imagery time-series data. 
-    - Molecular data: 12,560 samples of genomic sequences and 270,000 samples of scRNA-seq data to support expression prediction at the singlecell level; a total of 131,487 protein sequences for protein structure prediction.
-    - Text: Clinical notes that complement raw medical signals with rich, descriptive medical narratives with one million image-text pairs.
-- Task diversity
-    - Disease classification
-    - Brain tumor classification
-    - Breast cancer classification
-    - Radiographic findings classification
-    - Bone age classification
-    - Diabetic retinopathy classification
-    - Imagined motor imagery classification
-    - Cell type classification
-    - Expression prediction
-    - Protein structure prediction
-    - Medical Visual question answering
-
-</details>
-
-
-<details>
-<summary>[May 2016] <b>Data Descriptor: MIMIC-III, a freely accessible critical care database</b>, <i>Scientific Data</i></summary>
-
-[Paper](https://www.nature.com/articles/sdata201635)
-[Code](https://github.com/MIT-LCP/mimic-website)
-[Jupyter-Notebook](https://github.com/MIT-LCP/mimic-iii-paper/)
-
-**Contributions:**
-- MIMIC-III (‘Medical Information Mart for Intensive Care’) is a large, single-center database comprising information relating to patients admitted to critical care units at a large tertiary care hospital.
-- Data includes vital signs, medications, laboratory measurements, observations and notes charted by care providers, fluid balance, procedure codes, diagnostic codes, imaging reports, hospital length of stay, survival data, and more.
-- MIMIC-III critical care database is unique and notable:
-    - it is the only freely accessible critical care database of its kind; 
-    - the dataset spans more than a decade, with detailed information about individual patient care; 
-    - analysis is unrestricted once a data use agreement is accepted, enabling clinical research and education around the world.
-
-**Benchmark details:**
-- Patient characteristics
-    - MIMIC-III contains data associated with 53,423 distinct hospital admissions for adult patients (aged 16 years or above) admitted to critical care units between 2001 and 2012.
-    - In addition, it contains data for 7870 neonates admitted between 2001 and 2008.
-    - The data covers 38,597 distinct adult patients and 49,785 hospital admission. The median age of adult patients is 65.8 years (Q1–Q3: 52.8–77.8), 55.9% patients are male, and in-hospital mortality is 11.5%.
-    - The median length of an ICU stay is 2.1 days (Q1–Q3: 1.2–4.6) and the median length of a hospital stay is 6.9 days (Q1-Q3: 4.1–11.9). A mean of 4579 charted observations (’chartevents’) and 380 laboratory measurements (’labevents’) are available for each hospital admission.
-    - The top three codes across hospital admissions for patients aged 16 years and above were:
-        - 414.01 (‘Coronary atherosclerosis of native coronary artery’), accounting for 7.1% of all hospital admissions; 
-        - 038.9 (‘Unspecified septicemia’), accounting for 4.2% of all hospital admissions; and 
-        - 410.71 (‘Subendocardial infarction, initial episode of care’), accounting for 3.6% of all hospital admissions.
-- Classes of data
-    - Data available in the MIMIC-III database ranges from time-stamped, nurse-verified physiological measurements made at the bedside to free-text interpretations of imaging studies provided by the radiology department.
-
 
 </details>
