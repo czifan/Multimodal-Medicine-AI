@@ -1,5 +1,9 @@
 # Multimodal Medicine AI
 
+This repository is dedicated to curating research papers on multimodal medicine AI, encompassing reviews, benchmarks, and cutting-edge AI or machine learning techniques for analyzing clinical tasks using multimodal medical data. These tasks include treatment response assessment, prognosis evaluation, diagnosis, recurrence prediction, and more. We also aim to continually gather and update [relevant open datasets](https://github.com/czifan/Multimodal-Medicine-AI/blob/main/multimodal_dataset.md) to support research in multimodal medicine.
+
+---
+
 Articles collected so far: 48
 
 Last Updated: October 17, 2024
@@ -11,7 +15,7 @@ Last Updated: October 17, 2024
 - [Benchmarks](#benchmarks)
 - [Treatment Response Evaluation](#treatment-response-evaluation)
 - [Prognosis Evaluation](#prognosis-evaluation)
-- [Others (Dignosis, recurrence, ...)](#others)
+- [Others (Dignosis, recurrence prediction, ...)](#others)
 - [Multimodal Medical Datasets](https://github.com/czifan/Multimodal-Medicine-AI/blob/main/multimodal_dataset.md)
 
 <details>
