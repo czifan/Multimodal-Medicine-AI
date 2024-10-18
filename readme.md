@@ -1,8 +1,19 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<style>
+.custom-tag {
+    background-color: #EFEFEF;
+    border-radius: 10px;
+    padding: 3px;
+    display: inline-block;
+}
+</style>
+
 # Multimodal Medicine AI
 
 This repository is dedicated to curating research papers on multimodal medicine AI, encompassing reviews, benchmarks, and cutting-edge AI or machine learning techniques for analyzing clinical tasks using multimodal medical data. These tasks include treatment response assessment, prognosis evaluation, diagnosis, recurrence prediction, and more. We also aim to continually gather and update [relevant open datasets](https://github.com/czifan/Multimodal-Medicine-AI/blob/main/multimodal_dataset.md) to support research in multimodal medicine.
 
-> [October 17, 2024] Articles collected so far: 48
+> [October 18, 2024] Articles collected so far: 50
 
 ## Table of Contents
 - [Reviews](#reviews)
@@ -48,6 +59,43 @@ This repository is dedicated to curating research papers on multimodal medicine 
 - Unimodal feature extraction is a essential prerequisite for fusion, especially for multimodal heterogeneity.
 - Explainability is a challenge in multimodal diagnosis and prognosis.
 
+</details>
+
+<details>
+<summary>
+    <span class="custom-tag"> Perspective </span>
+    ⭐️ [Feb. 2023] <b>Multimodal data fusion for cancer biomarker discovery with deep learning</b>, 
+    <i>Nature machine intelligence</i>
+</summary>
+
+```Perspective```
+
+[Paper](https://www.nature.com/articles/s42256-023-00633-5)
+
+**Background:**
+- In oncology, massive amounts of data are being generated, ranging from molecular, histopathology, radiology to clinical records.
+- However, most currently AI approaches focus on single data modalities, leading to slow progress in methods to integrate complementary data types.
+- Development of effective multimodal fusion approaches is becoming increasingly important as a single modality might not be consistent and sufficient to capture the heterogeneity of complex diseases to tailor medical care and improve personalized medicine.
+
+**View points:**
+- **The need for multimodal data fusion in oncology:** Despite huge investments in cancer research and improved diagnosis and treatments, cancer prognosis is still bleak. Predictive models based on single modalities offer a limited view of disease heterogeneity and might not provide sufficient information to stratify patients and capture the full range of events that take place in response to treatments.
+- **Data fusion strategies for multimodal biomarker discovery:** The age of precision medicine demands powerful computational techniques to handle high-dimensional multimodal patient data. Each data source has strengths and limitations in its creation, analysis and interpretation that must be addressed.
+    - Medical images (2D in histopathology or 3D in radiology) contain dense information that is encoded at multiple scales. So far, the best performing methods have been based on DL, and specifically convolutional neural networks.
+    - EHRs comprise various data types ranging from structured data such as medications, diagnosis codes, vital signs or lab tests, to unstructured data in the form of clinical notes, patient emails and detailed clinical processes. Natural language processing (NLP) algorithms that can extract useful clinical information from structured and unstructured EHR data are being developed.
+    - Effective fusion methods must integrate high-dimensional multimodal biomedical data, ranging from quantitative features to images and text.
+    - A major decision that must be made is at what specific modelling stage the data fusion takes place: (1) early, (2) intermediate or (3) late.
+        - While both early and late fusion approaches are model agnostic, they are not specifically designed to cope with or take full advantage of multiple modalities. Anything between early and late fusion is defined as intermediate or joint data fusion.
+        - Intermediate fusion does not merge input data, nor develop separate models for each modality, but instead involves the development of inference algorithms to generate a joint multimodal low-level feature representation that retains the signal and properties of each individual modality. Although dedicated inference algorithms must be developed for each model type, this approach attempts to exploit the advantages of both early and late fusion
+- **Advances in multimodal biomarkers for patient stratification:** 
+    - Multi-omics data fusion: Although a single omics technology provides insights into the profile of a tumour, one technique alone does not fully capture the underlying biology. The increasing collection of large cohorts of multi-omics cancer data has spurred several efforts to fuse multi-omics data to fully grasp the tumour profile and several models for survival and risk prediction have been proposed
+    - Multiscale data fusion: Similar efforts as for multi-omics data fusion have been explored for multiscale data, like integrating histopathology, clinical and expression data to predict patient outcomes.
+    - imaging genomics and radiogenomics: When possible, molecular tumour information is nowadays used in cancer prognosis and treatment decisions. Interestingly, multiple studies have shown that phenotypes derived from medical images can act as proxies or biomarkers of molecular phenotypes such as an epidermal growth factor receptor (EGFR) mutation in lung cancer.
+- **Current challenges and future directions for multimodal data fusion:**
+    - *Data hunger*: DL models requires large amounts of data, and both data sparsity and scarcity present serious challenges, especially for biomedical data.
+    - *Modality missing*: in clinical practice, there are often different types of data missing between patients, as not all patients might have all modalities owing to cost, insurance coverage, material availability and lack of systemic collection procedures, among others.
+    - *Biased cohort*: the depth of data per patient, that is, many observables per patient are routinely generated and stored, but typical cohort sizes of patients are relatively small.
+    - *Lack of large 'golden labelled' cohorts*: the lack of large ‘golden labelled’ cohorts with matched multimodal data, mainly due to the intense labour to annotate cancer datasets combined with privacy concerns.
+    - *Lack of model interpretation*: while DL can extract predictive features from complex data, these are usually abstract, and it is not always apparent if they are clinically relevant
 </details>
 
 
@@ -824,6 +872,7 @@ This repository is dedicated to curating research papers on multimodal medicine 
 | Year | Paper | Code | Cancer | Modalities | Data Source | Patients | Fusion Mode |
 |------|-------|------|--------|------------|-------------|----------|-------------|
 | 2024 | [🔗](https://www.nature.com/articles/s41467-024-50369-y) | [🔗](https://github.com/guichengpeng1/WSI-based-deep-learning-classifier-in-papillary-renal-cell-carcinoma) | pRCC | Gene, Rad, Clin | In-House, TCGA | 793 + 204 | Late |
+| 2024 | [🔗](https://www.nature.com/articles/s41591-024-03118-z) | [🔗](https://github.com/vkola-lab/nmed2024) | Non-Cancer (dementia) | Rad, Clin | In-House | 51269 | Middle |
 | 2024 | [🔗](https://www.nature.com/articles/s41591-024-02993-w) | [🔗](https://github.com/AIRMEC/HECTOR) | Endometrial | Path, Clin | In-House, TCGA | 2072 | Middle |
 | 2024 | [🔗](https://www.nature.com/articles/s41467-024-46700-2) | [🔗](https://github.com/Xiao-OMG/OvcaFinder) | Ovarian | Rad, Clin | In-House | 724 | Middle |
 | 2024 | [🔗](https://arxiv.org/pdf/2402.14252.pdf) | | | Rad | In-House | | |
@@ -851,6 +900,29 @@ This repository is dedicated to curating research papers on multimodal medicine 
     - a clinicopathological classifier, built in univariate and multivariate Cox regression analyses
     - developing a multi-classifier system, driven by Cox regression, to integrate the above three modality models' outputs
 - **Fusion Mode:** Late-fusion, using Cox regression coefficients to integrate multimodal outputs: Multi classifier risk score = 1.2924 × the lncRNA-based risk score + 2.6315 × the WSI-basedscore + 0.8646 × (0.5670 × grade + 0.5326 × stage)
+</details>
+
+<details>
+<summary>⭐️ [June 2024] <b>AAI-based differential diagnosis of dementia etiologies on multimodal data</b>, <i>Nature Medicine</i></summary>
+
+[Paper](https://www.nature.com/articles/s41591-024-03118-z)
+[Code](https://github.com/vkola-lab/nmed2024)
+- **Cancer:** Non-Cancer (differential diagnosis of dementia)
+- **Modalities:** Clinical info (demographics, individual and family medical history, medication use, neuropsychological assessments, functional evaluations), multimodal neuroimaging (multi-series MRIs)
+    - Demographics: age, gender, race, primary language
+    - health history: family history, medication, hypertension
+    - Physical: height, weight, BMI, blood pressure
+    - Neurological tests: Unified Parkinson’s Disease Rating Scale, Geriatric Depression Scale, Neuropsychiatric Inventory Questionnaire, neuropsychological battery
+    - MRI scans: T1w, T2w, FLAIR, DWI, SWI
+- **Data Source:** In-House (51,269 participants across 9 independent, geographically diverse datasets, facilitated the identification of 10 distinct dementia etiologies)
+    - Training set: n = 38,319 NACC(36,454), AIBL, PPMI, NIFD, LBDSU, OASIS, 4RTNI
+    - Testing set: n = 12,950 NACC*(8,895), ADNI, FHS
+- **Pipeline:**
+    - using a series of steps (e.g. standardizing the data across all cohorts and formatting the features into numerical or categorical variables), and employing a single linear layer to extract numerical info embeddings while utilizing a lookup table to translate categorical inputs into corresponding embeddings
+    - to encounter challenges related to missing features and labels, incorporating several strategies such as random feature masking and masking of missing labels 
+    - using a series of pre-processing (e.g. skull stripping, linear registration to the MNI space and intensity normalization), and employing the Swin UNETR to extract image embeddings
+    - using a Transformer to aggregate these multimodal embeddings
+- **Fusion Mode:** Middle-fusion, using a Transformer to integrate multimodal embeddings
 </details>
 
 <details>
