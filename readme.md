@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 <style>
 .custom-tag {
@@ -7,7 +7,7 @@
     padding: 3px;
     display: inline-block;
 }
-</style>
+</style> -->
 
 # Multimodal Medicine AI
 
@@ -62,10 +62,7 @@ This repository is dedicated to curating research papers on multimodal medicine 
 </details>
 
 <details>
-<summary>
-    <span class="custom-tag"> Perspective </span>
-    ⭐️ [Feb. 2023] <b>Multimodal data fusion for cancer biomarker discovery with deep learning</b>, 
-    <i>Nature machine intelligence</i>
+<summary>⭐️ [Feb. 2023] <b>Multimodal data fusion for cancer biomarker discovery with deep learning</b>, <i>Nature machine intelligence</i> <i>[Perspective]</i>
 </summary>
 
 ```Perspective```
