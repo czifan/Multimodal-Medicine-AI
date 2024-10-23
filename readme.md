@@ -13,7 +13,7 @@
 
 This repository is dedicated to curating research papers on multimodal medicine AI, encompassing reviews, benchmarks, and cutting-edge AI or machine learning techniques for analyzing clinical tasks using multimodal medical data. These tasks include treatment response assessment, prognosis evaluation, diagnosis, recurrence prediction, and more. We also aim to continually gather and update [relevant open datasets](https://github.com/czifan/Multimodal-Medicine-AI/blob/main/multimodal_dataset.md) to support research in multimodal medicine.
 
-> [October 21, 2024] Articles collected so far: 51
+> [October 23, 2024] Articles collected so far: 53
 
 ## Table of Contents
 - [Reviews](#reviews)
@@ -42,6 +42,96 @@ This repository is dedicated to curating research papers on multimodal medicine 
 
 
 ## Reviews
+
+<details>
+<summary>⭐️ [Oct. 2024] <b>Recent Advances in Data-driven Fusion of Multi-modal Imaging and Genomics for Precision Medicine</b>, <i>Information Fusion</i></summary>
+
+[Paper](https://www.sciencedirect.com/science/article/pii/S1566253524005165?casa_token=C33TkmQ9-uwAAAAA:nQ0kLcxtdkrh-XYYcyZwOQDL4bRwtC4Sez8wWXIZP2t4RCPlQyxGOuWuRIyU3oB5Zcn_Qy1mq45S)
+
+**Highlights:** 
+- Providing a systematic overview of imaging genomics across multiple organs throughout the body.
+- highlighting the recent advancements in data-driven fusion methods for imaging genomics.
+- offering detailed reports on multi-modal imaging, imaging-genomics fusion, and clinical applications.
+- discussing the current challenges in imaging genomics, providing insights and future prospects.
+
+**Context:**
+- Multi-organ Imaging and IDP Extraction (IDP, imaging-derived phenotypes)
+    - Brain
+        - Modalities: commonly using MRI, including T1-magnetization prepared rapid gradient echo (MPRAGE), T2 fluid-attenuated inversion-recovery (FLAIR), diffusion-weighted imaging (DWI), diffusion tensor imaging (DTI), task-based functional MRI (tfMRI), and resting-state functional MRI (rfMRI).
+        - Clinical applications: brain IDPs serve as valuable biomarkers for assessing complex brain diseases, including Parkinson's disease, Alzheimer's disease (AD), ischemic stroke, and neuropsychiatric disorders.
+    - Heart
+        - Modalities: cardiac IDPs are usually extracted from various imaging modalities, including cardiac MRI (CMR), echocardiography, and CT. Similar to brain imaging, MRI is the primary cardiac imaging method for population genomics studies in cardiology, including T1 mapping, T2 mapping, cine, DTI, Q-flow, coronary imaging, 2D-PC, and 4D-flow.
+        - Clinical applications: cardiac IDPs are valuable for exploring associations with diseases such as coronary artery disease (CAD), dilated cardiomyopathy (DCM), hypertrophic cardiomyopathy (HCM), long QT syndrome, pulmonary hypertension, and heart failure
+    - Lung
+        - Modalities: pulmonary IDPs can be obtained utilizing a range of imaging modalities, including X-ray, CT, MRI, US, and PET/CT. Among these, CT is particularly advantageous due to its high resolution, faster imaging speed and lower cost, making it the preferred and most widely used method for obtaining pulmonary IDPs.
+        - Clinical applications: pulmonary IDPs holds promise in the diagnosis and management of various pulmonary conditions, encompassing bacterial lung infections, pulmonary viral and fungal infections, bronchiectasis, lung abscesses, pulmonary fibrosis (PF), emphysema, chronic obstructive pulmonary disease (COPD), and lung tumors
+    - Abdomen
+        - Modalities: abdominal IDPs, including several organs like liver, kidney, spleen, pancreas as well as visceral and subcutaneous fat, are predominantly obtained through CT and MRI.
+        - Clinical applications: these imaging modalities provide valuable insights into obesity, metabolic disorders, and liver disease.
+    - Bone
+        - Modalities: skeletal imaging techniques, such as photon, dual-energy X-ray absorptiometry (DXA), CT, MRI, and US, provide a rich source of IDPs related to bone and muscle health.
+        - Clinical applications: these IDPs play a crucial role in identifying risk factors monitoring disease progression, and assessing the effectiveness of interventions for conditions like osteoporosis, sarcopenia and fractures.
+    - Breast
+        - Modalities: breast imaging techniques include mammography, ultrasound, PET, CT, and MRI.
+        - Clinical applications: these measurements yield valuable information regarding the size, shape, density, and texture of the breast tissue, in addition to identifying any suspicious lesions or calcifications.
+- Genome Sequencing
+    - Single nucleotide polymorphisms (SNP) is one of the most common types of genetic variation in the human genome.
+    - SNP data processing involve collecting and extracting DNA samples from different individuals, detecting SNPs using high-throughput methods, standardizing and analyzing the data by genomewide association studies.
+    - Existing technologies that can be used to acquire SNP data include chip-based analysis and sequencing-based analysis:
+        - Chip-based analysis uses specific chips to detect the variation of SNP loci in the sample.
+        - Sequencing-based SNP analysis utilizes high-throughput sequencing technologies to detect SNP variation by comparing the sample to the reference genome.
+    - Common sequencing technologies include Sanger sequencing, second-generation sequencing (such as Illumina and Ion Torrent), and third-generation sequencing (such as PacBio and Oxford Nanopore)
+    - Commonly used file formats to store genetic data include VCF, BED, BAM, FASTQ, GTF/GFF, and BGEN.
+- Fusion Strategies:
+    - Coorelation analysis
+        - Genome-wide Association Analysis (GWAS): GWAS and post-GWAS analysis have become foundational in imaging genomics, playing a crucial role in uncovering associations between imaging features and genes.
+        - Pathway Analysis: pathway enrichment analysis is a valuable method for identifying specific biological pathways in a group of genes, facilitating the identification of associations between biological functions and phenotypes. (most common databases are Gene Ontology (GO) and Kyoto Encyclopedia of Genes and Genomes (KEGG))
+    - Causal Analysis：Mendelian Randomization (MR) is a robust approach for addressing causal questions about the effects of modifiable exposures on various outcomes.
+    - Machine Learning Methods
+        - Complex Association: canonical correlation analysis (CCA); structured sparse canonical correlation analysis (SCCA); manifold learning techniques; radiogenomics
+        - Prediction Model: early, intermediate, or late of data fusion; deep learning for extracting high spatial correlations; transformer models for modeling conplex dependency within gene expression data
+- Public Datasets:
+
+| Dataset | Sample size | Data type |
+|---|---|---|
+| [UK Biobank](https://www.ukbiobank.ac.uk/) | ~500,000 | Brain, heart, abdomen, genotype, others |
+| [FHS](https://www.framinghamheartstudy.org/) | 15,000+ | Brain, heart, lung, abdomen |
+| [SHIP](https://ship.community-medicine.de) | 12,000+ | Heart, abdomen, genotype, others |
+| [ABCD](https://nda.nih.gov.abcd) | 12,000+ | Brain, others |
+| [CAHHM](https://cahhm.mcmaster.ca/) | 9,500+ | Brain, heart, abdomen |
+| [PNC](https://www.med.upenn.edu/bbl/philadelphianeurodevelopmentalcohort.html) | 95,00+ | Brain, others |
+| [MESA](https://www.mesa-nhlbi.org) | 6,800+ | Heart, others |  
+| [IMAGEN](https://imagen-project.org/the-imagen-dataset) | 2,000+ | Brain, others |
+| [ADNI](https://adni.loni.usc.edu) | 1,200 | Brain, others |
+| [CHCP](https://hupi.fudan.edu.cn) | 300+ | Brain, others |
+
+- Clinical Applications
+    - Brain
+        - Modalities: T1W, MPRAGE, DTI, rfMRI, T2 FLAIR, SWI/QSM
+        - Disease: Alzheimer's disease; Parkinson's disease; ischemic stroke; cognitive dysfunction
+    - Heart:
+        - Modalities: Cine imaging; black blood, bright blood; coronary imaging; 4D flow
+        - Disease: dilated cardiomyopathy; coronary artery disease; heart failure; left ventricular dilation
+    - Breast
+        - Modalities: mammography, ultrasound, MRI
+        - Disease: breast cancer; fibrocystic breast; mastitis
+    - Lungs
+        - Modalities: NCCT
+        - Disease: pulmonary artery embolism; interstitial lung disease; lung cancer; emphysema; COPD
+    - Abdomen
+        - Modalities: NCCT, T1 mapping, T2*, dixon
+        - Disease: liver fibroinflammatory; nonalcohollc fatty liver disease; diabetes and the metabolic syndrome; energy expenditure and obestiy
+    - Bone
+        - Modalities: DXA
+        - Disease: fracture; osteoporosis; osteoporotic fracture
+- Challenges and Prospects
+    - Improving Data Representation: quality control; exraction of phenotypes; voxel-wise genetic analysis; imaging modalities combination
+    - Introducting Other Omics: integration of multi-omics analysis
+    - Performing Cross-dataset Analysis: data sharing
+    - Exploring Machine Learning Algorithms: new algorithms developed; computational limitation
+    - Studying Organ Interactions: exploration of whole-body network connections
+</details>
+
 <details>
 <summary>[Apr. 2023] <b>Deep multimodal fusion of image and non-image data in disease diagnosis and prognosis: a review</b>, <i>Progress in Biomedical Engineering</i></summary>
 
@@ -277,6 +367,7 @@ This repository is dedicated to curating research papers on multimodal medicine 
 
 | Year | Paper | Code | Cancer | Modalities | Data Source | Patients | Fusion Mode |
 |-------|-------|------|--------|------------|-------------|----------|-------------|
+| 2024 | [🔗](https://www.nature.com/articles/s41392-024-01932-y)| [🔗](https://github.com/czifan/MuMo) | GC | Rad, Path, Cli | In-House | 429 | Middle |
 | 2023 | [🔗](https://www.biorxiv.org/content/10.1101/2023.11.24.568360v1.abstract)| | ccRCC | Gene | TCGA, In-House | ~1000 | Middle |
 | 2023 | [🔗](https://www.biorxiv.org/content/10.1101/2023.07.04.547697v1.abstract) | [🔗](https://github.com/rootchang/ICBpredictor) | 18 solid tumor types | Path, Gene, Clin | In-House | 2881 | Middle |
 | 2023 | [🔗](https://www.sciencedirect.com/science/article/pii/S0167814023003316?casa_token=MZeMEY7Dz48AAAAA:9iepZVnJHZdhSU0Hmoq-UyajUchgBk1i1ZpoSZTj0NvvdbUaQhJg5ltcoth-iAC0TaVq9abwWA) | [🔗](https://github.com/vancywx/Immunotherapy-response-prediction-using-multi-modal-semi-superviseddeep-learning/tree/main) | GC | Rad, Clin | In-House | 249 | Middle |
@@ -286,6 +377,26 @@ This repository is dedicated to curating research papers on multimodal medicine 
 | 2021 | [🔗](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7868825/) | | NSCLC | Rad, Lab, Clin | In-House | 200 | Middle |
 | 2020 | [🔗](https://www.thelancet.com/journals/eclinm/article/PIIS2589-5370(20)30123-1/fulltext) | | HCC | Rad | In-House | 737 | Middle |
 
+<details>
+<summary>⭐️ [Aug. 2024] <b>Predicting gastric cancer response to anti-HER2 therapy or anti-HER2 combined immunotherapy based on multi-modal data</b>, <i>Signal Transduction and Targeted Therapy</i></summary>
+
+[Paper](https://www.nature.com/articles/s41392-024-01932-y)
+[Code](https://github.com/czifan/MuMo)
+- **Cancer:** Gastric Cancer (GC)
+- **Modalities:** Radiological CT images, radiological structured reports, pathological whole-slide H&E images (WSIs), pathological structured reports, clinical information (age, sex, treatment line, ...) 
+- **Data Source:** In-House
+- **Patients:** 429 patients: 310 treated with anti-HER2 therapy and 119 treated with a combination of anti-HER2 and anti-PD-1/PD-L1 inhibitors immunotherapy
+- **Pipeline:** 
+    - using a deep learning extractor to extract radiological deep image features from 3D CT images according to doctors' ROI annotations
+    - using a pre-defined one-hot encoder to map radiological structured reports into high-dim features
+    - using a multi-scale transformer-based encoder to extract pathological WSIs' features within doctors' ROI annotations
+    - using a pre-defined one-hot encoder to map pathological structure reports into high-dim features
+    - employing intra-modal fusion module (attention-based) to fuse pathological features and pathological features, respectively
+    - conducting a inter-modal fusion module to first separate model-specific features and then align modal-agnostic features from different modalities for multi-modal fusion
+    - unilizing a attention-based module to fuse clinical information and multi-modal feature into a patient-level representation
+    - leveraging an MLP layer for patient outcome predictions
+- **Fusion Mode:** Middle-fusion, employing attention-based module for multi-modal features intergation, and introducing a operation to first separate modal-specific features and then align modal-agnostic features for better multi-modal aggregation
+</details>
 
 <details>
 <summary>[Nov. 2023] <b>Multi-omics features-based machine learning method improve immunotherapy response in clear cell renal cell carcinoma</b>, <i>bioRxiv</i></summary>
