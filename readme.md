@@ -402,7 +402,7 @@ This repository is dedicated to curating research papers on multimodal medicine 
 
 
 <details>
-<summary>⭐️ [June 2024] <b>TMO-Net: an explainable pretrained multi-omics model for multi-task learning in oncology/b>, <i>Genome Biology</i></summary>
+<summary>⭐️ [June 2024] <b>TMO-Net: an explainable pretrained multi-omics model for multi-task learning in oncology</b>, <i>Genome Biology</i></summary>
 
 [Paper](https://pubmed.ncbi.nlm.nih.gov/38845006/)
 [Code](https://github.com/FengAoWang/TMO‑Net)
