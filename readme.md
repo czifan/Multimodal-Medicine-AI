@@ -13,7 +13,7 @@
 
 This repository is dedicated to curating research papers on multimodal medicine AI, encompassing reviews, benchmarks, and cutting-edge AI or machine learning techniques for analyzing clinical tasks using multimodal medical data. These tasks include treatment response assessment, prognosis evaluation, diagnosis, recurrence prediction, and more. We also aim to continually gather and update [relevant open datasets](https://github.com/czifan/Multimodal-Medicine-AI/blob/main/multimodal_dataset.md) to support research in multimodal medicine.
 
-> [October 23, 2024] Articles collected so far: 53
+> [October 24, 2024] Articles collected so far: 55
 
 ## Table of Contents
 - [Reviews](#reviews)
@@ -368,6 +368,7 @@ This repository is dedicated to curating research papers on multimodal medicine 
 | Year | Paper | Code | Cancer | Modalities | Data Source | Patients | Fusion Mode |
 |-------|-------|------|--------|------------|-------------|----------|-------------|
 | 2024 | [🔗](https://www.nature.com/articles/s41392-024-01932-y)| [🔗](https://github.com/czifan/MuMo) | GC | Rad, Path, Cli | In-House | 429 | Middle |
+| 2024 | [🔗](https://pubmed.ncbi.nlm.nih.gov/38845006/)| [🔗](https://github.com/FengAoWang/TMO‑Net) | Pan-Cancer | Multi-omics | TCGA | 8174 | Middle |
 | 2023 | [🔗](https://www.biorxiv.org/content/10.1101/2023.11.24.568360v1.abstract)| | ccRCC | Gene | TCGA, In-House | ~1000 | Middle |
 | 2023 | [🔗](https://www.biorxiv.org/content/10.1101/2023.07.04.547697v1.abstract) | [🔗](https://github.com/rootchang/ICBpredictor) | 18 solid tumor types | Path, Gene, Clin | In-House | 2881 | Middle |
 | 2023 | [🔗](https://www.sciencedirect.com/science/article/pii/S0167814023003316?casa_token=MZeMEY7Dz48AAAAA:9iepZVnJHZdhSU0Hmoq-UyajUchgBk1i1ZpoSZTj0NvvdbUaQhJg5ltcoth-iAC0TaVq9abwWA) | [🔗](https://github.com/vancywx/Immunotherapy-response-prediction-using-multi-modal-semi-superviseddeep-learning/tree/main) | GC | Rad, Clin | In-House | 249 | Middle |
@@ -382,6 +383,7 @@ This repository is dedicated to curating research papers on multimodal medicine 
 
 [Paper](https://www.nature.com/articles/s41392-024-01932-y)
 [Code](https://github.com/czifan/MuMo)
+
 - **Cancer:** Gastric Cancer (GC)
 - **Modalities:** Radiological CT images, radiological structured reports, pathological whole-slide H&E images (WSIs), pathological structured reports, clinical information (age, sex, treatment line, ...) 
 - **Data Source:** In-House
@@ -397,6 +399,29 @@ This repository is dedicated to curating research papers on multimodal medicine 
     - leveraging an MLP layer for patient outcome predictions
 - **Fusion Mode:** Middle-fusion, employing attention-based module for multi-modal features intergation, and introducing a operation to first separate modal-specific features and then align modal-agnostic features for better multi-modal aggregation
 </details>
+
+
+<details>
+<summary>⭐️ [June 2024] <b>TMO-Net: an explainable pretrained multi-omics model for multi-task learning in oncology/b>, <i>Genome Biology</i></summary>
+
+[Paper](https://pubmed.ncbi.nlm.nih.gov/38845006/)
+[Code](https://github.com/FengAoWang/TMO‑Net)
+[Dataset](https://zenodo.org/records/11258239)
+
+- **Cancer:** Pan-Cancer
+- **Modalities:** Gene mutation, mRNA expression, copy number variation (CNV), and DNA methylation
+- **Data Source:** TCGA
+- **Patients:** 32 pan-cancers from the TCGA database, which consisted of 8174 samples, including normal tissue samples; All processed datasets used for TMO‑Net model pre‑training and fine‑tuning are deposited in [Zenodo](https://zenodo.org/records/11258239)
+- **Pipeline:** 
+    - developing the Tumor Multi-Omics pre-trained Network (TMO-Net) model, pre-trained with large-scale pan-cancer multi-omics datasets and learn the relationships among individual omics features
+    - the model was engineered to accommodate the learning of incomplete omics data
+    - utilizing multiple variational autoencoders (VAEs) for capturing associations within self-modal and cross-modal features
+    - integrating a "Cross Fusion Module" to efficiently align latent spaces from different modalities and faciliting the inference of missing modalities
+    - fusing each omics type's embeddings into a comprehensive joint multi-omics sample embedding via summation
+    - pre-training TMO-Net in large-scale pan-cancer multi-omics datasets and then finetuning it to solve several downstream tasks, i.e. breast cancer subtype prediction, primary and metastatic cancer samples separation, drug response prediction, and pan-cancers prognositic prediction
+- **Fusion Mode:** Middle-fusion, using summation to integrate multimodal embeddings
+</details>
+
 
 <details>
 <summary>[Nov. 2023] <b>Multi-omics features-based machine learning method improve immunotherapy response in clear cell renal cell carcinoma</b>, <i>bioRxiv</i></summary>
@@ -979,6 +1004,7 @@ This repository is dedicated to curating research papers on multimodal medicine 
 
 | Year | Paper | Code | Cancer | Modalities | Data Source | Patients | Fusion Mode |
 |------|-------|------|--------|------------|-------------|----------|-------------|
+| 2024 | [🔗](https://pmc.ncbi.nlm.nih.gov/articles/PMC11487165/) | [🔗](https://github.com/BioInforCore-BCI/giExtract) | ESCC | Gene, Path | In-House | 120 | Late |
 | 2024 | [🔗](https://www.nature.com/articles/s41467-024-51888-4) | [🔗](https://github.com/zqiuak/CoPAS) | Non-Cancer (knee abnormalities) | Rad (multi-sequence MRIs) | In-House | 1748 | Middle |
 | 2024 | [🔗](https://www.nature.com/articles/s41467-024-50369-y) | [🔗](https://github.com/guichengpeng1/WSI-based-deep-learning-classifier-in-papillary-renal-cell-carcinoma) | pRCC | Gene, Rad, Clin | In-House, TCGA | 793 + 204 | Late |
 | 2024 | [🔗](https://www.nature.com/articles/s41591-024-03118-z) | [🔗](https://github.com/vkola-lab/nmed2024) | Non-Cancer (dementia) | Rad, Clin | In-House | 51269 | Middle |
@@ -994,6 +1020,29 @@ This repository is dedicated to curating research papers on multimodal medicine 
 | 2021 | [🔗](https://ieeexplore.ieee.org/abstract/document/9366692) |  | | MRIs, PETs | ADNI | 820 | Middle |
 | 2021 | [🔗](https://www.nature.com/articles/s41598-020-74399-w) |  | | MRI, Gene, Clin | ADNI | 2004 | Middle |
 | 2020 | [🔗](https://www.nature.com/articles/s43018-020-00121-4) | [🔗](https://github.com/PascaDiMagliano-Lab/MultimodalMappingPDA-scRNASeq) | Pancreas | CyTOF, m-IHC, scRNA-seq | In-House | 18+105+19 | N/A |
+
+
+<details>
+<summary>[Oct. 2024] <b>The integrated molecular and histological analysis defines subtypes of esophageal squamous cell carcinoma</b>, <i>Nature Communications</i></summary>
+
+[Paper](https://pmc.ncbi.nlm.nih.gov/articles/PMC11487165/)
+[Code](https://github.com/BioInforCore-BCI/giExtract)
+[Analysis-source-code](https://github.com/Zhong2020/ESCCproject)
+
+- **Cancer:** Esophageal Squamous Cell Carcinoma (ESCC)
+- **Modalities:** Genomic-transcriptomic, histopathological images
+- **Data Source:** In-House
+- **Patients:** 120 Chinese ESCC patients
+- **Pipeline:** 
+    - extracting sample RNA; constructing the sequencing library; performing 150 bp double-ended sequencing; using SOAPnuke and Salmon for data cleaning and comparison; normalizing RNA-seq data for differential expression and GSEA pathway enrichment analysis
+    - using non-negative matrix decomposition (NMF) algorithm for unsupervised clustering of RNA-seq data, and then dividing the samples into 4 subtypes
+    - using CIBERSORT and Danaher methods to estimate the level of immune cell infiltration in tumor samples and determine the immune subtypes
+    - using Agilent SureSelect to capture Exon regions; sequenced by Illumina X Ten platform, and driver genes were identified using methods such as MutSigCV
+    - using CNNs to extract histopathological image features, and then filtering subtype-specific histological markers
+    - performing XCL1 gene overexpression in ESCC cell lines in vitro; performing SFRP1 tumor growth in nude mice
+- **Fusion Mode:** Late-fusion, correlation analysis refers to the analysis of each modality separately and the interpretation of supporting conclusions through the integration of results
+</details>
+
 
 <details>
 <summary>[Aug. 2024] <b>Learning co-plane attention across MRI sequences for diagnosing twelve types of knee abnormalities</b>, <i>Nature Communications</i></summary>
@@ -1180,8 +1229,8 @@ This repository is dedicated to curating research papers on multimodal medicine 
     - employing an inter-modal transformer to build and align the long-range correlations across modalities
     - a decoder performs a progressive up-sampling and fusion with the modality-invariant features to generate robust segmentation
 - **Fusion Mode:** Middle-fusion, using an inter-modal transformer to integrate multimodal features
-
 </details>
+
 
 <details>
 <summary>[May 2021] <b>Multimodal analysis of cell-free DNA whole-genome sequencing for pediatric cancers with low mutational burden</b>, <i>Nature Communications</i></summary>
