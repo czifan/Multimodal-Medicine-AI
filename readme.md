@@ -13,7 +13,7 @@
 
 This repository is dedicated to curating research papers on multimodal medicine AI, encompassing reviews, benchmarks, and cutting-edge AI or machine learning techniques for analyzing clinical tasks using multimodal medical data. These tasks include treatment response assessment, prognosis evaluation, diagnosis, recurrence prediction, and more. We also aim to continually gather and update [relevant open datasets](https://github.com/czifan/Multimodal-Medicine-AI/blob/main/multimodal_dataset.md) to support research in multimodal medicine.
 
-> [October 24, 2024] Articles collected so far: 55
+> [October 25, 2024] Articles collected so far: 56
 
 ## Table of Contents
 - [Reviews](#reviews)
@@ -1006,6 +1006,7 @@ This repository is dedicated to curating research papers on multimodal medicine 
 |------|-------|------|--------|------------|-------------|----------|-------------|
 | 2024 | [🔗](https://pmc.ncbi.nlm.nih.gov/articles/PMC11487165/) | [🔗](https://github.com/BioInforCore-BCI/giExtract) | ESCC | Gene, Path | In-House | 120 | Late |
 | 2024 | [🔗](https://www.nature.com/articles/s41467-024-51888-4) | [🔗](https://github.com/zqiuak/CoPAS) | Non-Cancer (knee abnormalities) | Rad (multi-sequence MRIs) | In-House | 1748 | Middle |
+| 2024 | [🔗](https://www.nature.com/articles/s41591-024-03185-2) | [🔗](https://github.com/taokz/BiomedGPT) | | Path, Rad, Clic, Text | 14 freely avaiable datasets | | Middle |
 | 2024 | [🔗](https://www.nature.com/articles/s41467-024-50369-y) | [🔗](https://github.com/guichengpeng1/WSI-based-deep-learning-classifier-in-papillary-renal-cell-carcinoma) | pRCC | Gene, Rad, Clin | In-House, TCGA | 793 + 204 | Late |
 | 2024 | [🔗](https://www.nature.com/articles/s41591-024-03118-z) | [🔗](https://github.com/vkola-lab/nmed2024) | Non-Cancer (dementia) | Rad, Clin | In-House | 51269 | Middle |
 | 2024 | [🔗](https://www.nature.com/articles/s41591-024-02993-w) | [🔗](https://github.com/AIRMEC/HECTOR) | Endometrial | Path, Clin | In-House, TCGA | 2072 | Middle |
@@ -1057,6 +1058,28 @@ This repository is dedicated to curating research papers on multimodal medicine 
     - there is a branch network for sagittal plane, coronal plane and axial plane respectively, including encoder module, cross-plane attention module, cross-sequence attention module and branch integration module
     - using the aggregated cross-plane cross-sequence features to predict knee abnormalities' types
 - **Fusion Mode:** Middle-fusion, using a cross-plane attention module and a cross-sequence attention module to intergate multi-plane and multi-MRI-sequence embeddings 
+</details>
+
+
+<details>
+<summary>[July 2024] <b>A generalist vision–language foundation model for diverse biomedical tasks</b>, <i>Nature Medicine</i></summary>
+
+[Paper](https://www.nature.com/articles/s41591-024-03185-2)
+[Code](https://github.com/taokz/BiomedGPT)
+- **Cancer:** Non-Cancer (diverse biomedical tasks)
+- **Modalities:** image (MRI, X-ary, EKG, ultrasound, microscopy, CT, endoscopy, pathology images), and text (publications, EHRs, literature, clinical notes)
+- **Data Source:** 14 freely available datasets (Peir Gross, MedMNIST-raw, SZ-CXR, MedNLI, MIMIC-CXR, MeQSum, PathVQA, MIMIC-III, IU X-ray, VQA-RAD, CBIS-DDSM, SLAKE)
+- **Pipeline:**
+    - diverse biomedical tasks:
+        - **text understanding:** clinical-trail matching, mortality prediction, and treatment suggestion
+        - **text summarization:** report summarization, conversation summarization
+        - **captioning:** report generation
+        - **image classification:** disease diagnosis, lesion detection
+        - **VQA:** pathology and radiology VQA
+    - using text encoder, 2D image encoder, 3D image encoder, and text encoder to encode instruction, 2D biomedical image, 3D biomedical image, and biomedical text into input embeddings, respectively
+    - using a BiomedGPT encoder as well as a BiomedGPT decoder to integrate input embeddings into a discrete output sequence (Biomed GPT model scale: small with 33 million params, medium with 93 params, and base with 182 millon params)
+    - employing a text decoder to solve diverse biomedical tasks 
+- **Fusion Mode:** Middle-fusion, using a BiomedGPT encoder and a BiomedGPT decoder to integrate multimodal information
 </details>
 
 
