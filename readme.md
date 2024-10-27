@@ -1005,6 +1005,7 @@ This repository is dedicated to curating research papers on multimodal medicine 
 | Year | Paper | Code | Cancer | Modalities | Data Source | Patients | Fusion Mode |
 |------|-------|------|--------|------------|-------------|----------|-------------|
 | 2024 | [🔗](https://pmc.ncbi.nlm.nih.gov/articles/PMC11487165/) | [🔗](https://github.com/BioInforCore-BCI/giExtract) | ESCC | Gene, Path | In-House | 120 | Late |
+| 2024 | [🔗](https://arxiv.org/pdf/2407.15362) | | Pan-Cancer | Path, Gene, Text | In-House | 10275 | Middle |
 | 2024 | [🔗](https://www.nature.com/articles/s41467-024-51888-4) | [🔗](https://github.com/zqiuak/CoPAS) | Non-Cancer (knee abnormalities) | Rad (multi-sequence MRIs) | In-House | 1748 | Middle |
 | 2024 | [🔗](https://www.nature.com/articles/s41591-024-03185-2) | [🔗](https://github.com/taokz/BiomedGPT) | | Path, Rad, Clic, Text | 14 freely avaiable datasets | | Middle |
 | 2024 | [🔗](https://www.nature.com/articles/s41467-024-50369-y) | [🔗](https://github.com/guichengpeng1/WSI-based-deep-learning-classifier-in-papillary-renal-cell-carcinoma) | pRCC | Gene, Rad, Clin | In-House, TCGA | 793 + 204 | Late |
@@ -1042,6 +1043,25 @@ This repository is dedicated to curating research papers on multimodal medicine 
     - using CNNs to extract histopathological image features, and then filtering subtype-specific histological markers
     - performing XCL1 gene overexpression in ESCC cell lines in vitro; performing SFRP1 tumor growth in nude mice
 - **Fusion Mode:** Late-fusion, correlation analysis refers to the analysis of each modality separately and the interpretation of supporting conclusions through the integration of results
+</details>
+
+
+<details>
+<summary>[Aug. 2024] <b>A Multimodal Knowledge-enhanced Whole-slide Pathology Foundation Model</b>, <i>arXiv</i></summary>
+
+[Paper](https://arxiv.org/pdf/2407.15362)
+- **Cancer:** Pan-Cancer (32 cancer types)
+- **Modalities:** pathologicval whole-slide images (WSIs), pathology reports, and RNA-Seq data
+- **Data Source:** In-House (26,169 slide-level modality pairs from 10,275 patients across 32 cancer types)
+- **Pipeline:**
+    - proposing a novel whole-slide pretraining paradigm which injects multimodal knowledge at the whole-slide context into the pathology FM, called Multimodal Self-TAught PRetraining (mSTAR)
+    - stage 1: pretrain slide aggregator for the injection of multimodal knowledge: 
+        - 1) first, using patch extractor andh a slide aggregator to extract multi-patch features from pasthological whole-slide images; 2) using a tokenizer and a text encoder to extract pathology reports features; 3) using a Gene2Vec modulle and a gene encoder to extract gene features from gene expression profile
+        - employing inter-modality contrastive learning to align inter-modal [CLS] embeddings (pathology and text, pathology and gene, text and gene)
+        - employing inter-cancer contrastive learning (triplet loss) to distinguish different cancer types to alleviate the hetegrogeneity of various cancer types
+    - stage 2: pretrain patch extractor with self-taught training: propagating multimodal knowledge learnedc at the slide level into the patch extractor by self-taught training, levberaging the slide aggregator pretrained in Stage 1 as "Teacher" and enforces patch extractor to be "Student"
+    - evaluation tasks: 1) pathologicial slide classification for disgnosis and treatment; 2) pathological survival analysis for prognosis; 3) multimodal capability (few-shot slide classification; zero-shot slide classification; pathological report generation)
+- **Fusion Mode:** Middle-fusion, using contrastive learning to align multimodal embeddings and employing concatenation to fuse multimodal embeddings
 </details>
 
 
