@@ -13,7 +13,7 @@
 
 This repository is dedicated to curating research papers on multimodal medicine AI, encompassing reviews, benchmarks, and cutting-edge AI or machine learning techniques for analyzing clinical tasks using multimodal medical data. These tasks include treatment response assessment, prognosis evaluation, diagnosis, recurrence prediction, and more. We also aim to continually gather and update [relevant open datasets](https://github.com/czifan/Multimodal-Medicine-AI/blob/main/multimodal_dataset.md) to support research in multimodal medicine.
 
-> [October 27, 2024] Articles collected so far: 57
+> [October 28, 2024] Articles collected so far: 59
 
 ## Table of Contents
 - [Reviews](#reviews)
@@ -1011,6 +1011,8 @@ This repository is dedicated to curating research papers on multimodal medicine 
 | 2024 | [🔗](https://www.nature.com/articles/s41467-024-50369-y) | [🔗](https://github.com/guichengpeng1/WSI-based-deep-learning-classifier-in-papillary-renal-cell-carcinoma) | pRCC | Gene, Rad, Clin | In-House, TCGA | 793 + 204 | Late |
 | 2024 | [🔗](https://www.nature.com/articles/s41591-024-03118-z) | [🔗](https://github.com/vkola-lab/nmed2024) | Non-Cancer (dementia) | Rad, Clin | In-House | 51269 | Middle |
 | 2024 | [🔗](https://www.nature.com/articles/s41591-024-02993-w) | [🔗](https://github.com/AIRMEC/HECTOR) | Endometrial | Path, Clin | In-House, TCGA | 2072 | Middle |
+| 2024 | [🔗](https://link.springer.com/chapter/10.1007/978-3-031-72390-2_58) | [🔗](https://github.com/JefferyJiang-YF/M4oE) | Non-Cancer | Rad (CT, MRI, CE-MRI) | FLARE22, AMOS22, ATLAS23 | 50+500+100+60 | Middle |
+| 2024 | [🔗](https://ieeexplore.ieee.org/document/10539123) | | BRCA, NSCLC, RCC | Path, Gene | TCGA | 737+158+453+450+512+273+109 | Middle |
 | 2024 | [🔗](https://www.nature.com/articles/s41467-024-46700-2) | [🔗](https://github.com/Xiao-OMG/OvcaFinder) | Ovarian | Rad, Clin | In-House | 724 | Middle |
 | 2024 | [🔗](https://arxiv.org/pdf/2402.14252.pdf) | | | Rad | In-House | | |
 | 2023 | [🔗](https://arxiv.org/abs/2304.02836) | [🔗](https://github.com/MASILab/lmsignatures) | SPN | Rad, Clin | NLST, EHR-Pulmonary, Image-EHR, In-House | 2668 (public), 1449 (in-house) | Middle |
@@ -1155,6 +1157,45 @@ This repository is dedicated to curating research papers on multimodal medicine 
     - applying a gating-based attention mechanism with biliear product on the embeddings from different modalities to weight the importance of each modality
     - reducing the multimodal embedding by two fully connected (FC) layers before the survival categorical head of a FC layer with output size as the number of discrete time intervals
 - **Fusion Mode:** Middle, employing a gating-based attention mechanism with biliear product to intergate multimodal embeddings
+</details>
+
+
+<details>
+<summary>[May 2024] <b>Multimodal Co-attention Fusion Network with Online Data Augmentation for Cancer Subtype Classification</b>, <i>IEEE transactions on medical imaging (TMI)</i></summary>
+
+[Paper](https://ieeexplore.ieee.org/document/10539123)
+
+- **Cancer:** BRCA, NSCLC, RCC
+- **Modalities:** pathological whole-slide images (WSIs), multi-omics data (mutation status, copy-number variation, and RNA-seq expression)
+- **Data Source:** BRCA (IDC: 737; ILC: 168); NSCLC (LUAD: 453; LUSC: 450); RCC (KIRC: 512; KIRP: 273; KICH: 109)
+- **Pipeline:**
+    - patching WSIs into patches and mapping them into patch embeddings
+    - preprocessing multi-omics data and mapping them into gene embeddings
+    - employing a mutual-guided co-attention to enhance both modalities' embeddings
+    - for WSI branch, using a online data augmentation module to aggregate information:
+        - first, according to co-attention module's attention map to scoring and ranking patches
+        - then, split them into an attentive group and an inattentive group according to their scores
+        - for attentive group, using a mixup-like strategry to augment patch embeddings
+        - for inattentive group, fusing them into one embeddings via their average score
+    - for multi-omics branch, using a SNN-Mixer, containing one token-mixing SNN and one channel-mixing SNN, to integrate multi-omics information
+    - employing global attention pooling (GAP) for both modalities' token embeddings and then concatenate them into a patient-level representation
+    - using a classifier for cancer subtype predictions
+- **Fusion Mode:** Middle, employing co-attention for enhancing both modalities' embeddings and finally concatenate multimodal embeddings for predicting cancer subtypes
+</details>
+
+
+<details>
+<summary>[May 2024] <b>M4oE: A Foundation Model for Medical Multimodal Image Segmentation with Mixture of Experts</b>, <i>MICCAI 2024</i></summary>
+
+[Paper](https://link.springer.com/chapter/10.1007/978-3-031-72390-2_58)
+[Code](https://github.com/JefferyJiang-YF/M4oE)
+- **Cancer:** Non-Cacner
+- **Modalities:** CTG, MRI, CE-MRI
+- **Data Source:** Three multimodal medical image segementation datasets: 1) FLARE22 with 50 labeled CT scan cases; 2) AMOS22 with 600 labeled cases comprising 500 CT and 100 MRI abdominal scans; 3) ATLAS23 with 60 cases of contrast-enhanced MRI (CE-MRI) liver scans
+- **Pipeline:**
+    - M4oE comprises modality-specific experts; each separately initialized to learn features encoding domain knowledge
+    - subsequently, a gating network is integrated during fine-tuning to modulate each expert's contribution to the collective predictions dynamically
+- **Fusion Mode:** Middle, employing a gating network to intergate each expers's contribution
 </details>
 
 <details>
